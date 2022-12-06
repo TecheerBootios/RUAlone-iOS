@@ -1,0 +1,43 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+    get_certificates
+    get_provisioning_profile
+    increment_build_number(xcodeproj: "Techeer-RUAlone.xcodeproj")
+    build_app(scheme: "Techeer-RUAlone")
+    upload_to_testflight
+    slack(
+        message: "Testflight Deploy Successful!",
+        slack_url: "https://hooks.slack.com/services/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"
+    )
+    error do |lane, exception, options|
+      slack(
+          message: "Error : #{exception}",
+          success: false,
+          slack_url: "https://hooks.slack.com/services/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"
+      )
+    end
+  end
+
+  desc "Initiate testing for new build"
+  lane :tests do
+    run_tests(scheme: "Techeer-RUAlone")
+  end
+end
