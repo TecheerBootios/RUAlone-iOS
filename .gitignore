@@ -6,16 +6,19 @@
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
-
+# Appstore settings
+AppStore_com.techeer.KKodiac.Techeer-RUAlone.mobileprovision
 
 # fastlane specific
 fastlane/report.xml
+
 
 # deliver temporary files
 fastlane/Preview.html
 
 # environment file for apple id
 fastlane/.env
+fastlane/.env.default
 
 # snapshot generated screenshots
 fastlane/screenshots/**/*.png
