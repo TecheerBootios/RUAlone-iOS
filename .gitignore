@@ -6,6 +6,9 @@
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
+# Remove personal SwiftLint rules
+.swiftlint.yml
+
 # Appstore settings
 AppStore_com.techeer.KKodiac.Techeer-RUAlone.mobileprovision
 
