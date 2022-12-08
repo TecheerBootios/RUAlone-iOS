@@ -14,6 +14,7 @@
 		0B06823729370AC300E5D648 /* Techeer_RUAloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06823629370AC300E5D648 /* Techeer_RUAloneTests.swift */; };
 		0B06824129370AC300E5D648 /* Techeer_RUAloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06824029370AC300E5D648 /* Techeer_RUAloneUITests.swift */; };
 		0B06824329370AC300E5D648 /* Techeer_RUAloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06824229370AC300E5D648 /* Techeer_RUAloneUITestsLaunchTests.swift */; };
+		0B0682AB294205BF00E5D648 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0B0682AA294205BF00E5D648 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		0B06823C29370AC300E5D648 /* Techeer-RUAloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Techeer-RUAloneUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B06824029370AC300E5D648 /* Techeer_RUAloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneUITests.swift; sourceTree = "<group>"; };
 		0B06824229370AC300E5D648 /* Techeer_RUAloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0B0682AA294205BF00E5D648 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		0B06821929370AC000E5D648 = {
 			isa = PBXGroup;
 			children = (
+				0B0682AA294205BF00E5D648 /* .swiftlint.yml */,
 				0B06822429370AC000E5D648 /* Techeer-RUAlone */,
 				0B06823529370AC300E5D648 /* Techeer-RUAloneTests */,
 				0B06823F29370AC300E5D648 /* Techeer-RUAloneUITests */,
@@ -134,6 +137,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B06824629370AC300E5D648 /* Build configuration list for PBXNativeTarget "Techeer-RUAlone" */;
 			buildPhases = (
+				0B0682A92942012900E5D648 /* SwiftLint Script */,
 				0B06821E29370AC000E5D648 /* Sources */,
 				0B06821F29370AC000E5D648 /* Frameworks */,
 				0B06822029370AC000E5D648 /* Resources */,
@@ -232,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B0682AB294205BF00E5D648 /* .swiftlint.yml in Resources */,
 				0B06822D29370AC200E5D648 /* Preview Assets.xcassets in Resources */,
 				0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */,
 			);
@@ -252,6 +257,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B0682A92942012900E5D648 /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0B06821E29370AC000E5D648 /* Sources */ = {
