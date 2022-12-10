@@ -17,6 +17,11 @@
 		0B0682AB294205BF00E5D648 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0B0682AA294205BF00E5D648 /* .swiftlint.yml */; };
 		0B0682AE29421CEE00E5D648 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0682AD29421CEE00E5D648 /* Alamofire */; };
 		0B0682B129421D5200E5D648 /* SendbirdUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0682B029421D5200E5D648 /* SendbirdUIKit */; };
+		0B0682B32944C7CC00E5D648 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682B22944C7CC00E5D648 /* HomeView.swift */; };
+		0B0682B52944C8BF00E5D648 /* HorizontalRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682B42944C8BF00E5D648 /* HorizontalRectangle.swift */; };
+		0B0682B72944CA4800E5D648 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B0682B62944CA4800E5D648 /* Colors.xcassets */; };
+		0B0682B92944CB0D00E5D648 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682B82944CB0D00E5D648 /* Color+Extensions.swift */; };
+		0B0682BB2944D1AE00E5D648 /* VerticalRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682BA2944D1AE00E5D648 /* VerticalRectangle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,11 @@
 		0B06824029370AC300E5D648 /* Techeer_RUAloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneUITests.swift; sourceTree = "<group>"; };
 		0B06824229370AC300E5D648 /* Techeer_RUAloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0B0682AA294205BF00E5D648 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		0B0682B22944C7CC00E5D648 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0B0682B42944C8BF00E5D648 /* HorizontalRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalRectangle.swift; sourceTree = "<group>"; };
+		0B0682B62944CA4800E5D648 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		0B0682B82944CB0D00E5D648 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		0B0682BA2944D1AE00E5D648 /* VerticalRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalRectangle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +114,12 @@
 				0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */,
 				0B06822729370AC000E5D648 /* ContentView.swift */,
 				0B06822929370AC200E5D648 /* Assets.xcassets */,
+				0B0682B62944CA4800E5D648 /* Colors.xcassets */,
 				0B06822B29370AC200E5D648 /* Preview Content */,
+				0B0682B22944C7CC00E5D648 /* HomeView.swift */,
+				0B0682B42944C8BF00E5D648 /* HorizontalRectangle.swift */,
+				0B0682B82944CB0D00E5D648 /* Color+Extensions.swift */,
+				0B0682BA2944D1AE00E5D648 /* VerticalRectangle.swift */,
 			);
 			path = "Techeer-RUAlone";
 			sourceTree = "<group>";
@@ -249,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B0682AB294205BF00E5D648 /* .swiftlint.yml in Resources */,
+				0B0682B72944CA4800E5D648 /* Colors.xcassets in Resources */,
 				0B06822D29370AC200E5D648 /* Preview Assets.xcassets in Resources */,
 				0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */,
 			);
@@ -296,8 +312,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B0682B92944CB0D00E5D648 /* Color+Extensions.swift in Sources */,
+				0B0682B32944C7CC00E5D648 /* HomeView.swift in Sources */,
 				0B06822829370AC000E5D648 /* ContentView.swift in Sources */,
+				0B0682BB2944D1AE00E5D648 /* VerticalRectangle.swift in Sources */,
 				0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */,
+				0B0682B52944C8BF00E5D648 /* HorizontalRectangle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
