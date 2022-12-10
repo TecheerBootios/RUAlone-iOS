@@ -21,12 +21,12 @@ struct HomeView: View {
                     HStack(spacing: 12) {
                         VerticalRectangle(contentText: "친구를 찾아보세요!",
                                           rectangleColor: .customGreen,
-                                          circleImage: "person.fill.questionmark",
+                                          circleImage: "person.2.fill",
                                           circleColor: .customLightGreen,
                                           iconColor: .customGreen)
                         VerticalRectangle(contentText: "친구를 모아보세요!",
                                           rectangleColor: .customOrange,
-                                          circleImage: "person.fill.badge.plus",
+                                          circleImage: "person.2.wave.2.fill",
                                           circleColor: .customLightOrange,
                                           iconColor: .customDarkOrange)
                     }

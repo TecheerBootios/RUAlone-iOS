@@ -29,7 +29,7 @@ struct VerticalRectangle: View {
                     HStack(alignment: .firstTextBaseline) {
                         Image(systemName: circleImage)
                           .resizable()
-                          .frame(width: 23, height: 23)
+                          .scaledToFit()
                           .foregroundColor(iconColor)
                           .padding(20)
                           .background(circleColor)
@@ -46,7 +46,7 @@ struct VerticalRectangle_Previews: PreviewProvider {
     static var previews: some View {
         VerticalRectangle(contentText: "친구를 찾아보세요!",
                           rectangleColor: .customGreen,
-                          circleImage: "person.fill.questionmark",
+                          circleImage: "person.2.fill",
                           circleColor: .customLightGreen,
                           iconColor: .customGreen)
     }
