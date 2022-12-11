@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */; };
-		0B06822829370AC000E5D648 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822729370AC000E5D648 /* ContentView.swift */; };
+		0B06822829370AC000E5D648 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822729370AC000E5D648 /* LoginView.swift */; };
 		0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B06822929370AC200E5D648 /* Assets.xcassets */; };
 		0B06822D29370AC200E5D648 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B06822C29370AC200E5D648 /* Preview Assets.xcassets */; };
 		0B06823729370AC300E5D648 /* Techeer_RUAloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06823629370AC300E5D648 /* Techeer_RUAloneTests.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		0B06822229370AC000E5D648 /* Techeer-RUAlone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Techeer-RUAlone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneApp.swift; sourceTree = "<group>"; };
-		0B06822729370AC000E5D648 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0B06822729370AC000E5D648 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0B06822929370AC200E5D648 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B06822C29370AC200E5D648 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0B06823229370AC300E5D648 /* Techeer-RUAloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Techeer-RUAloneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */,
-				0B06822729370AC000E5D648 /* ContentView.swift */,
+				0B06822729370AC000E5D648 /* LoginView.swift */,
 				0B06822929370AC200E5D648 /* Assets.xcassets */,
 				0B06822B29370AC200E5D648 /* Preview Content */,
 			);
@@ -258,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B06822829370AC000E5D648 /* ContentView.swift in Sources */,
+				0B06822829370AC000E5D648 /* LoginView.swift in Sources */,
 				0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
