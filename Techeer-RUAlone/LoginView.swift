@@ -13,23 +13,36 @@ struct LoginView: View {
 
     var body: some View {
         VStack {
+            Image("icon")
+                .resizable()
+                .frame(width: 300, height: 300, alignment: .leading)
+            
             Text("로그인")
-                .font(.system(size: 30))
+                .font(.system(size: 40))
+                .fontWeight(.bold)
             
-            TextField("이메일", text: $emailAddress)
-                .frame(maxWidth: 300)
-                .padding()
-                .background(Color.white)
-                .clipShape(RoundedRectangle(cornerRadius: 50))
-                .shadow(color: .gray, radius: 2, x: 0, y: 2)
+            HStack {
+                Image("email")
+                    .resizable()
+                    .frame(width: 30, height: 30, alignment: .leading)
+                TextField("이메일", text: $emailAddress)
+            }
+                    .frame(maxWidth: 300)
+                    .padding()
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 50))
             
-            TextField("패스워드", text: $password)
+            HStack {
+                Image("password")
+                    .resizable()
+                    .frame(width: 30, height: 30, alignment: .leading)
+                TextField("패스워드", text: $password)
+            }
                 .frame(maxWidth: 300)
                 .padding()
                 .foregroundColor(.black)
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 50))
-                .shadow(color: .gray, radius: 2, x: 0, y: 2)
             
             Button(action: {}) {
                 Text("로그인")
@@ -53,7 +66,14 @@ struct LoginView: View {
                     .shadow(color: .gray, radius: 2, x: 0, y: 2)
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity) // 1
+        .accentColor(Color.black)
+        .background(ColorManager.BackgroundColor.ignoresSafeArea())
     }
+}
+
+struct ColorManager {
+    static let BackgroundColor = Color("myBackground")
 }
 
 struct LoginView_Previews: PreviewProvider {
