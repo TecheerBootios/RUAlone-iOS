@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045BFABB2948AB5F0057DCCF /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BFABA2948AB5F0057DCCF /* SignupView.swift */; };
 		0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */; };
 		0B06822829370AC000E5D648 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822729370AC000E5D648 /* LoginView.swift */; };
 		0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B06822929370AC200E5D648 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		045BFABA2948AB5F0057DCCF /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		0B06822229370AC000E5D648 /* Techeer-RUAlone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Techeer-RUAlone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneApp.swift; sourceTree = "<group>"; };
 		0B06822729370AC000E5D648 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */,
 				0B06822729370AC000E5D648 /* LoginView.swift */,
+				045BFABA2948AB5F0057DCCF /* SignupView.swift */,
 				0B06822929370AC200E5D648 /* Assets.xcassets */,
 				0B06822B29370AC200E5D648 /* Preview Content */,
 			);
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045BFABB2948AB5F0057DCCF /* SignupView.swift in Sources */,
 				0B06822829370AC000E5D648 /* LoginView.swift in Sources */,
 				0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */,
 			);
