@@ -8,13 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    init() {
-        UITabBar.appearance().backgroundColor = UIColor.white
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .black
-        UISearchBar.appearance(whenContainedInInstancesOf: [UISearchBar.self]).barTintColor = .systemPink
-    }
-    
     var body: some View {
         TabView {
             HomeView()

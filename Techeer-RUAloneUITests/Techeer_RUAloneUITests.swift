@@ -29,6 +29,14 @@ final class Techeer_RUAloneUITests: XCTestCase {
         XCTAssertTrue(app.navigationBars.staticTexts["홈"].exists)
     }
     
+    func test_feedUITest() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        XCTAssertTrue(app.navigationBars.staticTexts["홈"].exists)
+    }
+    
+    
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.

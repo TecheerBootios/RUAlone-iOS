@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct FeedView: View {
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor.white
+    }
+    
     @State private var searchText = ""
     @State private var isPresented = false
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(alignment: .leading) {
                 ZStack {
                     ScrollView(.vertical, showsIndicators: false) {
@@ -33,9 +37,10 @@ struct FeedView: View {
                 }
             }
             .navigationTitle("메이트 구하기")
-            .background(Color.customPink)
             .navigationBarColor(titleColor: .white)
+            .background(Color.customPink)
         }
+        .textFieldColor(backgroundColor: .white, tintColor: .black)
         .searchable(text: $searchText,
                     prompt: Text("메뉴를 검색해보세요").foregroundColor(.white)) {
             SuggestionView()

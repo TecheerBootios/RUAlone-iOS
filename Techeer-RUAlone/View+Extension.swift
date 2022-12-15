@@ -31,8 +31,26 @@ struct NavigationBarModifier: ViewModifier {
     }
 }
 
-struct RoundedCorner: Shape {
+struct TextFieldModifier: ViewModifier {
+    var backgroundColor: UIColor?
+    var tintColor: UIColor?
+    
+    init(backgroundColor: UIColor?, tintColor: UIColor?) {
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = backgroundColor ?? .white
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = tintColor ?? .black
+    }
+    
+    func body(content: Content) -> some View {
+        ZStack{
+            content
+            VStack {
+                Spacer()
+            }
+        }
+    }
+}
 
+struct RoundedCorner: Shape {
     var radius: CGFloat = .infinity
     var corners: UIRectCorner = .allCorners
 
@@ -53,4 +71,7 @@ extension View {
         self.modifier(NavigationBarModifier(titleColor: titleColor))
     }
 
+    func textFieldColor(backgroundColor: UIColor?, tintColor: UIColor?) -> some View {
+        self.modifier(TextFieldModifier(backgroundColor: backgroundColor, tintColor: tintColor))
+    }
 }

@@ -39,7 +39,6 @@ struct HomeView: View {
                 }
             }
             .padding()
-            .navigationBarColor(titleColor: .black)
         }
     }
 }
