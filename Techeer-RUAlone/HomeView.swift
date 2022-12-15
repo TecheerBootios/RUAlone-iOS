@@ -39,7 +39,7 @@ struct HomeView: View {
                 }
             }
             .padding()
-            .navigationTitle("홈")
+            .navigationBarColor(titleColor: .black)
         }
     }
 }
