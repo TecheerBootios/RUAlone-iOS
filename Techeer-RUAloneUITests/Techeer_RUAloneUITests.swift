@@ -26,14 +26,14 @@ final class Techeer_RUAloneUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        XCTAssertTrue(app.navigationBars.staticTexts["홈"].exists)
+        XCTAssertTrue(app.navigationBars.staticTexts["오늘의 모임"].exists)
     }
     
     func test_feedUITest() throws {
         let app = XCUIApplication()
         app.launch()
         
-        XCTAssertTrue(app.navigationBars.staticTexts["홈"].exists)
+        XCTAssertTrue(app.navigationBars.staticTexts["메이트 구하기"].exists)
     }
     
     
