@@ -33,6 +33,8 @@ struct SignupView: View {
                     .background(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 50))
             
+            .padding(5)
+            
             HStack {
                 Image("email")
                     .resizable()
@@ -43,6 +45,8 @@ struct SignupView: View {
                     .padding()
                     .background(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 50))
+            
+            .padding(5)
             
             HStack {
                 Image("password")
@@ -56,6 +60,8 @@ struct SignupView: View {
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 50))
             
+            .padding(5)
+            
             Button(action: {}) {
                 Text("회원 가입")
                     .fontWeight(.bold)
@@ -66,6 +72,7 @@ struct SignupView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 50))
                     .shadow(color: .gray, radius: 2, x: 0, y: 2)
             }
+            .padding(5)
             
             Button(action: {}) {
                 Text("카카오 로그인")
@@ -77,6 +84,7 @@ struct SignupView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 50))
                     .shadow(color: .gray, radius: 2, x: 0, y: 2)
             }
+            .padding(5)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity) // 1
         .accentColor(Color.black)

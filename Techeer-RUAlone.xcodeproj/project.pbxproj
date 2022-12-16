@@ -97,8 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */,
-				0B06822729370AC000E5D648 /* LoginView.swift */,
 				045BFABA2948AB5F0057DCCF /* SignupView.swift */,
+				0B06822729370AC000E5D648 /* LoginView.swift */,
 				0B06822929370AC200E5D648 /* Assets.xcassets */,
 				0B06822B29370AC200E5D648 /* Preview Content */,
 			);

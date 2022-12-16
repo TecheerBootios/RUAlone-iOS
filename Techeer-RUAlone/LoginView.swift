@@ -32,6 +32,8 @@ struct LoginView: View {
                     .background(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 50))
             
+            .padding(5)
+            
             HStack {
                 Image("password")
                     .resizable()
@@ -43,6 +45,7 @@ struct LoginView: View {
                 .foregroundColor(.black)
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 50))
+            .padding(5)
             
             Button(action: {}) {
                 Text("로그인")
@@ -54,6 +57,7 @@ struct LoginView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 50))
                     .shadow(color: .gray, radius: 2, x: 0, y: 2)
             }
+            .padding(5)
             
             Button(action: {}) {
                 Text("카카오 로그인")
@@ -65,6 +69,7 @@ struct LoginView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 50))
                     .shadow(color: .gray, radius: 2, x: 0, y: 2)
             }
+            .padding(5)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity) // 1
         .accentColor(Color.black)

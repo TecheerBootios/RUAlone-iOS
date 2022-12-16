@@ -12,6 +12,7 @@ struct Techeer_RUAloneApp: App {
     var body: some Scene {
         WindowGroup {
             LoginView()
+            SignupView()
         }
     }
 }
