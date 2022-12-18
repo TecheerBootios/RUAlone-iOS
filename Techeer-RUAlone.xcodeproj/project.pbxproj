@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0445A512294F87DA007073DB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0445A511294F87DA007073DB /* .swiftlint.yml */; };
 		04868863294F8B37000E4C77 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04868862294F8B37000E4C77 /* SignupView.swift */; };
+		049C0CB9294F8C160076F2C8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C0CB8294F8C160076F2C8 /* LoginView.swift */; };
 		0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */; };
 		0B06822829370AC000E5D648 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822729370AC000E5D648 /* ContentView.swift */; };
 		0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B06822929370AC200E5D648 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		0445A511294F87DA007073DB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		04868862294F8B37000E4C77 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupView.swift; path = "../../workspace/RUAlone-iOS/Techeer-RUAlone/SignupView.swift"; sourceTree = "<group>"; };
+		049C0CB8294F8C160076F2C8 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = "../../workspace/RUAlone-iOS/Techeer-RUAlone/LoginView.swift"; sourceTree = "<group>"; };
 		0B06822229370AC000E5D648 /* Techeer-RUAlone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Techeer-RUAlone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneApp.swift; sourceTree = "<group>"; };
 		0B06822729370AC000E5D648 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */,
 				0B06822729370AC000E5D648 /* ContentView.swift */,
+				049C0CB8294F8C160076F2C8 /* LoginView.swift */,
 				04868862294F8B37000E4C77 /* SignupView.swift */,
 				0B06822929370AC200E5D648 /* Assets.xcassets */,
 				0B0682B62944CA4800E5D648 /* Colors.xcassets */,
@@ -321,6 +324,7 @@
 				0B06822829370AC000E5D648 /* ContentView.swift in Sources */,
 				0B0682BB2944D1AE00E5D648 /* VerticalRectangle.swift in Sources */,
 				0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */,
+				049C0CB9294F8C160076F2C8 /* LoginView.swift in Sources */,
 				0B0682B52944C8BF00E5D648 /* HorizontalRectangle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
