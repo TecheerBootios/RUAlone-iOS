@@ -8,16 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		045BFABB2948AB5F0057DCCF /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045BFABA2948AB5F0057DCCF /* SignupView.swift */; };
-		04838CEF294F7EEC0070BDE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04838CEE294F7EEC0070BDE1 /* ContentView.swift */; };
 		04838CF1294F7F2B0070BDE1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04838CF0294F7F2B0070BDE1 /* HomeView.swift */; };
 		04838CF3294F7F2E0070BDE1 /* HorizontalRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04838CF2294F7F2E0070BDE1 /* HorizontalRectangle.swift */; };
 		04838CF5294F7F320070BDE1 /* VerticalRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04838CF4294F7F320070BDE1 /* VerticalRectangle.swift */; };
 		04838CF7294F7FD70070BDE1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04838CF6294F7FD70070BDE1 /* Colors.xcassets */; };
 		04838CF9294F801A0070BDE1 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04838CF8294F801A0070BDE1 /* Color+Extensions.swift */; };
+		04838CFD294F81030070BDE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04838CFC294F81030070BDE1 /* ContentView.swift */; };
 		0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */; };
 		0B06822829370AC000E5D648 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822729370AC000E5D648 /* LoginView.swift */; };
 		0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B06822929370AC200E5D648 /* Assets.xcassets */; };
-		0B06822D29370AC200E5D648 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B06822C29370AC200E5D648 /* Preview Assets.xcassets */; };
 		0B06823729370AC300E5D648 /* Techeer_RUAloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06823629370AC300E5D648 /* Techeer_RUAloneTests.swift */; };
 		0B06824129370AC300E5D648 /* Techeer_RUAloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06824029370AC300E5D648 /* Techeer_RUAloneUITests.swift */; };
 		0B06824329370AC300E5D648 /* Techeer_RUAloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06824229370AC300E5D648 /* Techeer_RUAloneUITestsLaunchTests.swift */; };
@@ -42,17 +41,16 @@
 
 /* Begin PBXFileReference section */
 		045BFABA2948AB5F0057DCCF /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
-		04838CEE294F7EEC0070BDE1 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04838CF0294F7F2B0070BDE1 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		04838CF2294F7F2E0070BDE1 /* HorizontalRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalRectangle.swift; sourceTree = "<group>"; };
 		04838CF4294F7F320070BDE1 /* VerticalRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalRectangle.swift; sourceTree = "<group>"; };
 		04838CF6294F7FD70070BDE1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = "../../../RUAlone-iOS/Techeer-RUAlone/Colors.xcassets"; sourceTree = "<group>"; };
 		04838CF8294F801A0070BDE1 /* Color+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Color+Extensions.swift"; path = "../../../../RUAlone-iOS/Techeer-RUAlone/Color+Extensions.swift"; sourceTree = "<group>"; };
+		04838CFC294F81030070BDE1 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../../../RUAlone-iOS/Techeer-RUAlone/ContentView.swift"; sourceTree = "<group>"; };
 		0B06822229370AC000E5D648 /* Techeer-RUAlone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Techeer-RUAlone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneApp.swift; sourceTree = "<group>"; };
 		0B06822729370AC000E5D648 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0B06822929370AC200E5D648 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0B06822C29370AC200E5D648 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0B06823229370AC300E5D648 /* Techeer-RUAloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Techeer-RUAloneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B06823629370AC300E5D648 /* Techeer_RUAloneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneTests.swift; sourceTree = "<group>"; };
 		0B06823C29370AC300E5D648 /* Techeer-RUAloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Techeer-RUAloneUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */,
-				04838CEE294F7EEC0070BDE1 /* ContentView.swift */,
+				04838CFC294F81030070BDE1 /* ContentView.swift */,
 				045BFABA2948AB5F0057DCCF /* SignupView.swift */,
 				0B06822729370AC000E5D648 /* LoginView.swift */,
 				0B06822929370AC200E5D648 /* Assets.xcassets */,
@@ -126,7 +124,6 @@
 				04838CF2294F7F2E0070BDE1 /* HorizontalRectangle.swift */,
 				04838CF8294F801A0070BDE1 /* Color+Extensions.swift */,
 				04838CF4294F7F320070BDE1 /* VerticalRectangle.swift */,
-				0B06822C29370AC200E5D648 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -212,7 +209,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					0B06822129370AC000E5D648 = {
 						CreatedOnToolsVersion = 14.1;
@@ -254,7 +251,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				04838CF7294F7FD70070BDE1 /* Colors.xcassets in Resources */,
-				0B06822D29370AC200E5D648 /* Preview Assets.xcassets in Resources */,
 				0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +280,7 @@
 				045BFABB2948AB5F0057DCCF /* SignupView.swift in Sources */,
 				0B06822829370AC000E5D648 /* LoginView.swift in Sources */,
 				04838CF9294F801A0070BDE1 /* Color+Extensions.swift in Sources */,
-				04838CEF294F7EEC0070BDE1 /* ContentView.swift in Sources */,
+				04838CFD294F81030070BDE1 /* ContentView.swift in Sources */,
 				04838CF3294F7F2E0070BDE1 /* HorizontalRectangle.swift in Sources */,
 				04838CF1294F7F2B0070BDE1 /* HomeView.swift in Sources */,
 				0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */,
@@ -328,6 +324,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -388,6 +385,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

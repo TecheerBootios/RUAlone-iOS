@@ -11,6 +11,7 @@ import SwiftUI
 struct Techeer_RUAloneApp: App {
     var body: some Scene {
         WindowGroup {
+            ContentView()
             LoginView()
             SignupView()
         }
