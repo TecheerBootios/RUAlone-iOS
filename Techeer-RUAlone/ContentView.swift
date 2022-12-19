@@ -14,6 +14,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("홈", systemImage: "house.fill")
                 }
+            FeedView()
+                .tabItem {
+                    Label("게시판", systemImage: "person.3.fill")
+                }
         }
         .tint(.black)
     
