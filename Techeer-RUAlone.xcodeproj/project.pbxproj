@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042A830B2950CAEF001F3FE0 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 042A830A2950CAEF001F3FE0 /* .swiftlint.yml */; };
+		042A830D2950CB43001F3FE0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A830C2950CB43001F3FE0 /* LoginView.swift */; };
+		042A830F2950CB55001F3FE0 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A830E2950CB55001F3FE0 /* SignupView.swift */; };
 		0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */; };
 		0B06822829370AC000E5D648 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822729370AC000E5D648 /* ContentView.swift */; };
 		0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B06822929370AC200E5D648 /* Assets.xcassets */; };
@@ -14,7 +17,6 @@
 		0B06823729370AC300E5D648 /* Techeer_RUAloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06823629370AC300E5D648 /* Techeer_RUAloneTests.swift */; };
 		0B06824129370AC300E5D648 /* Techeer_RUAloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06824029370AC300E5D648 /* Techeer_RUAloneUITests.swift */; };
 		0B06824329370AC300E5D648 /* Techeer_RUAloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06824229370AC300E5D648 /* Techeer_RUAloneUITestsLaunchTests.swift */; };
-		0B0682AB294205BF00E5D648 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0B0682AA294205BF00E5D648 /* .swiftlint.yml */; };
 		0B0682AE29421CEE00E5D648 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0682AD29421CEE00E5D648 /* Alamofire */; };
 		0B0682B129421D5200E5D648 /* SendbirdUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0682B029421D5200E5D648 /* SendbirdUIKit */; };
 		0B0682B32944C7CC00E5D648 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682B22944C7CC00E5D648 /* HomeView.swift */; };
@@ -46,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042A830A2950CAEF001F3FE0 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		042A830C2950CB43001F3FE0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; usesTabs = 0; };
+		042A830E2950CB55001F3FE0 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		0B06822229370AC000E5D648 /* Techeer-RUAlone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Techeer-RUAlone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneApp.swift; sourceTree = "<group>"; };
 		0B06822729370AC000E5D648 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,7 +61,6 @@
 		0B06823C29370AC300E5D648 /* Techeer-RUAloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Techeer-RUAloneUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B06824029370AC300E5D648 /* Techeer_RUAloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneUITests.swift; sourceTree = "<group>"; };
 		0B06824229370AC300E5D648 /* Techeer_RUAloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		0B0682AA294205BF00E5D648 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0B0682B22944C7CC00E5D648 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0B0682B42944C8BF00E5D648 /* HorizontalRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalRectangle.swift; sourceTree = "<group>"; };
 		0B0682B62944CA4800E5D648 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -98,7 +102,7 @@
 		0B06821929370AC000E5D648 = {
 			isa = PBXGroup;
 			children = (
-				0B0682AA294205BF00E5D648 /* .swiftlint.yml */,
+				042A830A2950CAEF001F3FE0 /* .swiftlint.yml */,
 				0B06822429370AC000E5D648 /* Techeer-RUAlone */,
 				0B06823529370AC300E5D648 /* Techeer-RUAloneTests */,
 				0B06823F29370AC300E5D648 /* Techeer-RUAloneUITests */,
@@ -121,6 +125,8 @@
 			children = (
 				0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */,
 				0B06822729370AC000E5D648 /* ContentView.swift */,
+				042A830C2950CB43001F3FE0 /* LoginView.swift */,
+				042A830E2950CB55001F3FE0 /* SignupView.swift */,
 				0B06822929370AC200E5D648 /* Assets.xcassets */,
 				0B0682B62944CA4800E5D648 /* Colors.xcassets */,
 				0B06822B29370AC200E5D648 /* Preview Content */,
@@ -275,7 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B0682AB294205BF00E5D648 /* .swiftlint.yml in Resources */,
+				042A830B2950CAEF001F3FE0 /* .swiftlint.yml in Resources */,
 				0B0682B72944CA4800E5D648 /* Colors.xcassets in Resources */,
 				0B06822D29370AC200E5D648 /* Preview Assets.xcassets in Resources */,
 				0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */,
@@ -324,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042A830F2950CB55001F3FE0 /* SignupView.swift in Sources */,
 				0BC42351294B373200188283 /* SuggestionView.swift in Sources */,
 				0B29ED11294B185800A2D8FA /* FeedRowView.swift in Sources */,
 				0B0682B92944CB0D00E5D648 /* Color+Extensions.swift in Sources */,
@@ -333,6 +340,7 @@
 				0B0682BB2944D1AE00E5D648 /* VerticalRectangle.swift in Sources */,
 				0B0682BF2945AC3B00E5D648 /* FeedView.swift in Sources */,
 				0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */,
+				042A830D2950CB43001F3FE0 /* LoginView.swift in Sources */,
 				0B0682B52944C8BF00E5D648 /* HorizontalRectangle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
