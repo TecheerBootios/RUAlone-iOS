@@ -39,7 +39,6 @@ struct HomeView: View {
                 }
             }
             .padding()
-            .navigationTitle("홈")
         }
     }
 }

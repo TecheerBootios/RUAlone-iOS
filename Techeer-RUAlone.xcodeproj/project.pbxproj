@@ -24,6 +24,10 @@
 		0B0682B72944CA4800E5D648 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B0682B62944CA4800E5D648 /* Colors.xcassets */; };
 		0B0682B92944CB0D00E5D648 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682B82944CB0D00E5D648 /* Color+Extensions.swift */; };
 		0B0682BB2944D1AE00E5D648 /* VerticalRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682BA2944D1AE00E5D648 /* VerticalRectangle.swift */; };
+		0B0682BF2945AC3B00E5D648 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682BE2945AC3B00E5D648 /* FeedView.swift */; };
+		0B29ED0F294B080B00A2D8FA /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29ED0E294B080B00A2D8FA /* View+Extension.swift */; };
+		0B29ED11294B185800A2D8FA /* FeedRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29ED10294B185800A2D8FA /* FeedRowView.swift */; };
+		0BC42351294B373200188283 /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC42350294B373200188283 /* SuggestionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +66,10 @@
 		0B0682B62944CA4800E5D648 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0B0682B82944CB0D00E5D648 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		0B0682BA2944D1AE00E5D648 /* VerticalRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalRectangle.swift; sourceTree = "<group>"; };
+		0B0682BE2945AC3B00E5D648 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		0B29ED0E294B080B00A2D8FA /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		0B29ED10294B185800A2D8FA /* FeedRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRowView.swift; sourceTree = "<group>"; };
+		0BC42350294B373200188283 /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,10 @@
 				0B0682B42944C8BF00E5D648 /* HorizontalRectangle.swift */,
 				0B0682B82944CB0D00E5D648 /* Color+Extensions.swift */,
 				0B0682BA2944D1AE00E5D648 /* VerticalRectangle.swift */,
+				0B0682BE2945AC3B00E5D648 /* FeedView.swift */,
+				0B29ED0E294B080B00A2D8FA /* View+Extension.swift */,
+				0B29ED10294B185800A2D8FA /* FeedRowView.swift */,
+				0BC42350294B373200188283 /* SuggestionView.swift */,
 			);
 			path = "Techeer-RUAlone";
 			sourceTree = "<group>";
@@ -319,10 +331,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				04868863294F8B37000E4C77 /* SignupView.swift in Sources */,
+				0BC42351294B373200188283 /* SuggestionView.swift in Sources */,
+				0B29ED11294B185800A2D8FA /* FeedRowView.swift in Sources */,
 				0B0682B92944CB0D00E5D648 /* Color+Extensions.swift in Sources */,
 				0B0682B32944C7CC00E5D648 /* HomeView.swift in Sources */,
+				0B29ED0F294B080B00A2D8FA /* View+Extension.swift in Sources */,
 				0B06822829370AC000E5D648 /* ContentView.swift in Sources */,
 				0B0682BB2944D1AE00E5D648 /* VerticalRectangle.swift in Sources */,
+				0B0682BF2945AC3B00E5D648 /* FeedView.swift in Sources */,
 				0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */,
 				049C0CB9294F8C160076F2C8 /* LoginView.swift in Sources */,
 				0B0682B52944C8BF00E5D648 /* HorizontalRectangle.swift in Sources */,
