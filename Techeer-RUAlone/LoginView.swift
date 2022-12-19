@@ -30,9 +30,10 @@ struct LoginView: View {
                             .padding()
                         TextField("이메일", text: $email)
                     }
+                    .frame(width: 360, height: 60)
                     .background(Color(uiColor: .white))
                     .cornerRadius(50)
-                    .padding(10)
+                    .padding(5)
                     
                     HStack {
                         Image("Password")
@@ -41,9 +42,10 @@ struct LoginView: View {
                             .padding()
                         TextField("패스워드", text: $password)
                     }
+                    .frame(width: 360, height: 60)
                     .background(Color(uiColor: .white))
                     .cornerRadius(50)
-                    .padding(10)
+                    .padding(5)
                     
                     Button("로그인") { }
                         .frame(width: 330, height: 25)
