@@ -20,7 +20,7 @@ struct ContentView: View {
                 }
             MessageView()
                 .tabItem {
-                    Label("메세지", systemImage: "person.3.fill")
+                    Label("메세지", systemImage: "message.fill")
                 }
         }
         .tint(.black)
