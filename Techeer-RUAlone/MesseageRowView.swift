@@ -14,7 +14,7 @@ struct MesseageRowView: View {
     var body: some View {
         HStack {
             Circle()
-                .foregroundColor(.customPurple)
+                .foregroundColor(.customRed)
                 .frame(width: 50, height: 50)
             VStack(alignment: .leading) {
                 Text(title)
