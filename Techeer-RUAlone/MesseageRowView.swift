@@ -28,11 +28,6 @@ struct MesseageRowView: View {
                 Text("\(time)")
                     .font(.subheadline)
                     .foregroundColor(Color.gray)
-                Label(title: {
-                }, icon: {
-                    Image("ArrowGather")
-                        .renderingMode(.original)
-                })
             }
         }
     }
