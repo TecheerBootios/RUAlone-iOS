@@ -18,6 +18,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("게시판", systemImage: "person.3.fill")
                 }
+            MessageView()
+                .tabItem {
+                    Label("메세지", systemImage: "message.fill")
+                }
         }
         .tint(.black)
     
