@@ -18,43 +18,7 @@ struct LoginView: View {
                 VStack {
                     Image("MainIcon")
                         .resizable()
-                        .frame(width: 250, height: 270)
-                    
-                    Text("로그인")
-                        .font(.system(size:35, weight: .black))
-                    
-                    HStack {
-                        Image("Email")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .padding()
-                        TextField("이메일", text: $email)
-                    }
-                    .frame(width: 360, height: 60)
-                    .background(Color(uiColor: .white))
-                    .cornerRadius(50)
-                    .padding(5)
-                    
-                    HStack {
-                        Image("Password")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .padding()
-                        TextField("패스워드", text: $password)
-                    }
-                    .frame(width: 360, height: 60)
-                    .background(Color(uiColor: .white))
-                    .cornerRadius(50)
-                    .padding(5)
-                    
-                    Button("로그인") { }
-                        .frame(width: 330, height: 25)
-                        .foregroundColor(Color.black)
-                        .padding()
-                        .background(Color.customWhite)
-                        .cornerRadius(50)
-                        .padding(10)
-                        .shadow(color: .gray, radius: 5, x: 0, y: 5)
+                        .frame(width: 320, height: 340)
                     
                     Button("카카오 로그인") { }
                         .frame(width: 330, height: 25)
