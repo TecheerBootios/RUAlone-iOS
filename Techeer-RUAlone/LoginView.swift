@@ -18,11 +18,7 @@ struct LoginView: View {
                 VStack {
                     Image("MainIcon")
                         .resizable()
-                        .frame(width: 250, height: 270)
-                    
-                    Text("로그인")
-                        .font(.system(size:35, weight: .black))
-                        .padding()
+                        .frame(width: 320, height: 340)
                     
                     Button("카카오 로그인") { }
                         .frame(width: 330, height: 25)
