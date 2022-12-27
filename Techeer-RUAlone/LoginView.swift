@@ -20,11 +20,12 @@ struct LoginView: View {
                         .resizable()
                         .frame(width: 320, height: 340)
                     
-                    Button("카카오 로그인") {}
-                        .frame(width: 330, height: 25)
-                        .foregroundColor(Color.black)
+                    Button(action: {}) {
+                        Image("KakaoLogin")
+                            .resizable()
+                            .frame(width: 350, height: 55)
+                    }
                         .padding()
-                        .background(Color.customYellow)
                         .cornerRadius(50)
                         .shadow(color: .gray, radius: 5, x: 0, y: 5)
                 })
