@@ -20,7 +20,7 @@ struct LoginView: View {
                         .resizable()
                         .frame(width: 320, height: 340)
                     
-                    Button("카카오 로그인") { }
+                    Button("카카오 로그인") {}
                         .frame(width: 330, height: 25)
                         .foregroundColor(Color.black)
                         .padding()
