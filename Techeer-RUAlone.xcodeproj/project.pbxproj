@@ -15,8 +15,6 @@
 		0431FAC2295AE38F0026CD8F /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0431FAC1295AE38F0026CD8F /* KakaoSDKAuth */; };
 		0431FAC4295AE38F0026CD8F /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 0431FAC3295AE38F0026CD8F /* KakaoSDKCommon */; };
 		0431FAC6295AE38F0026CD8F /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 0431FAC5295AE38F0026CD8F /* KakaoSDKUser */; };
-		0431FAC9295AF54E0026CD8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FAC8295AF54E0026CD8F /* SceneDelegate.swift */; };
-		0431FACB295AF8630026CD8F /* KakaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431FACA295AF8630026CD8F /* KakaoViewController.swift */; };
 		0477E96F2959EDB000B9870F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0477E96E2959EDB000B9870F /* .swiftlint.yml */; };
 		0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */; };
 		0B06822829370AC000E5D648 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822729370AC000E5D648 /* ContentView.swift */; };
@@ -61,8 +59,6 @@
 		042A83122951D198001F3FE0 /* MesseageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesseageRowView.swift; sourceTree = "<group>"; };
 		0431FAB5295AE0500026CD8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0431FAC7295AEF440026CD8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		0431FAC8295AF54E0026CD8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0431FACA295AF8630026CD8F /* KakaoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoViewController.swift; sourceTree = "<group>"; };
 		0477E96E2959EDB000B9870F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0B06822229370AC000E5D648 /* Techeer-RUAlone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Techeer-RUAlone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneApp.swift; sourceTree = "<group>"; };
@@ -149,9 +145,7 @@
 				0B0682B22944C7CC00E5D648 /* HomeView.swift */,
 				042A830C2950CB43001F3FE0 /* LoginView.swift */,
 				0431FAB5295AE0500026CD8F /* AppDelegate.swift */,
-				0431FACA295AF8630026CD8F /* KakaoViewController.swift */,
 				042A83102950E96B001F3FE0 /* MessageView.swift */,
-				0431FAC8295AF54E0026CD8F /* SceneDelegate.swift */,
 				0B0682B42944C8BF00E5D648 /* HorizontalRectangle.swift */,
 				0B0682B82944CB0D00E5D648 /* Color+Extensions.swift */,
 				0B0682BA2944D1AE00E5D648 /* VerticalRectangle.swift */,
@@ -362,12 +356,10 @@
 				0431FAB6295AE0500026CD8F /* AppDelegate.swift in Sources */,
 				0B0682B92944CB0D00E5D648 /* Color+Extensions.swift in Sources */,
 				0B0682B32944C7CC00E5D648 /* HomeView.swift in Sources */,
-				0431FAC9295AF54E0026CD8F /* SceneDelegate.swift in Sources */,
 				042A83112950E96B001F3FE0 /* MessageView.swift in Sources */,
 				0B29ED0F294B080B00A2D8FA /* View+Extension.swift in Sources */,
 				042A83132951D198001F3FE0 /* MesseageRowView.swift in Sources */,
 				0B06822829370AC000E5D648 /* ContentView.swift in Sources */,
-				0431FACB295AF8630026CD8F /* KakaoViewController.swift in Sources */,
 				0B0682BB2944D1AE00E5D648 /* VerticalRectangle.swift in Sources */,
 				0B0682BF2945AC3B00E5D648 /* FeedView.swift in Sources */,
 				0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */,
