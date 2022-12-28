@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import KakaoSDKAuth
+import KakaoSDKUser
 
 struct LoginView: View {
     @State var email: String = ""
@@ -18,16 +20,26 @@ struct LoginView: View {
                 VStack {
                     Image("MainIcon")
                         .resizable()
-                        .frame(width: 320, height: 340)
+                        .frame(width: 320, height: 340);
                     
-                    Button(action: {}) {
+                    Button {
+                        if (UserApi.isKakaoTalkLoginAvailable()) {
+                            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                                    print(oauthToken)
+                                    print(error)
+                                }
+                            } else {
+                                UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                                    print(oauthToken)
+                                print(error)
+                                }
+                            }
+                        } label : {
                         Image("KakaoLogin")
                             .resizable()
-                            .frame(width: 350, height: 55)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width : UIScreen.main.bounds.width * 0.9)
                     }
-                        .padding()
-                        .cornerRadius(50)
-                        .shadow(color: .gray, radius: 5, x: 0, y: 5)
                 })
     }
 }
