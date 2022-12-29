@@ -6,11 +6,17 @@
 //
 
 import SwiftUI
+import KakaoSDKAuth
+import KakaoSDKUser
+
+import os
+
+private let logger = Logger.init(subsystem: "com.techeer.KKodiac.Techeer-RUAlone", category: "LoginView")
 
 struct LoginView: View {
     @State var email: String = ""
     @State var password: String = ""
-
+    
     var body: some View {
         Color.customBackground
             .ignoresSafeArea()
@@ -20,19 +26,30 @@ struct LoginView: View {
                         .resizable()
                         .frame(width: 320, height: 340)
                     
-                    Button("카카오 로그인") { }
-                        .frame(width: 330, height: 25)
-                        .foregroundColor(Color.black)
-                        .padding()
-                        .background(Color.customYellow)
-                        .cornerRadius(50)
-                        .shadow(color: .gray, radius: 5, x: 0, y: 5)
+                    Button {
+                        if UserApi.isKakaoTalkLoginAvailable() == true {
+                            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                                guard error != nil else {
+                                    logger.error("\(error.debugDescription)")
+                                    return
+                                }
+                                logger.log("\(oauthToken.debugDescription)")
+                            }
+                        } else {
+                            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                                guard error != nil else {
+                                    logger.error("\(error.debugDescription)")
+                                    return
+                                }
+                                logger.log("\(oauthToken.debugDescription)")
+                            }
+                        }
+                    } label: {
+                        Image("KakaoLogin")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: UIScreen.main.bounds.width * 0.9)
+                    }
                 })
-    }
-}
-
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
     }
 }
