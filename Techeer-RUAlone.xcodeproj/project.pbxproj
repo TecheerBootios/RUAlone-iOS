@@ -78,7 +78,6 @@
 		0BC42350294B373200188283 /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
 		0BC4235629599A0C00188283 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		0BCCC0DA295C34B6002883AC /* FeedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailView.swift; sourceTree = "<group>"; };
-		0BCCC0DC295C3529002883AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0BCCC0DD295C3597002883AC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		0BCCC0DF295C385C002883AC /* FeedDetailModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailModalView.swift; sourceTree = "<group>"; };
 		0BCCC0E1295C38A8002883AC /* FeedDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailModel.swift; sourceTree = "<group>"; };
@@ -135,7 +134,6 @@
 		0B06822429370AC000E5D648 /* Techeer-RUAlone */ = {
 			isa = PBXGroup;
 			children = (
-				0BCCC0DC295C3529002883AC /* Info.plist */,
 				0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */,
 				0B06822729370AC000E5D648 /* ContentView.swift */,
 				042A830C2950CB43001F3FE0 /* LoginView.swift */,
