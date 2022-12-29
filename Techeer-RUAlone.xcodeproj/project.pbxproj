@@ -10,7 +10,6 @@
 		042A830D2950CB43001F3FE0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A830C2950CB43001F3FE0 /* LoginView.swift */; };
 		042A83112950E96B001F3FE0 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A83102950E96B001F3FE0 /* MessageView.swift */; };
 		042A83132951D198001F3FE0 /* MesseageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A83122951D198001F3FE0 /* MesseageRowView.swift */; };
-		048CF9FC29588AA2001E4457 /* swiftlint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048CF9FB29588AA2001E4457 /* swiftlint.swift */; };
 		0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */; };
 		0B06822829370AC000E5D648 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822729370AC000E5D648 /* ContentView.swift */; };
 		0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B06822929370AC200E5D648 /* Assets.xcassets */; };
@@ -30,6 +29,11 @@
 		0B29ED11294B185800A2D8FA /* FeedRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29ED10294B185800A2D8FA /* FeedRowView.swift */; };
 		0BC42351294B373200188283 /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC42350294B373200188283 /* SuggestionView.swift */; };
 		0BC4235729599A0C00188283 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC4235629599A0C00188283 /* ChatView.swift */; };
+		0BCCC0DB295C34B6002883AC /* FeedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCC0DA295C34B6002883AC /* FeedDetailView.swift */; };
+		0BCCC0DE295C3597002883AC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCC0DD295C3597002883AC /* MapView.swift */; };
+		0BCCC0E0295C385C002883AC /* FeedDetailModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCC0DF295C385C002883AC /* FeedDetailModalView.swift */; };
+		0BCCC0E2295C38A8002883AC /* FeedDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCC0E1295C38A8002883AC /* FeedDetailModel.swift */; };
+		0BCCC0E4295D526A002883AC /* FeedDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCC0E3295D5269002883AC /* FeedDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +57,6 @@
 		042A830C2950CB43001F3FE0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		042A83102950E96B001F3FE0 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		042A83122951D198001F3FE0 /* MesseageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesseageRowView.swift; sourceTree = "<group>"; };
-		048CF9FB29588AA2001E4457 /* swiftlint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftlint.swift; sourceTree = "<group>"; };
 		0B06822229370AC000E5D648 /* Techeer-RUAlone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Techeer-RUAlone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneApp.swift; sourceTree = "<group>"; };
 		0B06822729370AC000E5D648 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +77,12 @@
 		0B29ED10294B185800A2D8FA /* FeedRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRowView.swift; sourceTree = "<group>"; };
 		0BC42350294B373200188283 /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
 		0BC4235629599A0C00188283 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		0BCCC0DA295C34B6002883AC /* FeedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailView.swift; sourceTree = "<group>"; };
+		0BCCC0DC295C3529002883AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0BCCC0DD295C3597002883AC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		0BCCC0DF295C385C002883AC /* FeedDetailModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailModalView.swift; sourceTree = "<group>"; };
+		0BCCC0E1295C38A8002883AC /* FeedDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailModel.swift; sourceTree = "<group>"; };
+		0BCCC0E3295D5269002883AC /* FeedDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +115,6 @@
 		0B06821929370AC000E5D648 = {
 			isa = PBXGroup;
 			children = (
-				048CF9FB29588AA2001E4457 /* swiftlint.swift */,
 				0B06822429370AC000E5D648 /* Techeer-RUAlone */,
 				0B06823529370AC300E5D648 /* Techeer-RUAloneTests */,
 				0B06823F29370AC300E5D648 /* Techeer-RUAloneUITests */,
@@ -127,6 +135,7 @@
 		0B06822429370AC000E5D648 /* Techeer-RUAlone */ = {
 			isa = PBXGroup;
 			children = (
+				0BCCC0DC295C3529002883AC /* Info.plist */,
 				0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */,
 				0B06822729370AC000E5D648 /* ContentView.swift */,
 				042A830C2950CB43001F3FE0 /* LoginView.swift */,
@@ -144,6 +153,11 @@
 				0BC42350294B373200188283 /* SuggestionView.swift */,
 				042A83122951D198001F3FE0 /* MesseageRowView.swift */,
 				0BC4235629599A0C00188283 /* ChatView.swift */,
+				0BCCC0DA295C34B6002883AC /* FeedDetailView.swift */,
+				0BCCC0DD295C3597002883AC /* MapView.swift */,
+				0BCCC0DF295C385C002883AC /* FeedDetailModalView.swift */,
+				0BCCC0E1295C38A8002883AC /* FeedDetailModel.swift */,
+				0BCCC0E3295D5269002883AC /* FeedDetailViewModel.swift */,
 			);
 			path = "Techeer-RUAlone";
 			sourceTree = "<group>";
@@ -335,7 +349,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048CF9FC29588AA2001E4457 /* swiftlint.swift in Sources */,
+				0BCCC0E2295C38A8002883AC /* FeedDetailModel.swift in Sources */,
+				0BCCC0E4295D526A002883AC /* FeedDetailViewModel.swift in Sources */,
+				0BCCC0DB295C34B6002883AC /* FeedDetailView.swift in Sources */,
 				0BC42351294B373200188283 /* SuggestionView.swift in Sources */,
 				0B29ED11294B185800A2D8FA /* FeedRowView.swift in Sources */,
 				0B0682B92944CB0D00E5D648 /* Color+Extensions.swift in Sources */,
@@ -343,6 +359,8 @@
 				042A83112950E96B001F3FE0 /* MessageView.swift in Sources */,
 				0B29ED0F294B080B00A2D8FA /* View+Extension.swift in Sources */,
 				0BC4235729599A0C00188283 /* ChatView.swift in Sources */,
+				0BCCC0E0295C385C002883AC /* FeedDetailModalView.swift in Sources */,
+				0BCCC0DE295C3597002883AC /* MapView.swift in Sources */,
 				042A83132951D198001F3FE0 /* MesseageRowView.swift in Sources */,
 				0B06822829370AC000E5D648 /* ContentView.swift in Sources */,
 				0B0682BB2944D1AE00E5D648 /* VerticalRectangle.swift in Sources */,
@@ -511,6 +529,7 @@
 				DEVELOPMENT_TEAM = LVBMDY357W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Techeer-RUAlone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -540,6 +559,7 @@
 				DEVELOPMENT_TEAM = LVBMDY357W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Techeer-RUAlone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

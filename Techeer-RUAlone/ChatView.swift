@@ -10,9 +10,9 @@ import SendbirdUIKit
 
 struct ChatView: View {
     let appID = "B63A605C-5AA3-4540-A296-83CAFB32E557"
-    let channelURL = "sendbird_group_channel_104288745_01714e67ffa2f3be0dbf8796492e06c172bdc321"
+    let channelURL: String
     
-    init() {
+    init(channelURL: String) {
         SendbirdUI.initialize(applicationId: appID) { (error) in
             print("Sendbird Init: Initialization Error \(String(describing: error))")
         }
@@ -23,6 +23,7 @@ struct ChatView: View {
                 return
             }
         }
+        self.channelURL = channelURL
     }
     var body: some View {
         ChatViewContainer(channelURL: channelURL)
