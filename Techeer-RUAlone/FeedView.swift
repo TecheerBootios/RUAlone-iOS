@@ -11,9 +11,7 @@ struct FeedView: View {
     init() {
         UITabBar.appearance().backgroundColor = UIColor.white
     }
-    
     @State private var searchText = ""
-    @State private var isPresented = false
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
@@ -22,9 +20,7 @@ struct FeedView: View {
                         LazyVStack {
                             ForEach(0..<100) { _ in
                                 FeedRowView(title: "버거킹 같이먹어요.", date: "2022/11/30", gathered: 3, hours: 2)
-                                    .padding([.top, .leading, .trailing]).onTapGesture {
-                                        isPresented = true
-                                    }
+                                    .padding([.top, .leading, .trailing])
                             }
                         }
                         .frame(maxWidth: .infinity)
@@ -32,9 +28,6 @@ struct FeedView: View {
                 }
                 .background(Color.customWhite)
                 .cornerRadius(30, corners: [.topLeft, .topRight])
-                .sheet(isPresented: $isPresented) {
-                    Text("Details")
-                }
             }
             .navigationTitle("메이트 구하기")
             .navigationBarColor(titleColor: .white)

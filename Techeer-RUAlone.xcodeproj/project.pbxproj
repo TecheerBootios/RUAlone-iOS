@@ -34,6 +34,11 @@
 		0B29ED11294B185800A2D8FA /* FeedRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29ED10294B185800A2D8FA /* FeedRowView.swift */; };
 		0BC42351294B373200188283 /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC42350294B373200188283 /* SuggestionView.swift */; };
 		0BC4235729599A0C00188283 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC4235629599A0C00188283 /* ChatView.swift */; };
+		0BCCC0DB295C34B6002883AC /* FeedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCC0DA295C34B6002883AC /* FeedDetailView.swift */; };
+		0BCCC0DE295C3597002883AC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCC0DD295C3597002883AC /* MapView.swift */; };
+		0BCCC0E0295C385C002883AC /* FeedDetailModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCC0DF295C385C002883AC /* FeedDetailModalView.swift */; };
+		0BCCC0E2295C38A8002883AC /* FeedDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCC0E1295C38A8002883AC /* FeedDetailModel.swift */; };
+		0BCCC0E4295D526A002883AC /* FeedDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCC0E3295D5269002883AC /* FeedDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +84,11 @@
 		0B29ED10294B185800A2D8FA /* FeedRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRowView.swift; sourceTree = "<group>"; };
 		0BC42350294B373200188283 /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
 		0BC4235629599A0C00188283 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		0BCCC0DA295C34B6002883AC /* FeedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailView.swift; sourceTree = "<group>"; };
+		0BCCC0DD295C3597002883AC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		0BCCC0DF295C385C002883AC /* FeedDetailModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailModalView.swift; sourceTree = "<group>"; };
+		0BCCC0E1295C38A8002883AC /* FeedDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailModel.swift; sourceTree = "<group>"; };
+		0BCCC0E3295D5269002883AC /* FeedDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +164,11 @@
 				0BC42350294B373200188283 /* SuggestionView.swift */,
 				042A83122951D198001F3FE0 /* MesseageRowView.swift */,
 				0BC4235629599A0C00188283 /* ChatView.swift */,
+				0BCCC0DA295C34B6002883AC /* FeedDetailView.swift */,
+				0BCCC0DD295C3597002883AC /* MapView.swift */,
+				0BCCC0DF295C385C002883AC /* FeedDetailModalView.swift */,
+				0BCCC0E1295C38A8002883AC /* FeedDetailModel.swift */,
+				0BCCC0E3295D5269002883AC /* FeedDetailViewModel.swift */,
 			);
 			path = "Techeer-RUAlone";
 			sourceTree = "<group>";
@@ -351,6 +366,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BCCC0E2295C38A8002883AC /* FeedDetailModel.swift in Sources */,
+				0BCCC0E4295D526A002883AC /* FeedDetailViewModel.swift in Sources */,
+				0BCCC0DB295C34B6002883AC /* FeedDetailView.swift in Sources */,
 				0BC42351294B373200188283 /* SuggestionView.swift in Sources */,
 				0B29ED11294B185800A2D8FA /* FeedRowView.swift in Sources */,
 				0B0682B92944CB0D00E5D648 /* Color+Extensions.swift in Sources */,
@@ -358,6 +376,8 @@
 				042A83112950E96B001F3FE0 /* MessageView.swift in Sources */,
 				0B29ED0F294B080B00A2D8FA /* View+Extension.swift in Sources */,
 				0BC4235729599A0C00188283 /* ChatView.swift in Sources */,
+				0BCCC0E0295C385C002883AC /* FeedDetailModalView.swift in Sources */,
+				0BCCC0DE295C3597002883AC /* MapView.swift in Sources */,
 				042A83132951D198001F3FE0 /* MesseageRowView.swift in Sources */,
 				0B06822829370AC000E5D648 /* ContentView.swift in Sources */,
 				0B0682BB2944D1AE00E5D648 /* VerticalRectangle.swift in Sources */,

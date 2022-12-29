@@ -22,7 +22,7 @@ struct NavigationBarModifier: ViewModifier {
     }
 
     func body(content: Content) -> some View {
-        ZStack{
+        ZStack {
             content
             VStack {
                 Spacer()
@@ -41,7 +41,7 @@ struct TextFieldModifier: ViewModifier {
     }
     
     func body(content: Content) -> some View {
-        ZStack{
+        ZStack {
             content
             VStack {
                 Spacer()

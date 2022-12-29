@@ -13,26 +13,28 @@ struct FeedRowView: View {
     let gathered: Int
     let hours: Int
     var body: some View {
-        HStack {
-            Circle()
-                .foregroundColor(.customPurple)
-                .frame(width: 50, height: 50)
-            VStack(alignment: .leading) {
-                Text(title)
-                Text(date)
-                    .font(.subheadline)
-                    .foregroundColor(Color.gray)
-            }
-            .padding(.leading)
-            Spacer()
-            VStack {
-                Text("\(gathered)명 모임")
-                Label(title: {
-                    Text("\(hours)시간")
-                }, icon: {
-                    Image("ArrowGather")
-                        .renderingMode(.original)
-                })
+        NavigationLink(destination: FeedDetailView()) {
+            HStack {
+                Circle()
+                    .foregroundColor(.customPurple)
+                    .frame(width: 50, height: 50)
+                VStack(alignment: .leading) {
+                    Text(title)
+                    Text(date)
+                        .font(.subheadline)
+                        .foregroundColor(Color.gray)
+                }
+                .padding(.leading)
+                Spacer()
+                VStack {
+                    Text("\(gathered)명 모임")
+                    Label(title: {
+                        Text("\(hours)시간")
+                    }, icon: {
+                        Image("ArrowGather")
+                            .renderingMode(.original)
+                    })
+                }
             }
         }
     }
