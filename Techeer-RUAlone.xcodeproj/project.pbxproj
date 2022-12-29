@@ -10,7 +10,11 @@
 		042A830D2950CB43001F3FE0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A830C2950CB43001F3FE0 /* LoginView.swift */; };
 		042A83112950E96B001F3FE0 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A83102950E96B001F3FE0 /* MessageView.swift */; };
 		042A83132951D198001F3FE0 /* MesseageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A83122951D198001F3FE0 /* MesseageRowView.swift */; };
-		048CF9FC29588AA2001E4457 /* swiftlint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048CF9FB29588AA2001E4457 /* swiftlint.swift */; };
+		0431FAC0295AE38F0026CD8F /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0431FABF295AE38F0026CD8F /* KakaoSDK */; };
+		0431FAC2295AE38F0026CD8F /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0431FAC1295AE38F0026CD8F /* KakaoSDKAuth */; };
+		0431FAC4295AE38F0026CD8F /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 0431FAC3295AE38F0026CD8F /* KakaoSDKCommon */; };
+		0431FAC6295AE38F0026CD8F /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 0431FAC5295AE38F0026CD8F /* KakaoSDKUser */; };
+		0477E96F2959EDB000B9870F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0477E96E2959EDB000B9870F /* .swiftlint.yml */; };
 		0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */; };
 		0B06822829370AC000E5D648 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822729370AC000E5D648 /* ContentView.swift */; };
 		0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B06822929370AC200E5D648 /* Assets.xcassets */; };
@@ -53,7 +57,8 @@
 		042A830C2950CB43001F3FE0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		042A83102950E96B001F3FE0 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		042A83122951D198001F3FE0 /* MesseageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesseageRowView.swift; sourceTree = "<group>"; };
-		048CF9FB29588AA2001E4457 /* swiftlint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftlint.swift; sourceTree = "<group>"; };
+		0431FAC7295AEF440026CD8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0477E96E2959EDB000B9870F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0B06822229370AC000E5D648 /* Techeer-RUAlone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Techeer-RUAlone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneApp.swift; sourceTree = "<group>"; };
 		0B06822729370AC000E5D648 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +88,10 @@
 			files = (
 				0B0682B129421D5200E5D648 /* SendbirdUIKit in Frameworks */,
 				0B0682AE29421CEE00E5D648 /* Alamofire in Frameworks */,
+				0431FAC6295AE38F0026CD8F /* KakaoSDKUser in Frameworks */,
+				0431FAC0295AE38F0026CD8F /* KakaoSDK in Frameworks */,
+				0431FAC4295AE38F0026CD8F /* KakaoSDKCommon in Frameworks */,
+				0431FAC2295AE38F0026CD8F /* KakaoSDKAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +115,7 @@
 		0B06821929370AC000E5D648 = {
 			isa = PBXGroup;
 			children = (
-				048CF9FB29588AA2001E4457 /* swiftlint.swift */,
+				0477E96E2959EDB000B9870F /* .swiftlint.yml */,
 				0B06822429370AC000E5D648 /* Techeer-RUAlone */,
 				0B06823529370AC300E5D648 /* Techeer-RUAloneTests */,
 				0B06823F29370AC300E5D648 /* Techeer-RUAloneUITests */,
@@ -127,13 +136,14 @@
 		0B06822429370AC000E5D648 /* Techeer-RUAlone */ = {
 			isa = PBXGroup;
 			children = (
+				0431FAC7295AEF440026CD8F /* Info.plist */,
 				0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */,
 				0B06822729370AC000E5D648 /* ContentView.swift */,
-				042A830C2950CB43001F3FE0 /* LoginView.swift */,
 				0B06822929370AC200E5D648 /* Assets.xcassets */,
 				0B0682B62944CA4800E5D648 /* Colors.xcassets */,
 				0B06822B29370AC200E5D648 /* Preview Content */,
 				0B0682B22944C7CC00E5D648 /* HomeView.swift */,
+				042A830C2950CB43001F3FE0 /* LoginView.swift */,
 				042A83102950E96B001F3FE0 /* MessageView.swift */,
 				0B0682B42944C8BF00E5D648 /* HorizontalRectangle.swift */,
 				0B0682B82944CB0D00E5D648 /* Color+Extensions.swift */,
@@ -193,6 +203,10 @@
 			packageProductDependencies = (
 				0B0682AD29421CEE00E5D648 /* Alamofire */,
 				0B0682B029421D5200E5D648 /* SendbirdUIKit */,
+				0431FABF295AE38F0026CD8F /* KakaoSDK */,
+				0431FAC1295AE38F0026CD8F /* KakaoSDKAuth */,
+				0431FAC3295AE38F0026CD8F /* KakaoSDKCommon */,
+				0431FAC5295AE38F0026CD8F /* KakaoSDKUser */,
 			);
 			productName = "Techeer-RUAlone";
 			productReference = 0B06822229370AC000E5D648 /* Techeer-RUAlone.app */;
@@ -270,6 +284,7 @@
 			packageReferences = (
 				0B0682AC29421CEE00E5D648 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				0B0682AF29421D5200E5D648 /* XCRemoteSwiftPackageReference "sendbird-uikit-ios-spm" */,
+				0431FABE295AE38F0026CD8F /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 			);
 			productRefGroup = 0B06822329370AC000E5D648 /* Products */;
 			projectDirPath = "";
@@ -287,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0477E96F2959EDB000B9870F /* .swiftlint.yml in Resources */,
 				0B0682B72944CA4800E5D648 /* Colors.xcassets in Resources */,
 				0B06822D29370AC200E5D648 /* Preview Assets.xcassets in Resources */,
 				0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */,
@@ -335,7 +351,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048CF9FC29588AA2001E4457 /* swiftlint.swift in Sources */,
 				0BC42351294B373200188283 /* SuggestionView.swift in Sources */,
 				0B29ED11294B185800A2D8FA /* FeedRowView.swift in Sources */,
 				0B0682B92944CB0D00E5D648 /* Color+Extensions.swift in Sources */,
@@ -511,6 +526,8 @@
 				DEVELOPMENT_TEAM = LVBMDY357W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Techeer-RUAlone/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = RUAlone;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -540,6 +557,8 @@
 				DEVELOPMENT_TEAM = LVBMDY357W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Techeer-RUAlone/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = RUAlone;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -676,6 +695,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0431FABE295AE38F0026CD8F /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		0B0682AC29421CEE00E5D648 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -695,6 +722,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0431FABF295AE38F0026CD8F /* KakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0431FABE295AE38F0026CD8F /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDK;
+		};
+		0431FAC1295AE38F0026CD8F /* KakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0431FABE295AE38F0026CD8F /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		0431FAC3295AE38F0026CD8F /* KakaoSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0431FABE295AE38F0026CD8F /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCommon;
+		};
+		0431FAC5295AE38F0026CD8F /* KakaoSDKUser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0431FABE295AE38F0026CD8F /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKUser;
+		};
 		0B0682AD29421CEE00E5D648 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0B0682AC29421CEE00E5D648 /* XCRemoteSwiftPackageReference "Alamofire" */;
