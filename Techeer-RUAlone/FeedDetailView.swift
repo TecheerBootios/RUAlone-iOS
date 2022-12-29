@@ -10,6 +10,7 @@ import MapKit
 
 struct FeedDetailView: View {
     @ObservedObject private var viewModel = FeedDetailViewModel()
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -20,6 +21,7 @@ struct FeedDetailView: View {
                             .presentationDetents([.medium, .large])
                     }
             }
+            .toolbar(.hidden, for: .tabBar)
         }
     }
 }

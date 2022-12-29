@@ -18,7 +18,7 @@ struct ChatView: View {
         }
         SBUGlobals.currentUser = SBUUser(userId: "Test")
         SendbirdUI.connect { (user, error) in
-            guard let _ = user else {
+            guard user != nil else {
                 print("Sendbird Init: Connection Error \(String(describing: error))")
                 return
             }
