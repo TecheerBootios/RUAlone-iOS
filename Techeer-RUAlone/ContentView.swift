@@ -9,12 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
         TabView {
-            LoginView()
-                .tabItem {
-                    Label("로그인", systemImage: "lock.fill")
-                }
             HomeView()
                 .tabItem {
                     Label("홈", systemImage: "house.fill")
@@ -29,7 +24,6 @@ struct ContentView: View {
                 }
         }
         .tint(.black)
-    
     }
 }
 

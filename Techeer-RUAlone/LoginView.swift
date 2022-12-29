@@ -9,10 +9,14 @@ import SwiftUI
 import KakaoSDKAuth
 import KakaoSDKUser
 
+import os
+
+private let logger = Logger.init(subsystem: "com.techeer.KKodiac.Techeer-RUAlone", category: "LoginView")
+
 struct LoginView: View {
     @State var email: String = ""
     @State var password: String = ""
-
+    
     var body: some View {
         Color.customBackground
             .ignoresSafeArea()
@@ -20,32 +24,32 @@ struct LoginView: View {
                 VStack {
                     Image("MainIcon")
                         .resizable()
-                        .frame(width: 320, height: 340);
+                        .frame(width: 320, height: 340)
                     
                     Button {
-                        if (UserApi.isKakaoTalkLoginAvailable()) {
+                        if UserApi.isKakaoTalkLoginAvailable() == true {
                             UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                                    print(oauthToken)
-                                    print(error)
+                                guard error != nil else {
+                                    logger.error("\(error.debugDescription)")
+                                    return
                                 }
-                            } else {
-                                UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-                                    print(oauthToken)
-                                print(error)
-                                }
+                                logger.log("\(oauthToken.debugDescription)")
                             }
-                        } label : {
+                        } else {
+                            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                                guard error != nil else {
+                                    logger.error("\(error.debugDescription)")
+                                    return
+                                }
+                                logger.log("\(oauthToken.debugDescription)")
+                            }
+                        }
+                    } label: {
                         Image("KakaoLogin")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width : UIScreen.main.bounds.width * 0.9)
+                            .frame(width: UIScreen.main.bounds.width * 0.9)
                     }
                 })
-    }
-}
-
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
     }
 }
