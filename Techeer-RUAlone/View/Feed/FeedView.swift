@@ -33,11 +33,8 @@ struct FeedView: View {
             .navigationBarColor(titleColor: .white)
             .background(Color.customPink)
         }
+        .searchable(text: $searchText)
         .textFieldColor(backgroundColor: .white, tintColor: .black)
-        .searchable(text: $searchText,
-                    prompt: Text("메뉴를 검색해보세요").foregroundColor(.white)) {
-            SuggestionView()
-        }
     }
 }
 
