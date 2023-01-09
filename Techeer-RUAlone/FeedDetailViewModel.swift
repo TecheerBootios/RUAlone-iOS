@@ -9,9 +9,10 @@ import Foundation
 import MapKit
 
 class FeedDetailViewModel: ObservableObject {
+    // let offSet: Double = 0.0055
     @Published var isPresented: Bool = true
     @Published var place = PlaceIdentifier(lat: 37.334_900, long: -122.009_020)
-    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.334_900,
+    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.334_900-0.0055,
                                                                               longitude: -122.009_020),
                                                latitudinalMeters: 750,
                                                longitudinalMeters: 750)
