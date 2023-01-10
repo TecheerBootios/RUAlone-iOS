@@ -13,7 +13,6 @@ struct HomeView: View {
             GeometryReader { geometry in
                 VStack(spacing: 12) {
                     HorizontalRectangle(contentText: "어서오세요, 홍길동님!",
-                                        contentImage: "HomeButtonImage",
                                         rectangleColor: .customPurple,
                                         capsuleText: "오늘의 모임",
                                         capsuleImage: "person")
@@ -31,7 +30,6 @@ struct HomeView: View {
                                           iconColor: .customDarkOrange)
                     }
                     HorizontalRectangle(contentText: "최근 나의 모임 기록",
-                                        contentImage: "GatheringButtonImage",
                                         rectangleColor: .customBlue,
                                         capsuleText: "확인하기",
                                         capsuleImage: "note")
