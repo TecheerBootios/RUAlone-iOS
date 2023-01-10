@@ -7,31 +7,70 @@
 
 import SwiftUI
 
-enum FoodCategory: String, CaseIterable, Identifiable {
-    case 한식, 중식, 일식, 치킨, 분식, 양식
-    var id: Self { self }
-}
-
 struct FeedFormView: View {
-    @State private var selectionFoodCategory: FoodCategory = .한식
-    @State private var startAt = Date()
-    @State private var numberOfMembers = 0
-    @State private var title = ""
+    @ObservedObject var formViewModel = FeedFormViewModel()
+    @ObservedObject var searchViewModel = LocalSearchViewModel()
+
     var body: some View {
-        List {
-            TextField("제목", text: $title).autocorrectionDisabled().textFieldStyle(.automatic)
-            Picker("무슨 종류의 음식인가요?", selection: $selectionFoodCategory) {
-                ForEach(FoodCategory.allCases) { category in
-                    Text(category.rawValue)
+        NavigationStack {
+            VStack {
+                List {
+                    Section(header: Text("제목")) {
+                        TextField("예) 버거킹 같이 드실 분!",
+                                  text: $formViewModel.form.title)
+                            .autocorrectionDisabled()
+                            .textFieldStyle(.automatic)
+                        NavigationLink(destination: {
+                            LocationSelectionView(searchViewModel: searchViewModel,
+                                                  formViewModel: formViewModel)
+                        }, label: {
+                            Text("모임 위치")
+                        })
+                    }
+                    
+                    Section("모집 인원") {
+                        Picker("", selection: $formViewModel.form.numberOfMember) {
+                            ForEach(1...5, id: \.self) {
+                                Text("\($0)명")
+                            }
+                        }.pickerStyle(.segmented)
+                    }
+                    
+                    Section("음식 카테고리") {
+                        Picker("음식 종류", selection: $formViewModel.form.foodCategory) {
+                            ForEach(FoodCategory.allCases, id: \.self) { category in
+                                Text(category.rawValue)
+                            }
+                        }
+                    }
+                    
+                    Section("일정") {
+                        DatePicker("언제 만날까요?", selection: $formViewModel.form.startAt)
+                    }
                 }
+                Spacer()
+                Button(action: {
+                    print("\(formViewModel.form)")
+                }, label: {
+                    HStack {
+                        Spacer()
+                        Text("작성 완료")
+                            .font(.title2)
+                            .bold()
+                            .padding(.all)
+                        Spacer()
+                    }
+                })
+                .padding([.leading, .trailing])
+                .buttonStyle(.borderedProminent)
             }
-            DatePicker("언제 만날까요?", selection: $startAt, displayedComponents: .hourAndMinute)
-            Picker("모집인원은 몇명인가요?", selection: $numberOfMembers) {
-                ForEach(1...10, id: \.self) {
-                    Text("\($0)명")
-                }
-            }
+            .listStyle(.insetGrouped)
+            .headerProminence(.increased)
+            .navigationTitle("새로운 글 작성")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar(.hidden, for: .tabBar)
         }
+        
     }
 }
 

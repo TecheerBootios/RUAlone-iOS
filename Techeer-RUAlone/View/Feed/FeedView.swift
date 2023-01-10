@@ -32,9 +32,13 @@ struct FeedView: View {
             .navigationTitle("메이트 구하기")
             .navigationBarColor(titleColor: .white)
             .background(Color.customPink)
+            .toolbar {
+                NavigationLink(destination: { FeedFormView() }, label: { Image(systemName: "plus")})
+            }
         }
-        .searchable(text: $searchText)
+        .searchable(text: $searchText, prompt: Text("메뉴를 검색해보세요"))
         .textFieldColor(backgroundColor: .white, tintColor: .black)
+        
     }
 }
 
