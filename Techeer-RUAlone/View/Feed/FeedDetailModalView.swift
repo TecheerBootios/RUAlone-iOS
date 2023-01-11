@@ -28,7 +28,7 @@ struct FeedDetailModalView: View {
                         }
                         
                         Label(title: {
-                            Text("\(details.timestamp) 시간 전")
+                            Text("Time \(details.timestamp)")
                                 .font(.subheadline)},
                               icon: {Image(systemName: "clock.fill")})
                         .foregroundColor(Color.gray)
@@ -37,7 +37,7 @@ struct FeedDetailModalView: View {
                             Button(action: {
                                 binding.toggle()
                             }, label: {
-                                Label(title: {Text("참여하기")}, icon: {
+                                Label(title: {Text("Join")}, icon: {
                                     Image(systemName: "car.fill")})
                                 .frame(width: geometry.size.width/1.4, height: geometry.size.width/13)
                             })
@@ -60,23 +60,23 @@ struct FeedDetailModalView: View {
                     
                     List {
                         VStack(alignment: .leading) {
-                            Text("만남 시간")
+                            Text("Gather Time")
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
                             Text("\(details.startAt)")
                                 .bold()
-                            Text("\(details.currentMemeber) / \(details.limitMember) 명 모집중")
+                            Text("Gathered State \(details.currentMemeber) \(details.limitMember)")
                                 .foregroundColor(.red)
                                 .bold()
                         }
                         Section {
                             HStack {
-                                Label(title: {Text("경로보기")},
+                                Label(title: {Text("Find Route")},
                                       icon: { Image(systemName: "map") })
                             }
                             .contentShape(Rectangle())
                             .onTapGesture {
-                                
+                                // TODO: Open map showing route to destination restaurant
                             }
                         }.listStyle(.sidebar)
                     }

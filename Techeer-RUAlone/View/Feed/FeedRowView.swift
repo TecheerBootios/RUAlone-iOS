@@ -8,28 +8,28 @@
 import SwiftUI
 
 struct FeedRowView: View {
-    let title: String
-    let date: String
-    let gathered: Int
-    let hours: Int
+    let feed: FeedModel
+    
     var body: some View {
-        NavigationLink(destination: FeedDetailView()) {
+        NavigationLink(destination: FeedDetailView(viewModel: FeedDetailViewModel())) {
             HStack {
                 Circle()
                     .foregroundColor(.customPurple)
                     .frame(width: 50, height: 50)
                 VStack(alignment: .leading) {
-                    Text(title)
-                    Text(date)
+                    Text(feed.title)
+                    Text(feed.date.toString())
                         .font(.subheadline)
                         .foregroundColor(Color.gray)
                 }
                 .padding(.leading)
                 Spacer()
                 VStack {
-                    Text("\(gathered)명 모임")
+                    Text("Gathered \(feed.currentlyGathered)")
                     Label(title: {
-                        Text("\(hours)시간")
+                        Text("Time \(feed.hoursPassed)")
+                            .font(.footnote)
+                            .foregroundColor(.gray)
                     }, icon: {
                         Image("ArrowGather")
                             .renderingMode(.original)
@@ -37,11 +37,5 @@ struct FeedRowView: View {
                 }
             }
         }
-    }
-}
-
-struct FeedRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedRowView(title: "버거킹 같이 먹어요.", date: "2022/11/20", gathered: 5, hours: 2)
     }
 }

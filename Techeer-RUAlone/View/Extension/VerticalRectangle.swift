@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct VerticalRectangle: View {
-    let contentText: String
+    let contentText: LocalizedStringKey
     let rectangleColor: Color
     let circleImage: String
     let circleColor: Color
     let iconColor: Color
-    let radius: CGFloat = 20
+    
+    private let radius: CGFloat = 20
+    private let shadowRadius: CGFloat = 10
+    private let shadowArea: CGFloat = 5
     
     var body: some View {
         RoundedRectangle(cornerRadius: radius)
@@ -22,7 +25,7 @@ struct VerticalRectangle: View {
                 VStack(alignment: .leading) {
                     Text(contentText)
                         .font(.title3)
-                        .shadow(radius: 10, x: 5, y: 5)
+                        .shadow(radius: shadowRadius, x: shadowArea, y: shadowArea)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
                     Spacer()
@@ -31,7 +34,6 @@ struct VerticalRectangle: View {
                           .resizable()
                           .scaledToFit()
                           .foregroundColor(iconColor)
-                          .padding(20)
                           .background(circleColor)
                           .clipShape(Circle())
                         Spacer(minLength: 80)
@@ -39,15 +41,5 @@ struct VerticalRectangle: View {
                 }
                 .padding()
             }
-    }
-}
-
-struct VerticalRectangle_Previews: PreviewProvider {
-    static var previews: some View {
-        VerticalRectangle(contentText: "친구를 찾아보세요!",
-                          rectangleColor: .customGreen,
-                          circleImage: "person.2.fill",
-                          circleColor: .customLightGreen,
-                          iconColor: .customGreen)
     }
 }

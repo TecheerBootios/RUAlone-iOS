@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct FeedDetailView: View {
-    @ObservedObject private var viewModel = FeedDetailViewModel()
+    @ObservedObject var viewModel: FeedDetailViewModel
     
     var body: some View {
         NavigationStack {
@@ -23,11 +23,5 @@ struct FeedDetailView: View {
             }
             .toolbar(.hidden, for: .tabBar)
         }
-    }
-}
-
-struct FeedDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedDetailView()
     }
 }

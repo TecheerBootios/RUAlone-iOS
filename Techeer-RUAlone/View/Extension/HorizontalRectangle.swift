@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct HorizontalRectangle: View {
-    let contentText: String
-    let contentImage: String
+    let contentText: LocalizedStringKey
     let rectangleColor: Color
-    let capsuleText: String
+    let capsuleText: LocalizedStringKey
     let capsuleImage: String
-    let radius: CGFloat = 20
+    
+    private let radius: CGFloat = 20
+    private let shadowRadius: CGFloat = 10
+    private let shadowArea: CGFloat = 5
     
     var body: some View {
         RoundedRectangle(cornerRadius: radius)
@@ -22,9 +24,10 @@ struct HorizontalRectangle: View {
                 VStack(alignment: .leading) {
                     Text(contentText)
                         .font(.title2)
-                        .shadow(radius: 10, x: 5, y: 5)
+                        .shadow(radius: shadowRadius, x: shadowArea, y: shadowArea)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
+                    Spacer()
                     HStack(alignment: .bottom) {
                         Label(capsuleText, systemImage: capsuleImage)
                             .font(.headline)
@@ -33,21 +36,8 @@ struct HorizontalRectangle: View {
                             .padding()
                             .background(in: Capsule())
                         Spacer()
-                        Image(contentImage)
-                            .resizable()
-                            .scaledToFit()
                     }
                 }.padding()
             }
-    }
-}
-
-struct HorizontalRectangle_Previews: PreviewProvider {
-    static var previews: some View {
-        HorizontalRectangle(contentText: "어서오세요, 홍길동님!",
-                            contentImage: "HomeButtonImage",
-                            rectangleColor: .customPurple,
-                            capsuleText: "오늘의 모임",
-                            capsuleImage: "person")
     }
 }

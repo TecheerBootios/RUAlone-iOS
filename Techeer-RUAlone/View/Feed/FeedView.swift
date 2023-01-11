@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct FeedView: View {
-    init() {
-        UITabBar.appearance().backgroundColor = UIColor.white
-    }
+    init() { UITabBar.appearance().backgroundColor = UIColor.white }
     @State private var searchText = ""
+    private let example = ExampleFeedModel()
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
                 ZStack {
                     ScrollView(.vertical, showsIndicators: false) {
                         LazyVStack {
-                            ForEach(0..<100) { _ in
-                                FeedRowView(title: "버거킹 같이먹어요.", date: "2022/11/30", gathered: 3, hours: 2)
+                            ForEach(example.feeds, id: \.self) { feed in
+                                FeedRowView(feed: feed)
                                     .padding([.top, .leading, .trailing])
                             }
                         }
@@ -29,15 +28,16 @@ struct FeedView: View {
                 .background(Color.customWhite)
                 .cornerRadius(30, corners: [.topLeft, .topRight])
             }
-            .navigationTitle("메이트 구하기")
+            .navigationTitle("Find Nav Title")
             .navigationBarColor(titleColor: .white)
             .background(Color.customPink)
+            .toolbar {
+                NavigationLink(destination: { FeedFormView() }, label: { Image(systemName: "plus")})
+            }
         }
+        .searchable(text: $searchText, prompt: Text("메뉴를 검색해보세요"))
         .textFieldColor(backgroundColor: .white, tintColor: .black)
-        .searchable(text: $searchText,
-                    prompt: Text("메뉴를 검색해보세요").foregroundColor(.white)) {
-            SuggestionView()
-        }
+        
     }
 }
 
