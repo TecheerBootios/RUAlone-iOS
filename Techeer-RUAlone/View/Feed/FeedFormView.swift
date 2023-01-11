@@ -10,13 +10,12 @@ import SwiftUI
 struct FeedFormView: View {
     @ObservedObject var formViewModel = FeedFormViewModel()
     @ObservedObject var searchViewModel = LocalSearchViewModel()
-
     var body: some View {
         NavigationStack {
             VStack {
                 List {
-                    Section(header: Text("제목")) {
-                        TextField("예) 버거킹 같이 드실 분!",
+                    Section(header: Text("Form Title")) {
+                        TextField("Field Example",
                                   text: $formViewModel.form.title)
                             .autocorrectionDisabled()
                             .textFieldStyle(.automatic)
@@ -24,28 +23,28 @@ struct FeedFormView: View {
                             LocationSelectionView(searchViewModel: searchViewModel,
                                                   formViewModel: formViewModel)
                         }, label: {
-                            Text("모임 위치")
+                            Text("Location")
                         })
                     }
                     
-                    Section("모집 인원") {
+                    Section("Persons") {
                         Picker("", selection: $formViewModel.form.numberOfMember) {
                             ForEach(1...5, id: \.self) {
-                                Text("\($0)명")
+                                Text("Person \($0)")
                             }
                         }.pickerStyle(.segmented)
                     }
                     
-                    Section("음식 카테고리") {
-                        Picker("음식 종류", selection: $formViewModel.form.foodCategory) {
+                    Section("Food Category") {
+                        Picker("Food Type", selection: $formViewModel.form.foodCategory) {
                             ForEach(FoodCategory.allCases, id: \.self) { category in
-                                Text(category.rawValue)
+                                Text(category.description)
                             }
                         }
                     }
                     
-                    Section("일정") {
-                        DatePicker("언제 만날까요?", selection: $formViewModel.form.startAt)
+                    Section("Date") {
+                        DatePicker("Date Ask", selection: $formViewModel.form.startAt)
                     }
                 }
                 Spacer()
@@ -54,7 +53,7 @@ struct FeedFormView: View {
                 }, label: {
                     HStack {
                         Spacer()
-                        Text("작성 완료")
+                        Text("Submit")
                             .font(.title2)
                             .bold()
                             .padding(.all)
@@ -70,7 +69,6 @@ struct FeedFormView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(.hidden, for: .tabBar)
         }
-        
     }
 }
 

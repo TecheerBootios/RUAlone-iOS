@@ -8,19 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    private let homeText: LocalizedStringKey = "Home"
+    private let postText: LocalizedStringKey = "Post"
+    private let messageText: LocalizedStringKey = "Message"
+    
     var body: some View {
         TabView {
             HomeView()
                 .tabItem {
-                    Label("홈", systemImage: "house.fill")
+                    Label(homeText, systemImage: "house.fill")
                 }
             FeedView()
                 .tabItem {
-                    Label("게시판", systemImage: "person.3.fill")
+                    Label(postText, systemImage: "person.3.fill")
                 }
             MessageView()
                 .tabItem {
-                    Label("메세지", systemImage: "message.fill")
+                    Label(messageText, systemImage: "message.fill")
                 }
         }
         .tint(.black)

@@ -6,22 +6,42 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum FoodCategory: String, CaseIterable, Codable {
-    case 한식 = "Korean"
-    case 중식 = "Chinese"
-    case 일식 = "Japanese"
-    case 치킨 = "Chicken"
-    case 분식 = "Bunsik"
-    case 양식 = "Western"
+    case korean = "Korean"
+    case chinese = "Chinese"
+    case japanese = "Japanese"
+    case chicken = "Chicken"
+    case bunsik = "Bunsik"
+    case western = "Western"
+    var description : String {
+        get {
+            switch(self) {
+            case .korean:
+                return NSLocalizedString("Korean", comment: "")
+            case .chinese:
+                return NSLocalizedString("Chinese", comment: "")
+            case .japanese:
+                return NSLocalizedString("Japanese", comment: "")
+            case .western:
+                return NSLocalizedString("Western", comment: "")
+            case .chicken:
+                return NSLocalizedString("Chicken", comment: "")
+            case .bunsik:
+                return NSLocalizedString("Bunsik", comment: "")
+            }
+        }
+    }
 }
+
 
 struct Form: Codable {
     var title: String = ""
     var location: String = ""
     var startAt: Date = Date()
     var numberOfMember: Int = 0
-    var foodCategory: FoodCategory = .한식
+    var foodCategory: FoodCategory = .korean
     
     enum CodingKeys: String, CodingKey {
         case title

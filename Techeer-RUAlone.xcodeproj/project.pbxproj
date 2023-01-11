@@ -37,6 +37,9 @@
 		0BA0351C296C44C400BF8EA1 /* LocalSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0351B296C44C400BF8EA1 /* LocalSearchViewModel.swift */; };
 		0BA03520296C5FAA00BF8EA1 /* LocationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0351F296C5FAA00BF8EA1 /* LocationSelectionView.swift */; };
 		0BA03524296D419900BF8EA1 /* FeedFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA03523296D419900BF8EA1 /* FeedFormViewModel.swift */; };
+		0BA03527296DD88B00BF8EA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0BA03529296DD88B00BF8EA1 /* Localizable.strings */; };
+		0BA03530296E7DE500BF8EA1 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 0BA0352F296E7DE500BF8EA1 /* Localizable.stringsdict */; };
+		0BA03532296E82B000BF8EA1 /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA03531296E82B000BF8EA1 /* FeedModel.swift */; };
 		0BC42351294B373200188283 /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC42350294B373200188283 /* SuggestionView.swift */; };
 		0BC4235729599A0C00188283 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC4235629599A0C00188283 /* ChatView.swift */; };
 		0BCCC0DB295C34B6002883AC /* FeedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCC0DA295C34B6002883AC /* FeedDetailView.swift */; };
@@ -91,6 +94,10 @@
 		0BA0351B296C44C400BF8EA1 /* LocalSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchViewModel.swift; sourceTree = "<group>"; };
 		0BA0351F296C5FAA00BF8EA1 /* LocationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectionView.swift; sourceTree = "<group>"; };
 		0BA03523296D419900BF8EA1 /* FeedFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFormViewModel.swift; sourceTree = "<group>"; };
+		0BA03528296DD88B00BF8EA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0BA0352A296DD88F00BF8EA1 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0BA0352F296E7DE500BF8EA1 /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
+		0BA03531296E82B000BF8EA1 /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
 		0BC42350294B373200188283 /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
 		0BC4235629599A0C00188283 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		0BCCC0DA295C34B6002883AC /* FeedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailView.swift; sourceTree = "<group>"; };
@@ -162,6 +169,8 @@
 				0B06822929370AC200E5D648 /* Assets.xcassets */,
 				0B0682B62944CA4800E5D648 /* Colors.xcassets */,
 				0B06822B29370AC200E5D648 /* Preview Content */,
+				0BA03529296DD88B00BF8EA1 /* Localizable.strings */,
+				0BA0352F296E7DE500BF8EA1 /* Localizable.stringsdict */,
 			);
 			path = "Techeer-RUAlone";
 			sourceTree = "<group>";
@@ -231,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				0BCCC0E1295C38A8002883AC /* FeedDetailModel.swift */,
+				0BA03531296E82B000BF8EA1 /* FeedModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -394,10 +404,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BA03527296DD88B00BF8EA1 /* Localizable.strings in Resources */,
 				0477E96F2959EDB000B9870F /* .swiftlint.yml in Resources */,
 				0B0682B72944CA4800E5D648 /* Colors.xcassets in Resources */,
 				0B06822D29370AC200E5D648 /* Preview Assets.xcassets in Resources */,
 				0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */,
+				0BA03530296E7DE500BF8EA1 /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +477,7 @@
 				0BA0351C296C44C400BF8EA1 /* LocalSearchViewModel.swift in Sources */,
 				0BA03520296C5FAA00BF8EA1 /* LocationSelectionView.swift in Sources */,
 				0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */,
+				0BA03532296E82B000BF8EA1 /* FeedModel.swift in Sources */,
 				042A830D2950CB43001F3FE0 /* LoginView.swift in Sources */,
 				0B0682B52944C8BF00E5D648 /* HorizontalRectangle.swift in Sources */,
 			);
@@ -501,6 +514,18 @@
 			targetProxy = 0B06823D29370AC300E5D648 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0BA03529296DD88B00BF8EA1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0BA03528296DD88B00BF8EA1 /* en */,
+				0BA0352A296DD88F00BF8EA1 /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0B06824429370AC300E5D648 /* Debug */ = {
@@ -642,9 +667,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.techeer.KKodiac.Techeer-RUAlone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -673,9 +701,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.techeer.KKodiac.Techeer-RUAlone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
