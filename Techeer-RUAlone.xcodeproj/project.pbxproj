@@ -162,15 +162,12 @@
 		0B06822429370AC000E5D648 /* Techeer-RUAlone */ = {
 			isa = PBXGroup;
 			children = (
+				0BA035332973115100BF8EA1 /* Resources */,
 				0BA03516296C430900BF8EA1 /* Model */,
 				0BA03514296C42BF00BF8EA1 /* ViewModel */,
 				0BA03513296C427A00BF8EA1 /* View */,
 				0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */,
-				0B06822929370AC200E5D648 /* Assets.xcassets */,
-				0B0682B62944CA4800E5D648 /* Colors.xcassets */,
 				0B06822B29370AC200E5D648 /* Preview Content */,
-				0BA03529296DD88B00BF8EA1 /* Localizable.strings */,
-				0BA0352F296E7DE500BF8EA1 /* Localizable.stringsdict */,
 			);
 			path = "Techeer-RUAlone";
 			sourceTree = "<group>";
@@ -283,6 +280,17 @@
 				0BA03511296C3B4300BF8EA1 /* LocalSearchService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		0BA035332973115100BF8EA1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0BA03529296DD88B00BF8EA1 /* Localizable.strings */,
+				0BA0352F296E7DE500BF8EA1 /* Localizable.stringsdict */,
+				0B06822929370AC200E5D648 /* Assets.xcassets */,
+				0B0682B62944CA4800E5D648 /* Colors.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
