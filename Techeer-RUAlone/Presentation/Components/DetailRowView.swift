@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct FeedRowView: View {
+struct DetailRowView: View {
     let feed: FeedModel
     
     var body: some View {
-        NavigationLink(destination: FeedDetailView(viewModel: FeedDetailViewModel())) {
+        NavigationLink(destination: FeedDetail(viewModel: .init())) {
             HStack {
                 Circle()
                     .foregroundColor(.customPurple)

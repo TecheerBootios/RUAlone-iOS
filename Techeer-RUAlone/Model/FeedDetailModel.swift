@@ -48,3 +48,19 @@ struct PlaceCoordinates: Codable {
     let latitudinalMeters: Int
     let longitudinalMeters: Int
 }
+
+struct ExampleFeedDetailModel {
+    let mock: FeedDetailModel = FeedDetailModel(title: "버거킹 같이 먹어요",
+                                                 timestamp: 2,
+                                                 startAt: "17:00 ~ 00:00",
+                                                 foodCategory: "양식",
+                                                 chatURLString: "sendbird_group_channel_104288745_01714e67ffa2f3be0dbf8796492e06c172bdc321",
+                                                 currentMemeber: 3,
+                                                 limitMember: 5,
+                                                 place: "버거킹 시흥점",
+                                                 coordinates: PlaceCoordinates(latitude: 37.334_900,
+                                                                             longitude: -122.009_020,
+                                                                             latitudinalMeters: 750,
+                                                                             longitudinalMeters: 750))
+}
+

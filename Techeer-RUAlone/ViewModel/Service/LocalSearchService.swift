@@ -50,8 +50,7 @@ final class LocalSearchService: NSObject, CLLocationManagerDelegate {
         }
     }
     
-    private func request(resultType: MKLocalSearch.ResultType = .pointOfInterest,
-                         searchText: String) {
+    private func request(resultType: MKLocalSearch.ResultType = .pointOfInterest, searchText: String) {
         guard let location = self.location else { return }
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = searchText

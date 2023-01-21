@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FeedView: View {
+struct Feed: View {
     init() { UITabBar.appearance().backgroundColor = UIColor.white }
     @State private var searchText = ""
     private let example = ExampleFeedModel()
@@ -18,7 +18,7 @@ struct FeedView: View {
                     ScrollView(.vertical, showsIndicators: false) {
                         LazyVStack {
                             ForEach(example.feeds, id: \.self) { feed in
-                                FeedRowView(feed: feed)
+                                DetailRowView(feed: feed)
                                     .padding([.top, .leading, .trailing])
                             }
                         }
@@ -32,7 +32,9 @@ struct FeedView: View {
             .navigationBarColor(titleColor: .white)
             .background(Color.customPink)
             .toolbar {
-                NavigationLink(destination: { FeedFormView() }, label: { Image(systemName: "plus")})
+                NavigationLink(destination: {
+                    FeedForm(viewModel: .init(form: Form()))
+                }, label: { Image(systemName: "plus")})
             }
         }
         .searchable(text: $searchText, prompt: Text("메뉴를 검색해보세요"))
@@ -43,6 +45,6 @@ struct FeedView: View {
 
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedView()
+        Feed()
     }
 }

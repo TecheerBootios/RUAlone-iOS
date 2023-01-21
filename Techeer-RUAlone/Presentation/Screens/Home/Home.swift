@@ -7,38 +7,31 @@
 
 import SwiftUI
 
-struct HomeView: View {
-    private let welcomeText: LocalizedStringKey = "WelcomeMessage"
-    private let todaysGatheringText: LocalizedStringKey = "TodaysGathering"
-    private let findFriendText: LocalizedStringKey = "FindFriend"
-    private let gatherFriendText: LocalizedStringKey = "GatherFriend"
-    private let recentGatheringText: LocalizedStringKey = "RecentGathering"
-    private let checkGatheringText: LocalizedStringKey = "CheckGathering"
-    
+struct Home: View {
     var body: some View {
         NavigationStack {
             GeometryReader { geometry in
                 VStack(spacing: 12) {
-                    HorizontalRectangle(contentText: welcomeText,
+                    HorizontalRectangle(contentText:  "WelcomeMessage",
                                         rectangleColor: .customPurple,
-                                        capsuleText: todaysGatheringText,
+                                        capsuleText: "TodaysGathering",
                                         capsuleImage: "person")
                     .frame(height: geometry.size.height/3.6)
                     HStack(spacing: 12) {
-                        VerticalRectangle(contentText: findFriendText,
+                        VerticalRectangle(contentText: "FindFriend",
                                           rectangleColor: .customGreen,
                                           circleImage: "person.2.fill",
                                           circleColor: .customLightGreen,
                                           iconColor: .customGreen)
-                        VerticalRectangle(contentText: gatherFriendText,
+                        VerticalRectangle(contentText: "GatherFriend",
                                           rectangleColor: .customOrange,
                                           circleImage: "person.2.wave.2.fill",
                                           circleColor: .customLightOrange,
                                           iconColor: .customDarkOrange)
                     }
-                    HorizontalRectangle(contentText: recentGatheringText,
+                    HorizontalRectangle(contentText: "RecentGathering",
                                         rectangleColor: .customBlue,
-                                        capsuleText: checkGatheringText,
+                                        capsuleText: "CheckGathering",
                                         capsuleImage: "note")
                     .frame(height: geometry.size.height/3.6)
                 }
@@ -48,8 +41,8 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        Home()
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MessageView: View {
+struct Message: View {
     init() {
         UITabBar.appearance().backgroundColor = UIColor.white
     }
@@ -40,7 +40,7 @@ struct MessageView: View {
                         
                         LazyVStack {
                             ForEach(0..<100) { _ in
-                                MesseageRowView(title: "우육탕면 팟", time: "4:30 PM", chat: "그때 만나요!")
+                                DetailRowView(feed: FeedModel(title: "", date: Date(), currentlyGathered: 0, hoursPassed: 0))
                                     .padding([.top, .leading, .trailing]).onTapGesture {
                                         isPresented = true
                                     }
@@ -61,14 +61,12 @@ struct MessageView: View {
         }
         .textFieldColor(backgroundColor: .white, tintColor: .black)
         .searchable(text: $searchText,
-                    prompt: Text("메뉴를 검색해보세요").foregroundColor(.white)) {
-            SuggestionView()
-        }
+                    prompt: Text("메뉴를 검색해보세요").foregroundColor(.white)) { }
     }
 }
     
     struct MessageView_Previews: PreviewProvider {
         static var previews: some View {
-            MessageView()
+            Message()
         }
     }
