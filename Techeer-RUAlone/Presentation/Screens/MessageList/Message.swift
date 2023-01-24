@@ -6,67 +6,59 @@
 //
 
 import SwiftUI
+import SendbirdUIKit
 
 struct Message: View {
     init() {
-        UITabBar.appearance().backgroundColor = UIColor.white
-    }
-    
-    @State private var searchText = ""
-    @State private var isPresented = false
-    var body: some View {
-        NavigationStack {
-            VStack(alignment: .leading) {
-                ZStack {
-                    ScrollView(.vertical) {
-                        HStack {
-                            Button("채팅") { }
-                                .frame(width: 100, height: 15)
-                                .foregroundColor(Color.black)
-                                .padding()
-                                .background(Color.customWhite)
-                                .cornerRadius(50)
-                                .padding(10)
-                                .shadow(color: .gray, radius: 5, x: 0, y: 5)
-                            Button("기록") { }
-                                .frame(width: 100, height: 15)
-                                .foregroundColor(Color.black)
-                                .padding()
-                                .background(Color.customWhite)
-                                .cornerRadius(50)
-                                .padding(10)
-                                .shadow(color: .gray, radius: 5, x: 0, y: 5)
-                        }
-                        
-                        LazyVStack {
-                            ForEach(0..<100) { _ in
-                                DetailRowView(feed: FeedModel(title: "", date: Date(), currentlyGathered: 0, hoursPassed: 0))
-                                    .padding([.top, .leading, .trailing]).onTapGesture {
-                                        isPresented = true
-                                    }
-                            }
-                        }
-                        .frame(maxWidth: .infinity)
-                    }
-                }
-                .background(Color.customWhite)
-                .cornerRadius(30, corners: [.topLeft, .topRight])
-                .sheet(isPresented: $isPresented) {
-                    Text("Details")
-                }
-            }
-            .navigationTitle("메세지")
-            .navigationBarColor(titleColor: .white)
-            .background(Color.customMint)
+        let appID = "B63A605C-5AA3-4540-A296-83CAFB32E557"
+        SendbirdUI.initialize(applicationId: appID) { (error) in
+            print("Sendbird Init: Initialization Error \(String(describing: error))")
         }
-        .textFieldColor(backgroundColor: .white, tintColor: .black)
-        .searchable(text: $searchText,
-                    prompt: Text("메뉴를 검색해보세요").foregroundColor(.white)) { }
+        SBUGlobals.currentUser = SBUUser(userId: "Test")
+        SendbirdUI.connect { (user, error) in
+            guard user != nil else {
+                print("Sendbird Init: Connection Error \(String(describing: error))")
+                return
+            }
+        }
+    }
+    var body: some View {
+        ChannelListViewContainer()
     }
 }
-    
-    struct MessageView_Previews: PreviewProvider {
-        static var previews: some View {
-            Message()
-        }
+
+class ChannelListViewController: SBUGroupChannelListViewController {
+    override func viewDidLoad() {
+        let customChannelListTheme = SBUGroupChannelListTheme()
+        customChannelListTheme.navigationBarTintColor = UIColor(Color.customMint)
+        SBUTheme.set(theme: SBUTheme(groupChannelListTheme: customChannelListTheme))
+        self.headerComponent?.leftBarButton?.isHidden = true
+        self.headerComponent?.rightBarButton?.isHidden = true
+        self.headerComponent?.titleView = createCustomTitleLabel()
     }
+    
+    func createCustomTitleLabel() -> UILabel {
+        let titleLabel = UILabel()
+        titleLabel.text = "메세지"
+        titleLabel.textColor = UIColor(Color.white)
+        titleLabel.font = .boldSystemFont(ofSize: 20)
+        return titleLabel
+    }
+}
+
+struct ChannelListViewContainer: UIViewControllerRepresentable {
+    typealias UIViewControllerType = UINavigationController
+    
+    func makeUIViewController(context: Context) -> UINavigationController {
+        return UINavigationController(rootViewController: ChannelListViewController())
+    }
+    
+    func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
+    }
+}
+
+struct MessageView_Previews: PreviewProvider {
+    static var previews: some View {
+        Message()
+    }
+}

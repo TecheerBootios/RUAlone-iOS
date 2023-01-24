@@ -18,7 +18,7 @@ struct DetailRowView: View {
                     .frame(width: 50, height: 50)
                 VStack(alignment: .leading) {
                     Text(feed.title)
-                    Text(feed.date.toString())
+                    Text("\(feed.date)")
                         .font(.subheadline)
                         .foregroundColor(Color.gray)
                 }

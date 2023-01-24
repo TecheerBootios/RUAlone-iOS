@@ -12,22 +12,28 @@ struct FeedForm: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                List {
-                    titleLocationSection()
-                    limitMemeberSection()
-                    foodCategorySection()
-                    dateSelectionSection()
+            ZStack {
+                VStack {
+                    List {
+                        titleLocationSection()
+                        dateSelectionSection()
+                        limitMemeberSection()
+                        foodCategorySection()
+                    }
+                    Spacer()
+                    Button(action: {
+                        print("\($viewModel)")
+                    }, label: {
+                        HStack {
+                            Spacer()
+                            Text("Submit").font(.title2).bold()
+                                .padding([.top, .bottom])
+                            Spacer()
+                        }
+                    })
+                    .padding([.leading, .trailing])
+                    .buttonStyle(.borderedProminent)
                 }
-                Spacer()
-                Button(action: {
-                    print("\($viewModel)")
-                }, label: {
-                    Text("Submit").font(.title2).bold()
-                        .padding([.top, .bottom])
-                })
-                .padding([.leading, .trailing])
-                .buttonStyle(.borderedProminent)
             }
             .listStyle(.insetGrouped)
             .headerProminence(.increased)
@@ -99,13 +105,14 @@ extension FeedForm {
     private func dateSelectionSection() -> some View {
         Section("Date") {
             DatePicker("Date Ask", selection: $viewModel.startAt)
+                .datePickerStyle(.graphical)
         }
     }
 }
 
 struct FeedFormView_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyView()
-//        FeedForm(view)
+        FeedForm(viewModel: .init(form: Form()))
+            .environment(\.locale, .init(identifier: "ko"))
     }
 }

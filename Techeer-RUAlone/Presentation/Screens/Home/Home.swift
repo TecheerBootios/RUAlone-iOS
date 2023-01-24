@@ -12,7 +12,7 @@ struct Home: View {
         NavigationStack {
             GeometryReader { geometry in
                 VStack(spacing: 12) {
-                    HorizontalRectangle(contentText:  "WelcomeMessage",
+                    HorizontalRectangle(contentText: "WelcomeMessage",
                                         rectangleColor: .customPurple,
                                         capsuleText: "TodaysGathering",
                                         capsuleImage: "person")

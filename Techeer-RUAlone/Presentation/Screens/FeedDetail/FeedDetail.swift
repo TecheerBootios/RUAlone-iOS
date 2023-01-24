@@ -32,18 +32,16 @@ struct FeedDetail: View {
 private extension FeedDetail {
     func modalView() -> some View {
         NavigationStack {
-            GeometryReader { geometry in
+            VStack(alignment: .leading) {
                 VStack(alignment: .leading) {
-                    VStack(alignment: .leading) {
-                        titleView()
-                        uploadTimeView()
-                        joinButtonView()
-                    }.padding([.top, .leading, .trailing])
-                        
-                    List {
-                        basicInfoSectionView()
-                        routeInfoSectionView()
-                    }
+                    titleView()
+                    uploadTimeView()
+                    joinButtonView()
+                }.padding([.top, .leading, .trailing])
+                    
+                List {
+                    basicInfoSectionView()
+                    routeInfoSectionView()
                 }
             }
         }
@@ -56,7 +54,7 @@ private extension FeedDetail {
             ZStack {
                 Image(systemName: "x.circle.fill").foregroundColor(.gray)
             }.onTapGesture {
-                dismiss()
+                isPresented.toggle()
             }
         }
     }
@@ -76,14 +74,12 @@ private extension FeedDetail {
             Label(title: {
                 Spacer()
                 Text("Join")
-                    .font(.headline)
-                    .padding()
+                    .font(.title3)
                 Spacer()
             }, icon: { Image(systemName: "car.fill") })
         })
         .tint(.customOrange)
         .buttonStyle(.borderedProminent)
-        .padding()
         .fullScreenCover(isPresented: $isChatPresented) {
             ChatView(channelURL: viewModel.details.chatURLString)
         }
@@ -91,9 +87,12 @@ private extension FeedDetail {
     
     func basicInfoSectionView() -> some View {
         Section {
-            Text("Gather Time").font(.subheadline).foregroundColor(.gray)
             Text("\(viewModel.details.startAt)").bold()
-            Text("Gathered State \(viewModel.details.currentMemeber) \(viewModel.details.limitMember)").foregroundColor(.red).bold()
+            Text("Gathered State \(viewModel.details.currentMemeber) \(viewModel.details.limitMember)")
+                .foregroundColor(.red)
+                .bold()
+        } header: {
+            Text("Gather Time").font(.subheadline).foregroundColor(.gray)
         }
     }
     
@@ -107,9 +106,9 @@ private extension FeedDetail {
 
 private extension FeedDetail {
     func mapView() -> some View {
-        Map(coordinateRegion: $viewModel.region, annotationItems: [viewModel.place]) { place in
-            MapAnnotation(coordinate: place.location) {
-                Button(action: { }, label: {
+        Map(coordinateRegion: $viewModel.region, interactionModes: .zoom, annotationItems: [viewModel.place]) { place in
+            MapAnnotation(coordinate: place.location!) {
+                Button(action: { isPresented.toggle() }, label: {
                     Image(systemName: "fork.knife.circle.fill")
                         .resizable()
                         .frame(width: 30, height: 30)
@@ -117,5 +116,12 @@ private extension FeedDetail {
                 })
             }
         }
+    }
+}
+
+struct FeedDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        FeedDetail(viewModel: .init())
+            .environment(\.locale, .init(identifier: "ko"))
     }
 }

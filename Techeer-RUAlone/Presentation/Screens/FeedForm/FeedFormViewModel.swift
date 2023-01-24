@@ -27,7 +27,6 @@ extension FeedForm {
         private let locationAddressRepository: LocationAddressRepository
         private var cancellable: AnyCancellable?
         
-        
         @Published var data = [LocalSearch]()
         @Published var pointOfInterest = "" {
             didSet { search(pointOfInterest: pointOfInterest) }
@@ -41,11 +40,11 @@ extension FeedForm {
         @Published var foodCategory: Form.FoodCategory
         
         init(form: Form, locationAddressRepository: LocationAddressRepository = DefaultLocationAddressRepository()) {
-            self.title = form.title ?? ""
-            self.address = form.address ?? ""
-            self.startAt = form.startAt ?? Date()
-            self.limitMember = form.limitMember ?? 0
-            self.foodCategory = form.foodCategory ?? .none
+            self.title = form.title
+            self.address = form.address
+            self.startAt = form.startAt
+            self.limitMember = form.limitMember
+            self.foodCategory = form.foodCategory
             self.locationAddressRepository = locationAddressRepository
             self.cancellable = locationAddressRepository.service.searchPublisher.sink { items in
                 print(items)

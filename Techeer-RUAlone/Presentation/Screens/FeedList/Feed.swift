@@ -8,43 +8,40 @@
 import SwiftUI
 
 struct Feed: View {
-    init() { UITabBar.appearance().backgroundColor = UIColor.white }
     @State private var searchText = ""
-    private let example = ExampleFeedModel()
+
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading) {
-                ZStack {
-                    ScrollView(.vertical, showsIndicators: false) {
-                        LazyVStack {
-                            ForEach(example.feeds, id: \.self) { feed in
-                                DetailRowView(feed: feed)
-                                    .padding([.top, .leading, .trailing])
-                            }
-                        }
-                        .frame(maxWidth: .infinity)
+            ZStack {
+                Color.customPink.ignoresSafeArea()
+                ScrollView(.vertical, showsIndicators: false) {
+                    ForEach(FeedModel.stubs(), id: \.self) {
+                        DetailRowView(feed: $0)
+                            .padding([.top, .leading, .trailing])
                     }
                 }
+                .frame(maxWidth: .infinity)
                 .background(Color.customWhite)
                 .cornerRadius(30, corners: [.topLeft, .topRight])
+                .edgesIgnoringSafeArea(.bottom)
             }
             .navigationTitle("Find Nav Title")
             .navigationBarColor(titleColor: .white)
-            .background(Color.customPink)
+            .textFieldColor(backgroundColor: .white, tintColor: .black)
+            .searchable(text: $searchText, prompt: Text("메뉴를 검색해보세요"))
             .toolbar {
                 NavigationLink(destination: {
                     FeedForm(viewModel: .init(form: Form()))
                 }, label: { Image(systemName: "plus")})
             }
+         
         }
-        .searchable(text: $searchText, prompt: Text("메뉴를 검색해보세요"))
-        .textFieldColor(backgroundColor: .white, tintColor: .black)
-        
     }
 }
 
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
         Feed()
+            .environment(\.locale, .init(identifier: "ko"))
     }
 }
