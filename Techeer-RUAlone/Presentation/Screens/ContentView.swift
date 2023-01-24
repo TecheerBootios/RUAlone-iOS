@@ -10,6 +10,10 @@ import SwiftUI
 struct ContentView: View {    
     var body: some View {
         TabView {
+            Login()
+                .tabItem {
+                    Label("Login", systemImage: "house.fill")
+                }
             Home()
                 .tabItem {
                     Label("Home", systemImage: "house.fill")

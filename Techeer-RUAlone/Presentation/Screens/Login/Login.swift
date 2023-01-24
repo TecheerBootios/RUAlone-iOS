@@ -13,9 +13,8 @@ import os
 
 private let logger = Logger.init(subsystem: "com.techeer.KKodiac.Techeer-RUAlone", category: "LoginView")
 
-struct LoginView: View {
-    @State var email: String = ""
-    @State var password: String = ""
+struct Login: View {
+    @ObservedObject var viewModel: ViewModel = .init()
     
     var body: some View {
         Color.customBackground
@@ -29,19 +28,21 @@ struct LoginView: View {
                     Button {
                         if UserApi.isKakaoTalkLoginAvailable() == true {
                             UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                                guard error != nil else {
+                                guard let oauthToken = oauthToken else {
                                     logger.error("\(error.debugDescription)")
                                     return
                                 }
-                                logger.log("\(oauthToken.debugDescription)")
+                                viewModel.createToken(oauthToken.accessToken)
+                                logger.log("\(oauthToken.accessToken)")
                             }
                         } else {
                             UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-                                guard error != nil else {
+                                guard let oauthToken = oauthToken else {
                                     logger.error("\(error.debugDescription)")
                                     return
                                 }
-                                logger.log("\(oauthToken.debugDescription)")
+                                viewModel.createToken(oauthToken.accessToken)
+                                logger.log("\(oauthToken.accessToken)")
                             }
                         }
                     } label: {
@@ -51,5 +52,12 @@ struct LoginView: View {
                             .frame(width: UIScreen.main.bounds.width * 0.9)
                     }
                 })
+    }
+}
+
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        Login(viewModel: .init())
+            .environment(\.locale, .init(identifier: "ko"))
     }
 }
