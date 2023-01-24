@@ -8,18 +8,18 @@
 import SwiftUI
 import SendbirdUIKit
 
+import os
+
+private let logger = Logger.init(subsystem: "com.techeer.KKodiac.Techeer-RUAlone", category: "ChatView")
+
 struct ChatView: View {
-    let appID = "B63A605C-5AA3-4540-A296-83CAFB32E557"
     let channelURL: String
     
     init(channelURL: String) {
-        SendbirdUI.initialize(applicationId: appID) { (error) in
-            print("Sendbird Init: Initialization Error \(String(describing: error))")
-        }
         SBUGlobals.currentUser = SBUUser(userId: "Test")
         SendbirdUI.connect { (user, error) in
             guard user != nil else {
-                print("Sendbird Init: Connection Error \(String(describing: error))")
+                logger.error("Sendbird Init: Connection Error \(String(describing: error))")
                 return
             }
         }

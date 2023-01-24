@@ -10,10 +10,6 @@ import SendbirdUIKit
 
 struct Message: View {
     init() {
-        let appID = "B63A605C-5AA3-4540-A296-83CAFB32E557"
-        SendbirdUI.initialize(applicationId: appID) { (error) in
-            print("Sendbird Init: Initialization Error \(String(describing: error))")
-        }
         SBUGlobals.currentUser = SBUUser(userId: "Test")
         SendbirdUI.connect { (user, error) in
             guard user != nil else {
@@ -53,8 +49,7 @@ struct ChannelListViewContainer: UIViewControllerRepresentable {
         return UINavigationController(rootViewController: ChannelListViewController())
     }
     
-    func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
-    }
+    func updateUIViewController(_ uiViewController: UINavigationController, context: Context) { }
 }
 
 struct MessageView_Previews: PreviewProvider {

@@ -26,6 +26,7 @@ extension FeedForm {
     final class ViewModel: ObservableObject, FeedFormViewModel {
         private let locationAddressRepository: LocationAddressRepository
         private var cancellable: AnyCancellable?
+        private let chatRepository: ChatRepository
         
         @Published var data = [LocalSearch]()
         @Published var pointOfInterest = "" {
@@ -39,21 +40,27 @@ extension FeedForm {
         @Published var limitMember: Int
         @Published var foodCategory: Form.FoodCategory
         
-        init(form: Form, locationAddressRepository: LocationAddressRepository = DefaultLocationAddressRepository()) {
+        init(form: Form,
+             locationAddressRepository: LocationAddressRepository = DefaultLocationAddressRepository(),
+             chatRepository: ChatRepository = DefaultChatRepository()) {
             self.title = form.title
             self.address = form.address
             self.startAt = form.startAt
             self.limitMember = form.limitMember
             self.foodCategory = form.foodCategory
             self.locationAddressRepository = locationAddressRepository
+            self.chatRepository = chatRepository
             self.cancellable = locationAddressRepository.service.searchPublisher.sink { items in
-                print(items)
                 self.data = items.map({ LocalSearch(item: $0) })
             }
         }
         
         func updateUserLocation() {
             locationAddressRepository.updateUserLocation()
+        }
+        
+        func createNewChannel() {
+            chatRepository.createChannel()
         }
         
         private func search(pointOfInterest: String) {

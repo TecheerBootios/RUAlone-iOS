@@ -11,9 +11,9 @@ import MapKit
 
 import os
 
-private let logger = Logger(subsystem: "com.seanhong.KKodiac.Techeer-RUAlone", category: "LocationServie")
+private let logger = Logger(subsystem: "com.seanhong.KKodiac.Techeer-RUAlone", category: "LocationService")
 
-class LocationService: NSObject, ObservableObject {
+final class LocationService: NSObject, ObservableObject {
     private let manager = CLLocationManager()
     let searchPublisher = PassthroughSubject<[MKMapItem], Never>()
     
