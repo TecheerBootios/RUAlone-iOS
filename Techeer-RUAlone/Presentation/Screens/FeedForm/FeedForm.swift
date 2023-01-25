@@ -16,10 +16,15 @@ struct FeedForm: View {
                 VStack {
                     List {
                         titleLocationSection()
+                        Section {
+                            foodCategorySection()
+                            postTypeSelection()
+                            limitMemberSection()
+                        } header: {
+                            Text("Post Settings")
+                        }
                         dateSelectionSection()
-                        limitMemeberSection()
-                        foodCategorySection()
-                    }
+                    }.listStyle(.sidebar)
                     Spacer()
                     Button(action: {
                         print("\($viewModel)")
@@ -82,22 +87,26 @@ extension FeedForm {
         .padding(.all)
     }
     
-    private func limitMemeberSection() -> some View {
-        Section("Persons") {
-            Picker("", selection: $viewModel.limitMember) {
-                ForEach(1...5, id: \.self) {
-                    Text("Person \($0)")
-                }
-            }.pickerStyle(.segmented)
-        }
+    private func postTypeSelection() -> some View {
+        Picker("", selection: $viewModel.postType) {
+            ForEach(Form.PostType.allCases, id: \.self) {
+                Text($0.description)
+            }
+        }.pickerStyle(.segmented)
+    }
+    
+    private func limitMemberSection() -> some View {
+        Picker("", selection: $viewModel.limitMember) {
+            ForEach(1...5, id: \.self) {
+                Text("Person \($0)")
+            }
+        }.pickerStyle(.segmented)
     }
     
     private func foodCategorySection() -> some View {
-        Section("Food Category") {
-            Picker("Food Type", selection: $viewModel.foodCategory) {
-                ForEach(Form.FoodCategory.allCases, id: \.self) { category in
-                    Text(category.description)
-                }
+        Picker("Food Category", selection: $viewModel.foodCategory) {
+            ForEach(Form.FoodCategory.allCases, id: \.self) { category in
+                Text(category.description)
             }
         }
     }

@@ -39,6 +39,7 @@ extension FeedForm {
         @Published var startAt: Date
         @Published var limitMember: Int
         @Published var foodCategory: Form.FoodCategory
+        @Published var postType: Form.PostType
         
         init(form: Form,
              locationAddressRepository: LocationAddressRepository = DefaultLocationAddressRepository(),
@@ -48,6 +49,7 @@ extension FeedForm {
             self.startAt = form.startAt
             self.limitMember = form.limitMember
             self.foodCategory = form.foodCategory
+            self.postType = form.postType
             self.locationAddressRepository = locationAddressRepository
             self.chatRepository = chatRepository
             self.cancellable = locationAddressRepository.service.searchPublisher.sink { items in

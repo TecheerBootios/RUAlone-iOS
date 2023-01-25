@@ -10,17 +10,34 @@ import Foundation
 struct Form: Codable {
     enum CodingKeys: String, CodingKey {
         case title
+        case foodCategory = "FoodCategory"
         case address
         case startAt = "StartAt"
         case limitMember = "LimitMember"
-        case foodCategory = "FoodCategory"
+        case postType = "PostType"
+        case chatURL = "ChatURL"
     }
 
     var title: String = ""
+    var foodCategory: FoodCategory = .korean
+    var postType: PostType = .eatOut
     var address: String = ""
     var startAt: Date = Date()
-    var limitMember: Int = 0
-    var foodCategory: FoodCategory = .korean
+    var limitMember: Int = 1
+    var chatURL: String = ""
+    
+    enum PostType: String, Codable, CaseIterable {
+        case eatOut = "EatOut"
+        case eatIn = "EatIn"
+        var description: String {
+            switch self {
+            case .eatOut:
+                return NSLocalizedString("EatOut", comment: "")
+            case .eatIn:
+                return NSLocalizedString("EatIn", comment: "")
+            }
+        }
+    }
     
     enum FoodCategory: String, CaseIterable, Codable {
         case korean = "Korean"
