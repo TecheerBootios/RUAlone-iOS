@@ -17,7 +17,7 @@ protocol FeedFormViewModelOutput {
     var address: String { get }
     var startAt: Date { get }
     var limitMember: Int { get }
-    var foodCategory: Form.FoodCategory { get }
+    var foodCategory: FormModel.FoodCategory { get }
 }
 
 protocol FeedFormViewModel: FeedFormViewModelInput, FeedFormViewModelOutput { }
@@ -38,10 +38,10 @@ extension FeedForm {
         @Published var address: String
         @Published var startAt: Date
         @Published var limitMember: Int
-        @Published var foodCategory: Form.FoodCategory
-        @Published var postType: Form.PostType
+        @Published var foodCategory: FormModel.FoodCategory
+        @Published var postType: FormModel.PostType
         
-        init(form: Form,
+        init(form: FormModel,
              locationAddressRepository: LocationAddressRepository = DefaultLocationAddressRepository(),
              chatRepository: ChatRepository = DefaultChatRepository()) {
             self.title = form.title

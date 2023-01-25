@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Form: Codable {
+struct FormModel: Codable {
     enum CodingKeys: String, CodingKey {
         case title
         case foodCategory = "FoodCategory"

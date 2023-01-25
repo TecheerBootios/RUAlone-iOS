@@ -31,7 +31,7 @@ struct Feed: View {
             .searchable(text: $searchText, prompt: Text("메뉴를 검색해보세요"))
             .toolbar {
                 NavigationLink(destination: {
-                    FeedForm(viewModel: .init(form: Form()))
+                    FeedForm(viewModel: .init(form: FormModel()))
                 }, label: { Image(systemName: "plus")})
             }
          

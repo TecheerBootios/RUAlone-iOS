@@ -13,6 +13,7 @@ struct FeedForm: View {
     var body: some View {
         NavigationStack {
             ZStack {
+                Color.customOrange.ignoresSafeArea()
                 VStack {
                     List {
                         titleLocationSection()
@@ -24,7 +25,9 @@ struct FeedForm: View {
                             Text("Post Settings")
                         }
                         dateSelectionSection()
-                    }.listStyle(.sidebar)
+                    }
+                    .scrollContentBackground(.hidden)
+                    .listStyle(.sidebar)
                     Spacer()
                     Button(action: {
                         print("\($viewModel)")
@@ -40,9 +43,9 @@ struct FeedForm: View {
                     .buttonStyle(.borderedProminent)
                 }
             }
-            .listStyle(.insetGrouped)
             .headerProminence(.increased)
             .navigationTitle("새로운 글 작성")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar(.hidden, for: .tabBar)
         }.onAppear {
             viewModel.updateUserLocation()
@@ -89,7 +92,7 @@ extension FeedForm {
     
     private func postTypeSelection() -> some View {
         Picker("", selection: $viewModel.postType) {
-            ForEach(Form.PostType.allCases, id: \.self) {
+            ForEach(FormModel.PostType.allCases, id: \.self) {
                 Text($0.description)
             }
         }.pickerStyle(.segmented)
@@ -105,7 +108,7 @@ extension FeedForm {
     
     private func foodCategorySection() -> some View {
         Picker("Food Category", selection: $viewModel.foodCategory) {
-            ForEach(Form.FoodCategory.allCases, id: \.self) { category in
+            ForEach(FormModel.FoodCategory.allCases, id: \.self) { category in
                 Text(category.description)
             }
         }
@@ -121,7 +124,7 @@ extension FeedForm {
 
 struct FeedFormView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedForm(viewModel: .init(form: Form()))
+        FeedForm(viewModel: .init(form: FormModel()))
             .environment(\.locale, .init(identifier: "ko"))
     }
 }
