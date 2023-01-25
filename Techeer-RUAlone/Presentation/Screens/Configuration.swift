@@ -22,7 +22,23 @@ struct Configuration {
     
     static func setUp() {
         SendbirdUI.initialize(applicationId: Constant.appID) { (error) in
-            logger.error("Sendbird Init: Initialization Error \(String(describing: error))")
+            guard error != nil else {
+                logger.error("Sendbird Init: Initialization Error \(String(describing: error))")
+                return
+            }
+        }
+        SBUGlobals.currentUser = SBUUser(userId: "TestA")
+        SendbirdUI.connect { (user, error) in
+            guard user != nil else {
+                logger.error("[SendbirdUI] Connect: User offline and No local cache.")
+                return
+            }
+            if error != nil {
+                logger.error("[SendbirdUI] Connect: The user is offline.")
+            }
+            else {
+                logger.log("[SendbirdUI] Connect: User connected \(user)")
+            }
         }
         KakaoSDK.initSDK(appKey: Constant.appKey)
     }

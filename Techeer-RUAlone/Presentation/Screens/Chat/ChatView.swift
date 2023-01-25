@@ -16,13 +16,6 @@ struct ChatView: View {
     let channelURL: String
     
     init(channelURL: String) {
-        SBUGlobals.currentUser = SBUUser(userId: "Test")
-        SendbirdUI.connect { (user, error) in
-            guard user != nil else {
-                logger.error("Sendbird Init: Connection Error \(String(describing: error))")
-                return
-            }
-        }
         self.channelURL = channelURL
     }
     var body: some View {

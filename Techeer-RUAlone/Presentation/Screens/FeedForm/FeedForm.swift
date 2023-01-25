@@ -30,7 +30,7 @@ struct FeedForm: View {
                     .listStyle(.sidebar)
                     Spacer()
                     Button(action: {
-                        print("\($viewModel)")
+                        viewModel.createNewChannel()
                     }, label: {
                         HStack {
                             Spacer()

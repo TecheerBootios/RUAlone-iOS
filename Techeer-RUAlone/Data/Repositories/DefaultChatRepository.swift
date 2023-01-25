@@ -13,7 +13,7 @@ final class DefaultChatRepository {
 
 extension DefaultChatRepository: ChatRepository {
     func createChannel() {
-        service.createChat(name: "", users: [])
+        service.createChat(name: "TestChannel", users: [])
     }
     
     func deleteChannel() {

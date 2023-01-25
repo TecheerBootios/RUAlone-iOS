@@ -5,7 +5,6 @@
 //  Created by Sean Hong on 2023/01/25.
 //
 
-import SendbirdUIKit
 import SendbirdChatSDK
 import SwiftUI
 
@@ -38,6 +37,3 @@ final class ChatService: NSObject, ObservableObject {
         }
     }
 }
-
-
-
