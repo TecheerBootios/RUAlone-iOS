@@ -7,7 +7,7 @@ iOS repository for RUAlone @ Techeer: Team Bootios
 <br />
 <p align="center">
   <a href="https://github.com/alexanderritik/Best-README-Template">
-    <img src="logo.jpeg" alt="Logo" width="80" height="80">
+
   </a>
   <p align="center">
     혼밥러들을 함께 밥 먹을 친구와 이어주는 앱
