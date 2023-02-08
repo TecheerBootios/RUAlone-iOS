@@ -18,26 +18,40 @@ struct HorizontalRectangle: View {
     private let shadowArea: CGFloat = 5
     
     var body: some View {
-        RoundedRectangle(cornerRadius: radius)
-            .fill(rectangleColor)
-            .overlay {
-                VStack(alignment: .leading) {
-                    Text(contentText)
-                        .font(.title2)
-                        .shadow(radius: shadowRadius, x: shadowArea, y: shadowArea)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                    Spacer()
-                    HStack(alignment: .bottom) {
-                        Label(capsuleText, systemImage: capsuleImage)
-                            .font(.headline)
-                            .fontWeight(.heavy)
-                            .foregroundColor(.black)
-                            .padding()
-                            .background(in: Capsule())
-                        Spacer()
+        ZStack {
+            RoundedRectangle(cornerRadius: radius)
+                .fill(rectangleColor)
+                .overlay {
+                    ZStack {
+                        VStack(alignment: .leading) {
+                            Text(contentText)
+                                .font(.title2)
+                                .shadow(radius: shadowRadius, x: shadowArea, y: shadowArea)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                            Spacer()
+                            HStack(alignment: .bottom) {
+                                Label(capsuleText, systemImage: capsuleImage)
+                                    .font(.headline)
+                                    .fontWeight(.heavy)
+                                    .foregroundColor(.black)
+                                    .padding()
+                                    .background(in: Capsule())
+                                Spacer()
+                            }
+                        }.padding()
                     }
-                }.padding()
-            }
+                }
+        }
+        
+    }
+}
+
+struct Preview: PreviewProvider {
+    static var previews: some View {
+        HorizontalRectangle(contentText: "WelcomeMessage",
+                            rectangleColor: .customPurple,
+                            capsuleText: "TodaysGathering",
+                            capsuleImage: "person")
     }
 }

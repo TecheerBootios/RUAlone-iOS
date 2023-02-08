@@ -7,7 +7,14 @@
 
 import Foundation
 import Security
+
+import KakaoSDKCommon
 import KakaoSDKAuth
+import KakaoSDKUser
+
+import os
+
+private let logger = Logger.init(subsystem: "com.techeer.KKodiac.Techeer-RUAlone", category: "KeyChain")
 
 final class KeyChainService {
     static let shared = KeyChainService()
@@ -19,8 +26,8 @@ final class KeyChainService {
     private lazy var query: [CFString: Any]? = {
         guard let service = self.service else { return nil }
         return [kSecClass: kSecClassGenericPassword,
-                kSecAttrService: service,
-                kSecAttrAccount: account]
+          kSecAttrService: service,
+          kSecAttrAccount: account]
     }()
     
     func createToken(_ token: String) -> Bool {
@@ -40,9 +47,9 @@ final class KeyChainService {
         let query: [CFString: Any] = [kSecClass: kSecClassGenericPassword,
                                 kSecAttrService: service,
                                 kSecAttrAccount: account,
-                                kSecMatchLimit: kSecMatchLimitOne,
-                                kSecReturnAttributes: true,
-                                kSecReturnData: true]
+                                 kSecMatchLimit: kSecMatchLimitOne,
+                           kSecReturnAttributes: true,
+                                 kSecReturnData: true]
         
         var item: CFTypeRef?
         if SecItemCopyMatching(query as CFDictionary, &item) != errSecSuccess { return nil }
@@ -67,5 +74,24 @@ final class KeyChainService {
     func deleteToken() -> Bool {
         guard let query = self.query else { return false }
         return SecItemDelete(query as CFDictionary) == errSecSuccess
+    }
+    
+    func requiresLogin() -> Bool {
+        var isRequired: Bool = false
+        if AuthApi.hasToken() {
+            UserApi.shared.accessTokenInfo { (_, error) in
+                if let error = error {
+                    if let sdkError = error as? SdkError, sdkError.isInvalidTokenError() == true {
+                        isRequired = true
+                    } else {
+                        logger.error("\(error.localizedDescription)")
+                    }
+                }
+            }
+        } else {
+            isRequired = true
+        }
+        
+        return isRequired
     }
 }
