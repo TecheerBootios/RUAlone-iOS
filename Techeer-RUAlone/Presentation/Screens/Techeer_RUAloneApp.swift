@@ -11,11 +11,16 @@ import SwiftUI
 struct Techeer_RUAloneApp: App {
     init() {
         Configuration.setUp()
+            
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if KeyChainService.shared.requiresLogin() {
+                Login()
+            } else {
+                ContentView()
+            }
         }
     }
 }

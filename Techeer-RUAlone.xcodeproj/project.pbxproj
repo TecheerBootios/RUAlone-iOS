@@ -32,6 +32,9 @@
 		0B29ED0F294B080B00A2D8FA /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29ED0E294B080B00A2D8FA /* View+Extension.swift */; };
 		0B29ED11294B185800A2D8FA /* DetailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29ED10294B185800A2D8FA /* DetailRowView.swift */; };
 		0B4833DA297C52D900730E97 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4833D9297C52D900730E97 /* FormModel.swift */; };
+		0B6EA2FE2992428900A329C6 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0B6EA2FD2992428900A329C6 /* Lottie */; };
+		0B6EA3012992430100A329C6 /* Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EA3002992430100A329C6 /* Lottie.swift */; };
+		0B6EA3032992479000A329C6 /* food-carousel.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EA3022992479000A329C6 /* food-carousel.json */; };
 		0B80C68A2980144D00E72AFF /* FeedDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B80C6892980144D00E72AFF /* FeedDetailModel.swift */; };
 		0B80C691298015EB00E72AFF /* Feed+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B80C690298015EB00E72AFF /* Feed+Stub.swift */; };
 		0B80C69329803CDE00E72AFF /* FeedDetail+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B80C69229803CDE00E72AFF /* FeedDetail+Stub.swift */; };
@@ -99,6 +102,8 @@
 		0B29ED10294B185800A2D8FA /* DetailRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRowView.swift; sourceTree = "<group>"; };
 		0B4833D8297C500A00730E97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0B4833D9297C52D900730E97 /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
+		0B6EA3002992430100A329C6 /* Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottie.swift; sourceTree = "<group>"; };
+		0B6EA3022992479000A329C6 /* food-carousel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "food-carousel.json"; sourceTree = "<group>"; };
 		0B80C6892980144D00E72AFF /* FeedDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailModel.swift; sourceTree = "<group>"; };
 		0B80C690298015EB00E72AFF /* Feed+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Feed+Stub.swift"; sourceTree = "<group>"; };
 		0B80C69229803CDE00E72AFF /* FeedDetail+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedDetail+Stub.swift"; sourceTree = "<group>"; };
@@ -132,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B0682B129421D5200E5D648 /* SendbirdUIKit in Frameworks */,
+				0B6EA2FE2992428900A329C6 /* Lottie in Frameworks */,
 				0B0682AE29421CEE00E5D648 /* Alamofire in Frameworks */,
 				0431FAC6295AE38F0026CD8F /* KakaoSDKUser in Frameworks */,
 				0431FAC0295AE38F0026CD8F /* KakaoSDK in Frameworks */,
@@ -218,6 +224,22 @@
 			path = "Techeer-RUAloneUITests";
 			sourceTree = "<group>";
 		};
+		0B6EA2FF299242F100A329C6 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				0B6EA3002992430100A329C6 /* Lottie.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		0B6EA304299247A700A329C6 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				0B6EA3022992479000A329C6 /* food-carousel.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		0B80C68F2980149700E72AFF /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +293,8 @@
 		0BA035332973115100BF8EA1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0B6EA304299247A700A329C6 /* Animations */,
+				0B6EA2FF299242F100A329C6 /* Modifiers */,
 				0BA03515296C42D900BF8EA1 /* Extension */,
 				0BA03529296DD88B00BF8EA1 /* Localizable.strings */,
 				0BA0352F296E7DE500BF8EA1 /* Localizable.stringsdict */,
@@ -466,6 +490,7 @@
 				0431FAC1295AE38F0026CD8F /* KakaoSDKAuth */,
 				0431FAC3295AE38F0026CD8F /* KakaoSDKCommon */,
 				0431FAC5295AE38F0026CD8F /* KakaoSDKUser */,
+				0B6EA2FD2992428900A329C6 /* Lottie */,
 			);
 			productName = "Techeer-RUAlone";
 			productReference = 0B06822229370AC000E5D648 /* Techeer-RUAlone.app */;
@@ -544,6 +569,7 @@
 				0B0682AC29421CEE00E5D648 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				0B0682AF29421D5200E5D648 /* XCRemoteSwiftPackageReference "sendbird-uikit-ios-spm" */,
 				0431FABE295AE38F0026CD8F /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+				0B6EA2FC2992428900A329C6 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = 0B06822329370AC000E5D648 /* Products */;
 			projectDirPath = "";
@@ -565,6 +591,7 @@
 				0477E96F2959EDB000B9870F /* .swiftlint.yml in Resources */,
 				0B0682B72944CA4800E5D648 /* Colors.xcassets in Resources */,
 				0B06822D29370AC200E5D648 /* Preview Assets.xcassets in Resources */,
+				0B6EA3032992479000A329C6 /* food-carousel.json in Resources */,
 				0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */,
 				0BA03530296E7DE500BF8EA1 /* Localizable.stringsdict in Resources */,
 			);
@@ -617,6 +644,7 @@
 				0BCCC0DB295C34B6002883AC /* FeedDetail.swift in Sources */,
 				0B29ED11294B185800A2D8FA /* DetailRowView.swift in Sources */,
 				0BD8D322297C060300F72BF9 /* UseCase.swift in Sources */,
+				0B6EA3012992430100A329C6 /* Lottie.swift in Sources */,
 				0BA03524296D419900BF8EA1 /* FeedFormViewModel.swift in Sources */,
 				0B0682B92944CB0D00E5D648 /* Color+Extensions.swift in Sources */,
 				0B0682B32944C7CC00E5D648 /* Home.swift in Sources */,
@@ -1018,6 +1046,14 @@
 				kind = branch;
 			};
 		};
+		0B6EA2FC2992428900A329C6 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1050,6 +1086,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0B0682AF29421D5200E5D648 /* XCRemoteSwiftPackageReference "sendbird-uikit-ios-spm" */;
 			productName = SendbirdUIKit;
+		};
+		0B6EA2FD2992428900A329C6 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B6EA2FC2992428900A329C6 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
