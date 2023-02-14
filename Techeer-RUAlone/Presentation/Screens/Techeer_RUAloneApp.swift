@@ -8,10 +8,9 @@
 import SwiftUI
 
 @main
-struct Techeer_RUAloneApp: App {
+struct RUAloneApp: App {
     init() {
         Configuration.setUp()
-            
     }
     
     var body: some Scene {

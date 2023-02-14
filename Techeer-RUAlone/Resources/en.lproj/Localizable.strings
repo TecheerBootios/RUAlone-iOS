@@ -10,7 +10,7 @@
 "Home" = "Home";
 "Post" = "Post";
 "Message" = "Message";
-"WelcomeMessage" = "Welcome, %@";
+"WelcomeMessage %@" = "Welcome, %@";
 "TodaysGathering" = "Today's Gatherings";
 "FindFriend" = "Find a new Friend!";
 "GatherFriend" = "Gather a new group of Friends!";
@@ -42,3 +42,7 @@
 "Post Settings" = "Post Settings";
 "EatIn" = "Eat In";
 "EatOut" = "Eat Out";
+"Activity" = "Monthly Gatherings";
+"Average Time" = "Average Time Spent";
+"Book Keeping" = "Spendings";
+"Time Spent" = "Time Spent on Gatherings(min)";

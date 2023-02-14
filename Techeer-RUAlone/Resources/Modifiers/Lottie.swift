@@ -6,7 +6,7 @@
 //
 import SwiftUI
 import Lottie
- 
+
 struct LottieView: UIViewRepresentable {
     let lottieFile: String
     let contentMode: UIView.ContentMode

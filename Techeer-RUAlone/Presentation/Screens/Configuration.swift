@@ -35,8 +35,7 @@ struct Configuration {
             }
             if error != nil {
                 logger.error("[SendbirdUI] Connect: The user is offline.")
-            }
-            else {
+            } else {
                 logger.log("[SendbirdUI] Connect: User connected \(user)")
             }
         }

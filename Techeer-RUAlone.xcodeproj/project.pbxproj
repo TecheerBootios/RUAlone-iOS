@@ -13,7 +13,6 @@
 		0431FAC2295AE38F0026CD8F /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0431FAC1295AE38F0026CD8F /* KakaoSDKAuth */; };
 		0431FAC4295AE38F0026CD8F /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 0431FAC3295AE38F0026CD8F /* KakaoSDKCommon */; };
 		0431FAC6295AE38F0026CD8F /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 0431FAC5295AE38F0026CD8F /* KakaoSDKUser */; };
-		0477E96F2959EDB000B9870F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0477E96E2959EDB000B9870F /* .swiftlint.yml */; };
 		0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */; };
 		0B06822829370AC000E5D648 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822729370AC000E5D648 /* ContentView.swift */; };
 		0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B06822929370AC200E5D648 /* Assets.xcassets */; };
@@ -24,11 +23,13 @@
 		0B0682AE29421CEE00E5D648 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0682AD29421CEE00E5D648 /* Alamofire */; };
 		0B0682B129421D5200E5D648 /* SendbirdUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0682B029421D5200E5D648 /* SendbirdUIKit */; };
 		0B0682B32944C7CC00E5D648 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682B22944C7CC00E5D648 /* Home.swift */; };
-		0B0682B52944C8BF00E5D648 /* HorizontalRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682B42944C8BF00E5D648 /* HorizontalRectangle.swift */; };
+		0B0682B52944C8BF00E5D648 /* ActivityRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682B42944C8BF00E5D648 /* ActivityRectangle.swift */; };
 		0B0682B72944CA4800E5D648 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B0682B62944CA4800E5D648 /* Colors.xcassets */; };
 		0B0682B92944CB0D00E5D648 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682B82944CB0D00E5D648 /* Color+Extensions.swift */; };
 		0B0682BB2944D1AE00E5D648 /* VerticalRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682BA2944D1AE00E5D648 /* VerticalRectangle.swift */; };
 		0B0682BF2945AC3B00E5D648 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682BE2945AC3B00E5D648 /* Feed.swift */; };
+		0B0EE858299A148400114F45 /* SwiftPieChart in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0EE857299A148400114F45 /* SwiftPieChart */; };
+		0B0EE85B299A30BE00114F45 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0EE85A299A30BE00114F45 /* FSCalendar */; };
 		0B29ED0F294B080B00A2D8FA /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29ED0E294B080B00A2D8FA /* View+Extension.swift */; };
 		0B29ED11294B185800A2D8FA /* DetailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29ED10294B185800A2D8FA /* DetailRowView.swift */; };
 		0B4833DA297C52D900730E97 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4833D9297C52D900730E97 /* FormModel.swift */; };
@@ -45,6 +46,12 @@
 		0B80C6A229808C4600E72AFF /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B80C6A129808C4600E72AFF /* ChatService.swift */; };
 		0B80C6A429809B9100E72AFF /* DefaultChatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B80C6A329809B9100E72AFF /* DefaultChatRepository.swift */; };
 		0B80C6A629809BBD00E72AFF /* ChatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B80C6A529809BBD00E72AFF /* ChatRepository.swift */; };
+		0B8CE81C2995240A009ED5DD /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0B8CE81B2995240A009ED5DD /* .swiftlint.yml */; };
+		0B8CE81E2999C9B0009ED5DD /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CE81D2999C9B0009ED5DD /* GraphView.swift */; };
+		0B8CE8202999C9E2009ED5DD /* Chart+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CE81F2999C9E2009ED5DD /* Chart+Stub.swift */; };
+		0B8CE8222999CA0E009ED5DD /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CE8212999CA0E009ED5DD /* ChartModel.swift */; };
+		0B8CE8242999DF96009ED5DD /* HomeRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CE8232999DF96009ED5DD /* HomeRectangle.swift */; };
+		0B8CE8262999F218009ED5DD /* GraphCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CE8252999F218009ED5DD /* GraphCapsule.swift */; };
 		0BA03510296C302F00BF8EA1 /* FeedForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0350F296C302F00BF8EA1 /* FeedForm.swift */; };
 		0BA0351C296C44C400BF8EA1 /* LocalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0351B296C44C400BF8EA1 /* LocalSearch.swift */; };
 		0BA03524296D419900BF8EA1 /* FeedFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA03523296D419900BF8EA1 /* FeedFormViewModel.swift */; };
@@ -81,7 +88,6 @@
 /* Begin PBXFileReference section */
 		042A830C2950CB43001F3FE0 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; usesTabs = 0; };
 		042A83102950E96B001F3FE0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		0477E96E2959EDB000B9870F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0B06822229370AC000E5D648 /* Techeer-RUAlone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Techeer-RUAlone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneApp.swift; sourceTree = "<group>"; };
 		0B06822729370AC000E5D648 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,14 +99,14 @@
 		0B06824029370AC300E5D648 /* Techeer_RUAloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneUITests.swift; sourceTree = "<group>"; };
 		0B06824229370AC300E5D648 /* Techeer_RUAloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0B0682B22944C7CC00E5D648 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		0B0682B42944C8BF00E5D648 /* HorizontalRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalRectangle.swift; sourceTree = "<group>"; };
+		0B0682B42944C8BF00E5D648 /* ActivityRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRectangle.swift; sourceTree = "<group>"; };
 		0B0682B62944CA4800E5D648 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0B0682B82944CB0D00E5D648 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		0B0682BA2944D1AE00E5D648 /* VerticalRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalRectangle.swift; sourceTree = "<group>"; };
 		0B0682BE2945AC3B00E5D648 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		0B0EE853299A13F700114F45 /* SwiftPieChart */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftPieChart; path = ../../SwiftPieChart; sourceTree = "<group>"; };
 		0B29ED0E294B080B00A2D8FA /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		0B29ED10294B185800A2D8FA /* DetailRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRowView.swift; sourceTree = "<group>"; };
-		0B4833D8297C500A00730E97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0B4833D9297C52D900730E97 /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
 		0B6EA3002992430100A329C6 /* Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottie.swift; sourceTree = "<group>"; };
 		0B6EA3022992479000A329C6 /* food-carousel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "food-carousel.json"; sourceTree = "<group>"; };
@@ -114,6 +120,12 @@
 		0B80C6A129808C4600E72AFF /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		0B80C6A329809B9100E72AFF /* DefaultChatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultChatRepository.swift; sourceTree = "<group>"; };
 		0B80C6A529809BBD00E72AFF /* ChatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRepository.swift; sourceTree = "<group>"; };
+		0B8CE81B2995240A009ED5DD /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		0B8CE81D2999C9B0009ED5DD /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		0B8CE81F2999C9E2009ED5DD /* Chart+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chart+Stub.swift"; sourceTree = "<group>"; };
+		0B8CE8212999CA0E009ED5DD /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
+		0B8CE8232999DF96009ED5DD /* HomeRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRectangle.swift; sourceTree = "<group>"; };
+		0B8CE8252999F218009ED5DD /* GraphCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCapsule.swift; sourceTree = "<group>"; };
 		0BA0350F296C302F00BF8EA1 /* FeedForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedForm.swift; sourceTree = "<group>"; };
 		0BA0351B296C44C400BF8EA1 /* LocalSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearch.swift; sourceTree = "<group>"; };
 		0BA03523296D419900BF8EA1 /* FeedFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFormViewModel.swift; sourceTree = "<group>"; };
@@ -138,7 +150,9 @@
 			files = (
 				0B0682B129421D5200E5D648 /* SendbirdUIKit in Frameworks */,
 				0B6EA2FE2992428900A329C6 /* Lottie in Frameworks */,
+				0B0EE858299A148400114F45 /* SwiftPieChart in Frameworks */,
 				0B0682AE29421CEE00E5D648 /* Alamofire in Frameworks */,
+				0B0EE85B299A30BE00114F45 /* FSCalendar in Frameworks */,
 				0431FAC6295AE38F0026CD8F /* KakaoSDKUser in Frameworks */,
 				0431FAC0295AE38F0026CD8F /* KakaoSDK in Frameworks */,
 				0431FAC4295AE38F0026CD8F /* KakaoSDKCommon in Frameworks */,
@@ -166,11 +180,13 @@
 		0B06821929370AC000E5D648 = {
 			isa = PBXGroup;
 			children = (
-				0477E96E2959EDB000B9870F /* .swiftlint.yml */,
+				0B0EE84F299A12FB00114F45 /* Packages */,
+				0B8CE81B2995240A009ED5DD /* .swiftlint.yml */,
 				0B06822429370AC000E5D648 /* Techeer-RUAlone */,
 				0B06823529370AC300E5D648 /* Techeer-RUAloneTests */,
 				0B06823F29370AC300E5D648 /* Techeer-RUAloneUITests */,
 				0B06822329370AC000E5D648 /* Products */,
+				0B0EE854299A146200114F45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,7 +203,6 @@
 		0B06822429370AC000E5D648 /* Techeer-RUAlone */ = {
 			isa = PBXGroup;
 			children = (
-				0B4833D8297C500A00730E97 /* Info.plist */,
 				0B80C68F2980149700E72AFF /* Mocks */,
 				0BD8D323297C0E8400F72BF9 /* Service */,
 				0BD8D312297BCA7200F72BF9 /* Data */,
@@ -224,6 +239,21 @@
 			path = "Techeer-RUAloneUITests";
 			sourceTree = "<group>";
 		};
+		0B0EE84F299A12FB00114F45 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				0B0EE853299A13F700114F45 /* SwiftPieChart */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		0B0EE854299A146200114F45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0B6EA2FF299242F100A329C6 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +275,7 @@
 			children = (
 				0B80C690298015EB00E72AFF /* Feed+Stub.swift */,
 				0B80C69229803CDE00E72AFF /* FeedDetail+Stub.swift */,
+				0B8CE81F2999C9E2009ED5DD /* Chart+Stub.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -335,9 +366,12 @@
 		0BD8D313297BCAC300F72BF9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				0B0682B42944C8BF00E5D648 /* HorizontalRectangle.swift */,
+				0B0682B42944C8BF00E5D648 /* ActivityRectangle.swift */,
 				0B0682BA2944D1AE00E5D648 /* VerticalRectangle.swift */,
 				0B29ED10294B185800A2D8FA /* DetailRowView.swift */,
+				0B8CE81D2999C9B0009ED5DD /* GraphView.swift */,
+				0B8CE8232999DF96009ED5DD /* HomeRectangle.swift */,
+				0B8CE8252999F218009ED5DD /* GraphCapsule.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -409,6 +443,7 @@
 				0B4833D9297C52D900730E97 /* FormModel.swift */,
 				0B80C6892980144D00E72AFF /* FeedDetailModel.swift */,
 				0BA03531296E82B000BF8EA1 /* FeedModel.swift */,
+				0B8CE8212999CA0E009ED5DD /* ChartModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -491,6 +526,8 @@
 				0431FAC3295AE38F0026CD8F /* KakaoSDKCommon */,
 				0431FAC5295AE38F0026CD8F /* KakaoSDKUser */,
 				0B6EA2FD2992428900A329C6 /* Lottie */,
+				0B0EE857299A148400114F45 /* SwiftPieChart */,
+				0B0EE85A299A30BE00114F45 /* FSCalendar */,
 			);
 			productName = "Techeer-RUAlone";
 			productReference = 0B06822229370AC000E5D648 /* Techeer-RUAlone.app */;
@@ -540,7 +577,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					0B06822129370AC000E5D648 = {
 						CreatedOnToolsVersion = 14.1;
@@ -570,6 +607,7 @@
 				0B0682AF29421D5200E5D648 /* XCRemoteSwiftPackageReference "sendbird-uikit-ios-spm" */,
 				0431FABE295AE38F0026CD8F /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 				0B6EA2FC2992428900A329C6 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				0B0EE859299A30BE00114F45 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 0B06822329370AC000E5D648 /* Products */;
 			projectDirPath = "";
@@ -588,9 +626,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BA03527296DD88B00BF8EA1 /* Localizable.strings in Resources */,
-				0477E96F2959EDB000B9870F /* .swiftlint.yml in Resources */,
 				0B0682B72944CA4800E5D648 /* Colors.xcassets in Resources */,
 				0B06822D29370AC200E5D648 /* Preview Assets.xcassets in Resources */,
+				0B8CE81C2995240A009ED5DD /* .swiftlint.yml in Resources */,
 				0B6EA3032992479000A329C6 /* food-carousel.json in Resources */,
 				0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */,
 				0BA03530296E7DE500BF8EA1 /* Localizable.stringsdict in Resources */,
@@ -616,7 +654,8 @@
 /* Begin PBXShellScriptBuildPhase section */
 		0B0682A92942012900E5D648 /* SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			alwaysOutOfDate = 1;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -628,7 +667,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
@@ -646,16 +685,20 @@
 				0BD8D322297C060300F72BF9 /* UseCase.swift in Sources */,
 				0B6EA3012992430100A329C6 /* Lottie.swift in Sources */,
 				0BA03524296D419900BF8EA1 /* FeedFormViewModel.swift in Sources */,
+				0B8CE8202999C9E2009ED5DD /* Chart+Stub.swift in Sources */,
 				0B0682B92944CB0D00E5D648 /* Color+Extensions.swift in Sources */,
 				0B0682B32944C7CC00E5D648 /* Home.swift in Sources */,
 				0B80C691298015EB00E72AFF /* Feed+Stub.swift in Sources */,
 				0B4833DA297C52D900730E97 /* FormModel.swift in Sources */,
 				042A83112950E96B001F3FE0 /* Message.swift in Sources */,
+				0B8CE81E2999C9B0009ED5DD /* GraphView.swift in Sources */,
 				0B29ED0F294B080B00A2D8FA /* View+Extension.swift in Sources */,
+				0B8CE8242999DF96009ED5DD /* HomeRectangle.swift in Sources */,
 				0B80C69729806FEE00E72AFF /* CoreDataStorage.swift in Sources */,
 				0BC4235729599A0C00188283 /* ChatView.swift in Sources */,
 				0BA03510296C302F00BF8EA1 /* FeedForm.swift in Sources */,
 				0B80C6A429809B9100E72AFF /* DefaultChatRepository.swift in Sources */,
+				0B8CE8262999F218009ED5DD /* GraphCapsule.swift in Sources */,
 				0B06822829370AC000E5D648 /* ContentView.swift in Sources */,
 				0B0682BB2944D1AE00E5D648 /* VerticalRectangle.swift in Sources */,
 				0B0682BF2945AC3B00E5D648 /* Feed.swift in Sources */,
@@ -663,6 +706,7 @@
 				0B80C6A0298085D100E72AFF /* Configuration.swift in Sources */,
 				0BA0351C296C44C400BF8EA1 /* LocalSearch.swift in Sources */,
 				0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */,
+				0B8CE8222999CA0E009ED5DD /* ChartModel.swift in Sources */,
 				0B80C69C2980773B00E72AFF /* LoginViewModel.swift in Sources */,
 				0BD8D325297C0EA000F72BF9 /* LocationService.swift in Sources */,
 				0BA03532296E82B000BF8EA1 /* FeedModel.swift in Sources */,
@@ -673,7 +717,7 @@
 				0B80C6A229808C4600E72AFF /* ChatService.swift in Sources */,
 				0B80C6A629809BBD00E72AFF /* ChatRepository.swift in Sources */,
 				042A830D2950CB43001F3FE0 /* Login.swift in Sources */,
-				0B0682B52944C8BF00E5D648 /* HorizontalRectangle.swift in Sources */,
+				0B0682B52944C8BF00E5D648 /* ActivityRectangle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,6 +770,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -786,6 +831,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -847,7 +893,7 @@
 				DEVELOPMENT_TEAM = LVBMDY357W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Techeer-RUAlone/Info.plist";
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_CFBundleDisplayName = RUAlone;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow access for location tracking during app usage.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -881,7 +927,7 @@
 				DEVELOPMENT_TEAM = LVBMDY357W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Techeer-RUAlone/Info.plist";
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_CFBundleDisplayName = RUAlone;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow access for location tracking during app usage.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1046,6 +1092,14 @@
 				kind = branch;
 			};
 		};
+		0B0EE859299A30BE00114F45 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		0B6EA2FC2992428900A329C6 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
@@ -1086,6 +1140,15 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0B0682AF29421D5200E5D648 /* XCRemoteSwiftPackageReference "sendbird-uikit-ios-spm" */;
 			productName = SendbirdUIKit;
+		};
+		0B0EE857299A148400114F45 /* SwiftPieChart */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftPieChart;
+		};
+		0B0EE85A299A30BE00114F45 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B0EE859299A30BE00114F45 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 		0B6EA2FD2992428900A329C6 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -18,13 +18,12 @@ final class ChatService: NSObject, ObservableObject {
         params.name = name
         params.userIds = users
         params.isDistinct = isDistinct
-        
         GroupChannel.createChannel(params: params) { channel, error in
             guard let channelURL = channel?.channelURL else { return }
             logger.log("\(channelURL.description)")
         }
     }
-    
+
     func deleteChat(_ url: String) {
         GroupChannel.getChannel(url: url) { channel, error in
             guard let channel = channel else { return }

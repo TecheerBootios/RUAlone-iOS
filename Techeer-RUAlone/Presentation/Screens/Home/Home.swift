@@ -12,28 +12,9 @@ struct Home: View {
         NavigationStack {
             GeometryReader { geometry in
                 VStack(spacing: 12) {
-                    HorizontalRectangle(contentText: "WelcomeMessage",
-                                        rectangleColor: .customPurple,
-                                        capsuleText: "TodaysGathering",
-                                        capsuleImage: "person")
-                    .frame(height: geometry.size.height/3.6)
-                    HStack(spacing: 12) {
-                        VerticalRectangle(contentText: "FindFriend",
-                                          rectangleColor: .customGreen,
-                                          circleImage: "person.2.fill",
-                                          circleColor: .customLightGreen,
-                                          iconColor: .customGreen)
-                        VerticalRectangle(contentText: "GatherFriend",
-                                          rectangleColor: .customOrange,
-                                          circleImage: "person.2.wave.2.fill",
-                                          circleColor: .customLightOrange,
-                                          iconColor: .customDarkOrange)
-                    }
-                    HorizontalRectangle(contentText: "RecentGathering",
-                                        rectangleColor: .customBlue,
-                                        capsuleText: "CheckGathering",
-                                        capsuleImage: "note")
-                    .frame(height: geometry.size.height/3.6)
+                    HomeRectangle(rectangleColor: .customWhite)
+                    ActivityRectangle(rectangleColor: .customBlue)
+                        .frame(height: geometry.size.height/3)
                 }
             }
             .padding()
