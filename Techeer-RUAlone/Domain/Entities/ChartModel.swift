@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct ActivityStat: Identifiable, Hashable {
     var id = UUID()
@@ -20,4 +21,11 @@ struct FoodStat: Identifiable, Hashable {
     let minutes: Int
     let money: Int
     let date: Date
+}
+
+struct SpendingStat: Identifiable, Hashable {
+    var id = UUID()
+    let values: [Double]
+    let category: [String]
+    let colors: [Color]
 }

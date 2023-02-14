@@ -38,7 +38,7 @@ private extension FeedDetail {
                     uploadTimeView()
                     joinButtonView()
                 }.padding([.top, .leading, .trailing])
-                    
+                
                 List {
                     basicInfoSectionView()
                     routeInfoSectionView()

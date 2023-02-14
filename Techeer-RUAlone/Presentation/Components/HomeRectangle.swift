@@ -58,16 +58,16 @@ struct HomeRectangle: View {
     struct CalendarView: View {
         @Binding var isSelectedEventDate: Bool
         @Binding var selectedDate: Date
-
+        
         var body: some View {
-                  CalendarViewRepresentable(selectedDate: $selectedDate, isSelectedEventDate: $isSelectedEventDate)
-                    .ignoresSafeArea()
+            CalendarViewRepresentable(selectedDate: $selectedDate, isSelectedEventDate: $isSelectedEventDate)
+                .ignoresSafeArea()
         }
     }
-
+    
     struct CalendarViewRepresentable: UIViewRepresentable {
         typealias UIViewType = FSCalendar
-
+        
         fileprivate var calendar = FSCalendar()
         @Binding var selectedDate: Date
         @Binding var isSelectedEventDate: Bool
@@ -77,13 +77,13 @@ struct HomeRectangle: View {
                           Date.now.addingTimeInterval(100000),
                           Date.now.addingTimeInterval(-600000),
                           Date.now.addingTimeInterval(-200000)]
-
+        
         func makeUIView(context: Context) -> FSCalendar {
             calendar.delegate = context.coordinator
             calendar.dataSource = context.coordinator
             calendar.appearance.todayColor = UIColor(displayP3Red: 0,
-                                                      green: 0,
-                                                      blue: 0, alpha: 0)
+                                                     green: 0,
+                                                     blue: 0, alpha: 0)
             calendar.appearance.titleTodayColor = .black
             calendar.appearance.selectionColor = .orange
             calendar.appearance.eventDefaultColor = .red
@@ -92,30 +92,30 @@ struct HomeRectangle: View {
             calendar.appearance.titleWeekendColor = .systemOrange
             calendar.appearance.headerMinimumDissolvedAlpha = 0.12
             calendar.appearance.headerTitleFont = .systemFont(
-                                                    ofSize: 20,
-                                                    weight: .black)
+                ofSize: 20,
+                weight: .black)
             calendar.appearance.headerTitleColor = .darkGray
             calendar.appearance.headerDateFormat = "MMMM"
             calendar.scrollDirection = .vertical
             calendar.scope = .month
             calendar.clipsToBounds = true
-
+            
             return calendar
         }
-
+        
         func updateUIView(_ uiView: FSCalendar, context: Context) {}
-
+        
         func makeCoordinator() -> Coordinator {
             Coordinator(self)
         }
-
+        
         class Coordinator: NSObject, FSCalendarDelegate, FSCalendarDataSource {
             var parent: CalendarViewRepresentable
-
+            
             init(_ parent: CalendarViewRepresentable) {
                 self.parent = parent
             }
-
+            
             func calendar(_ calendar: FSCalendar,
                           didSelect date: Date,
                           at monthPosition: FSCalendarMonthPosition) {
@@ -124,7 +124,7 @@ struct HomeRectangle: View {
                     parent.isSelectedEventDate.toggle()
                 }
             }
-
+            
             func calendar(_ calendar: FSCalendar,
                           numberOfEventsFor date: Date) -> Int {
                 let eventDates = parent.eventDates
@@ -132,8 +132,8 @@ struct HomeRectangle: View {
                 var eventCount = 0
                 eventDates.forEach { eventDate in
                     if eventDate.formatted(date: .complete,
-                                  time: .omitted) == date.formatted(
-                                    date: .complete, time: .omitted){
+                                           time: .omitted) == date.formatted(
+                                            date: .complete, time: .omitted){
                         eventCount += 1;
                     }
                 }
@@ -151,7 +151,7 @@ struct HomeRectangle: View {
             func maximumDate(for calendar: FSCalendar) -> Date {
                 Date.now.addingTimeInterval(86400 * 30)
             }
-
+            
             func minimumDate(for calendar: FSCalendar) -> Date {
                 Date.now.addingTimeInterval(-86400 * 30)
             }

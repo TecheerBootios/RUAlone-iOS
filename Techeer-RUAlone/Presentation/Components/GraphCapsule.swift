@@ -15,15 +15,15 @@ struct GraphCapsule: View, Equatable {
     var height: CGFloat
     var range: Range<Double>
     var overallRange: Range<Double>
-
+    
     var heightRatio: CGFloat {
         max(CGFloat(magnitude(of: range) / magnitude(of: overallRange)), 0.15)
     }
-
+    
     var offsetRatio: CGFloat {
         CGFloat((range.lowerBound - overallRange.lowerBound) / magnitude(of: overallRange))
     }
-
+    
     var body: some View {
         Capsule()
             .fill(color)
@@ -37,7 +37,7 @@ func magnitude(of range: Range<Double>) -> Double {
 }
 
 func rangeOfRanges<C: Collection>(_ ranges: C) -> Range<Double>
-    where C.Element == Range<Double> {
+where C.Element == Range<Double> {
     guard !ranges.isEmpty else { return 0..<0 }
     let low = ranges.lazy.map { $0.lowerBound }.min()!
     let high = ranges.lazy.map { $0.upperBound }.max()!

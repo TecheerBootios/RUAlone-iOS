@@ -22,7 +22,6 @@ extension ActivityStat {
                 .init(month: "Nov", count: 2),
                 .init(month: "Dec", count: 11)]
     }
-    
 }
 
 extension FoodStat {
@@ -55,5 +54,17 @@ extension FoodStat {
                 .init(category: .korean, restraunt: "이모네 국밥", minutes: 111, money: 2, date: Calendar.autoupdatingCurrent.date(from: DateComponents(year: 2023, month: 2))!),
                 .init(category: .chicken, restraunt: "BBQ", minutes: 127, money: 3, date: Calendar.autoupdatingCurrent.date(from: DateComponents(year: 2023, month: 3))!),
                 .init(category: .chicken, restraunt: "BHC", minutes: 129, money: 5, date: Calendar.autoupdatingCurrent.date(from: DateComponents(year: 2023, month: 4))!)]
+    }
+}
+
+extension SpendingStat {
+    static func stub() -> Self {
+        let category = [FormModel.FoodCategory.chicken, FormModel.FoodCategory.korean,
+                        FormModel.FoodCategory.bunsik, FormModel.FoodCategory.western,
+                        FormModel.FoodCategory.chinese, FormModel.FoodCategory.japanese]
+        
+        return SpendingStat(values: [20000, 32800, 59000, 19800, 40000, 108000],
+                            category: category.map{ $0.rawValue },
+                            colors: [.blue, .green, .orange, .yellow, .brown, .indigo])
     }
 }

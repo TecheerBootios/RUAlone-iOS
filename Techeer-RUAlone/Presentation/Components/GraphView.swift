@@ -39,10 +39,10 @@ struct MoneyChart: View {
                     .foregroundColor(.white)
                     .font(.headline)
                     .bold()
-                PieChartView(values: [20000, 32800, 59000, 19800, 40000, 108000],
-                             names: ["중식", "한식", "분식", "치킨", "양식", "일식"],
+                PieChartView(values: SpendingStat.stub().values,
+                             names: SpendingStat.stub().category,
                              formatter: {value in String(format: "₩%.0f", value)},
-                             colors: [.blue, .green, .orange, .yellow, .brown, .indigo])
+                             colors: SpendingStat.stub().colors)
                 .cornerRadius(20, corners: .allCorners)
             }
             .padding([.top, .trailing, .leading])
@@ -62,14 +62,12 @@ struct TimeChart: View {
                     BarMark(x: .value("Time", data.date), y: .value("Minutes", data.minutes))
                         .foregroundStyle(by: .value("Category", data.category.rawValue))
                 }
-                
             }
             .padding()
             .padding(.bottom)
         }
     }
 }
-
 
 struct GraphView_Previews: PreviewProvider {
     static var previews: some View {
