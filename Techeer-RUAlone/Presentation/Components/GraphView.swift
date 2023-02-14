@@ -45,7 +45,8 @@ struct MoneyChart: View {
                              colors: SpendingStat.stub().colors)
                 .cornerRadius(20, corners: .allCorners)
             }
-            .padding([.top, .trailing, .leading])
+            .padding()
+            .padding(.bottom)
         }
     }
 }

@@ -64,7 +64,7 @@ extension SpendingStat {
                         FormModel.FoodCategory.chinese, FormModel.FoodCategory.japanese]
         
         return SpendingStat(values: [20000, 32800, 59000, 19800, 40000, 108000],
-                            category: category.map{ $0.rawValue },
+                            category: category.map{ $0.description },
                             colors: [.blue, .green, .orange, .yellow, .brown, .indigo])
     }
 }
