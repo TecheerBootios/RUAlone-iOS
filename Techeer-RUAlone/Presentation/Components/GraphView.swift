@@ -10,6 +10,10 @@ import Charts
 import SwiftPieChart
 
 struct GatherChart: View {
+    @State var sampleAnalytics: [ActivityStat] = ActivityStat.stub()
+    
+    @State var didChange: Bool = false
+    
     var body: some View {
         ZStack {
             VStack(alignment: .leading) {
@@ -18,15 +22,42 @@ struct GatherChart: View {
                     .font(.headline)
                     .bold()
                 Chart {
-                    ForEach(ActivityStat.stub(), id: \.self) { activity in
+                    ForEach(sampleAnalytics, id: \.self) { activity in
                         BarMark(x: .value("Meeting", activity.month),
-                                y: .value("Total Count", activity.count))
+                                y: .value("Total Count", activity.base))
                         .foregroundStyle(.blue)
+                        .annotation {
+                            Text("\(activity.count)").font(.caption).fontWeight(.regular).foregroundColor(.white)
+                        }
                     }
                 }
+                .chartYScale(domain: 0...((ActivityStat.stub().max { item1, item2 in
+                    return item2.count > item1.count
+                }?.count ?? 0)+5))
+                .chartYAxis(.hidden)
             }
             .padding()
             .padding(.bottom)
+            .onAppear {
+                didChange.toggle()
+                animateChart(fromChange: didChange)
+            }
+        }
+    }
+    
+    func animateChart(fromChange: Bool = false) {
+        for (index, _) in sampleAnalytics.enumerated() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * (fromChange ? 0.04 : 0.06)) {
+                withAnimation(.interactiveSpring(response: 0.8, dampingFraction: 0.4, blendDuration: 0.4)) {
+                    sampleAnalytics[index].animate = true
+                    while sampleAnalytics[index].base < sampleAnalytics[index].count {
+                        sampleAnalytics[index].base += 1
+                    }
+                }
+            }
+        }
+        for (index, _) in sampleAnalytics.enumerated() {
+            sampleAnalytics[index].base = 0
         }
     }
 }

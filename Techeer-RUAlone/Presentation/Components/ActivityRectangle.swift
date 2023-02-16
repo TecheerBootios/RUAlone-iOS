@@ -29,12 +29,13 @@ struct ActivityRectangle: View {
                         MoneyChart()
                     }
                 RoundedRectangle(cornerRadius: radius)
-                    .fill(Color.customOrange)
+                    .fill(Color.customLightOrange)
                     .overlay {
                         TimeChart()
                     }
             }
             .tabViewStyle(.page)
+            .shadow(radius: 50)
         }
         
         
