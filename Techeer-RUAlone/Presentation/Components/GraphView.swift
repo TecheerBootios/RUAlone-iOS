@@ -18,7 +18,7 @@ struct GatherChart: View {
         ZStack {
             VStack(alignment: .leading) {
                 Text("Activity")
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                     .font(.headline)
                     .bold()
                 Chart {
@@ -27,7 +27,7 @@ struct GatherChart: View {
                                 y: .value("Total Count", activity.base))
                         .foregroundStyle(.blue)
                         .annotation {
-                            Text("\(activity.count)").font(.caption).fontWeight(.regular).foregroundColor(.white)
+                            Text("\(activity.count)").font(.caption).fontWeight(.regular).foregroundColor(.black)
                         }
                     }
                 }

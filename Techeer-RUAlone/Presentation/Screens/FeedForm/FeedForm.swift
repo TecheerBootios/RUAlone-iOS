@@ -13,7 +13,7 @@ struct FeedForm: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.customOrange.ignoresSafeArea()
+                Color.customWhite.ignoresSafeArea()
                 VStack {
                     List {
                         titleLocationSection()

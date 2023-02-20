@@ -9,14 +9,17 @@ import SwiftUI
 
 @main
 struct RUAloneApp: App {
+    @StateObject var loginViewModel: Login.ViewModel = .init()
+    
     init() {
         Configuration.setUp()
+        loginViewModel.deleteToken()
     }
     
     var body: some Scene {
         WindowGroup {
-            if KeyChainService.shared.requiresLogin() {
-                Login()
+            if loginViewModel.isAuthenticated == false {
+                Login(viewModel: loginViewModel)
             } else {
                 ContentView()
             }

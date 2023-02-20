@@ -19,7 +19,7 @@ struct ActivityRectangle: View {
             Color.clear.ignoresSafeArea()
             TabView {
                 RoundedRectangle(cornerRadius: radius)
-                    .fill(Color.customBlue)
+                    .fill(Color.customWhite)
                     .overlay {
                         GatherChart()
                     }

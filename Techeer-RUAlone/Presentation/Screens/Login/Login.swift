@@ -14,7 +14,7 @@ import os
 private let logger = Logger.init(subsystem: "com.techeer.KKodiac.Techeer-RUAlone", category: "LoginView")
 
 struct Login: View {
-    @ObservedObject var viewModel: ViewModel = .init()
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         Color.customBackground
@@ -33,7 +33,7 @@ struct Login: View {
                                     return
                                 }
                                 viewModel.createToken(oauthToken.accessToken)
-                                logger.log("\(oauthToken.accessToken)")
+                                logger.log("[Access Token] \(oauthToken.accessToken)")
                             }
                         } else {
                             UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in

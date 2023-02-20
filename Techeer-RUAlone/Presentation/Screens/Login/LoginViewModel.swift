@@ -12,6 +12,7 @@ private let logger = Logger.init(subsystem: "com.techeer.KKodiac.Techeer-RUAlone
 
 extension Login {
     class ViewModel: ObservableObject {
+        @Published var isAuthenticated: Bool = false
         func readToken() -> String? {
             guard let token = KeyChainService.shared.readToken() else {
                 logger.error("[KeyChain] Read failed")
@@ -23,6 +24,7 @@ extension Login {
         func createToken(_ token: String) {
             if KeyChainService.shared.createToken(token) {
                 logger.log("[KeyChain] Create successful")
+                isAuthenticated.toggle()
             } else {
                 logger.error("[KeyChain] Create failed")
             }
