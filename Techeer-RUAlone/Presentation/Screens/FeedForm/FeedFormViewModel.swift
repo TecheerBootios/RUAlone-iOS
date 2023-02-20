@@ -15,6 +15,7 @@ protocol FeedFormViewModelInput {
 protocol FeedFormViewModelOutput {
     var title: String { get }
     var address: String { get }
+    // User Coord
     var startAt: Date { get }
     var limitMember: Int { get }
     var foodCategory: FormModel.FoodCategory { get }

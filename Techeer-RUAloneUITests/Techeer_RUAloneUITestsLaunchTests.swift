@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class Techeer_RUAloneUITestsLaunchTests: XCTestCase {
+final class RUAloneUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

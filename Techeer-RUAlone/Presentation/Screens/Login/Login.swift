@@ -15,7 +15,7 @@ private let logger = Logger.init(subsystem: "com.techeer.KKodiac.Techeer-RUAlone
 
 struct Login: View {
     @ObservedObject var viewModel: ViewModel = .init()
-
+    
     var body: some View {
         Color.customBackground
             .ignoresSafeArea()

@@ -10,7 +10,7 @@
 "Home" = "홈";
 "Post" = "게시판";
 "Message" = "메세지";
-"WelcomeMessage" = "어서오세요, %@";
+"WelcomeMessage %@" = "어서오세요, %@님";
 "TodaysGathering" = "오늘의 모임";
 "FindFriend" = "친구를 찾아보세요!";
 "GatherFriend" = "친구를 모아보세요!";
@@ -42,3 +42,7 @@
 "Post Settings" = "모임 설정";
 "EatIn" = "배달 시켜 먹기";
 "EatOut" = "나가서 먹기";
+"Activity" = "월별 모임 횟수";
+"Average Time" = "다른 회원들과 모인 시간";
+"Book Keeping" = "소비 차트";
+"Time Spent" = "만남에 소비된 시간(분)";

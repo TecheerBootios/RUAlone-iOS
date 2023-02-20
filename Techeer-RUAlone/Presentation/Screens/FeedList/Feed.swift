@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Feed: View {
     @State private var searchText = ""
-
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -34,7 +34,7 @@ struct Feed: View {
                     FeedForm(viewModel: .init(form: FormModel()))
                 }, label: { Image(systemName: "plus")})
             }
-         
+            
         }
     }
 }

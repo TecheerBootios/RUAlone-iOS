@@ -16,7 +16,6 @@ enum CoreDataStorageError: Error {
 final class CoreDataStorage {
 
     static let shared = CoreDataStorage()
-    
     private init() {}
 
     // MARK: - Core Data stack
@@ -24,7 +23,6 @@ final class CoreDataStorage {
         let container = NSPersistentContainer(name: "CoreDataStorage")
         container.loadPersistentStores { _, error in
             if let error = error as NSError? {
-                // TODO: - Log to Crashlytics
                 assertionFailure("CoreDataStorage Unresolved error \(error), \(error.userInfo)")
             }
         }
@@ -38,7 +36,6 @@ final class CoreDataStorage {
             do {
                 try context.save()
             } catch {
-                // TODO: - Log to Crashlytics
                 assertionFailure("CoreDataStorage Unresolved error \(error), \((error as NSError).userInfo)")
             }
         }

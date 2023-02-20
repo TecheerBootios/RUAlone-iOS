@@ -68,8 +68,8 @@ extension FeedForm {
     private func formTitleTextFieldView() -> some View {
         TextField("Field Example",
                   text: $viewModel.title)
-            .autocorrectionDisabled()
-            .textFieldStyle(.automatic)
+        .autocorrectionDisabled()
+        .textFieldStyle(.automatic)
     }
     
     private func pointOfInterestSelectionView() -> some View {
