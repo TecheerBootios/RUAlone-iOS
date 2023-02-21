@@ -13,6 +13,7 @@
 		0431FAC2295AE38F0026CD8F /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0431FAC1295AE38F0026CD8F /* KakaoSDKAuth */; };
 		0431FAC4295AE38F0026CD8F /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 0431FAC3295AE38F0026CD8F /* KakaoSDKCommon */; };
 		0431FAC6295AE38F0026CD8F /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 0431FAC5295AE38F0026CD8F /* KakaoSDKUser */; };
+		0B001D4829A4C44700EA40F3 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B001D4729A4C44700EA40F3 /* UserDTO.swift */; };
 		0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */; };
 		0B06822829370AC000E5D648 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06822729370AC000E5D648 /* ContentView.swift */; };
 		0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B06822929370AC200E5D648 /* Assets.xcassets */; };
@@ -40,7 +41,6 @@
 		0B6EA3032992479000A329C6 /* food-carousel.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EA3022992479000A329C6 /* food-carousel.json */; };
 		0B7F6B2C299DEA21006F1786 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F6B2B299DEA21006F1786 /* NetworkService.swift */; };
 		0B7F6B2F299DEE04006F1786 /* AuthenticationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F6B2E299DEE04006F1786 /* AuthenticationDTO.swift */; };
-		0B7F6B31299DEFD7006F1786 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F6B30299DEFD7006F1786 /* Authentication.swift */; };
 		0B7F6B3429A369C3006F1786 /* CoreDataStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F6B3229A369C3006F1786 /* CoreDataStorage.xcdatamodeld */; };
 		0B80C68A2980144D00E72AFF /* FeedDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B80C6892980144D00E72AFF /* FeedDetailModel.swift */; };
 		0B80C691298015EB00E72AFF /* Feed+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B80C690298015EB00E72AFF /* Feed+Stub.swift */; };
@@ -94,6 +94,7 @@
 /* Begin PBXFileReference section */
 		042A830C2950CB43001F3FE0 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; usesTabs = 0; };
 		042A83102950E96B001F3FE0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		0B001D4729A4C44700EA40F3 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		0B06822229370AC000E5D648 /* Techeer-RUAlone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Techeer-RUAlone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Techeer_RUAloneApp.swift; sourceTree = "<group>"; };
 		0B06822729370AC000E5D648 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 		0B6EA3022992479000A329C6 /* food-carousel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "food-carousel.json"; sourceTree = "<group>"; };
 		0B7F6B2B299DEA21006F1786 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0B7F6B2E299DEE04006F1786 /* AuthenticationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDTO.swift; sourceTree = "<group>"; };
-		0B7F6B30299DEFD7006F1786 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		0B7F6B3329A369C3006F1786 /* CoreDataStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStorage.xcdatamodel; sourceTree = "<group>"; };
 		0B7F6B3529A36DA0006F1786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0B80C6892980144D00E72AFF /* FeedDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailModel.swift; sourceTree = "<group>"; };
@@ -307,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				0B7F6B2E299DEE04006F1786 /* AuthenticationDTO.swift */,
+				0B001D4729A4C44700EA40F3 /* UserDTO.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -482,7 +483,6 @@
 		0BD8D31C297C04CB00F72BF9 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				0B7F6B30299DEFD7006F1786 /* Authentication.swift */,
 				0BA0351B296C44C400BF8EA1 /* LocalSearch.swift */,
 				0B4833D9297C52D900730E97 /* FormModel.swift */,
 				0B80C6892980144D00E72AFF /* FeedDetailModel.swift */,
@@ -723,7 +723,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BCCC0E4295D526A002883AC /* FeedDetailViewModel.swift in Sources */,
-				0B7F6B31299DEFD7006F1786 /* Authentication.swift in Sources */,
 				0B7F6B3429A369C3006F1786 /* CoreDataStorage.xcdatamodeld in Sources */,
 				0B80C69329803CDE00E72AFF /* FeedDetail+Stub.swift in Sources */,
 				0BCCC0DB295C34B6002883AC /* FeedDetail.swift in Sources */,
@@ -741,6 +740,7 @@
 				0B8CE81E2999C9B0009ED5DD /* GraphView.swift in Sources */,
 				0B0EE863299BA95700114F45 /* NetworkConfiguration.swift in Sources */,
 				0B29ED0F294B080B00A2D8FA /* View+Extension.swift in Sources */,
+				0B001D4829A4C44700EA40F3 /* UserDTO.swift in Sources */,
 				0B8CE8242999DF96009ED5DD /* HomeRectangle.swift in Sources */,
 				0B80C69729806FEE00E72AFF /* CoreDataStorage.swift in Sources */,
 				0BC4235729599A0C00188283 /* ChatView.swift in Sources */,

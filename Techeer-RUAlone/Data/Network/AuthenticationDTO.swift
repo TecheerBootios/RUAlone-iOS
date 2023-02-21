@@ -23,19 +23,26 @@ struct SignInRequestDTO: AuthenticationRequestDTO {
 // MARK: Response DTO
 protocol AuthenticationResponseDTO: Decodable {
     var code: Int { get }
-    var message: String { get }
-    var isSuccessful: Bool { get }
+    var msg: String { get }
+    var success: Bool { get }
 }
 
 struct SignUpResponseDTO: AuthenticationResponseDTO {
     var code: Int
-    var message: String
-    var isSuccessful: Bool
+    var msg: String
+    var success: Bool
 }
 
 struct SignInResponseDTO: AuthenticationResponseDTO {
     var code: Int
-    var message: String
-    var isSuccessful: Bool
-    var data: AuthenticationToken
+    var msg: String
+    var success: Bool
+    var data: Token
+}
+
+struct Token: Decodable {
+    let accessToken: String
+    let accessTokenExpireDate: Int
+    let grantType: String
+    let refreshToken: String
 }

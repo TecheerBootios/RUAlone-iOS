@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import KakaoSDKAuth
-import KakaoSDKUser
 
 import os
 
@@ -26,25 +24,7 @@ struct Login: View {
                         .frame(width: 320, height: 340)
                     
                     Button {
-                        if UserApi.isKakaoTalkLoginAvailable() == true {
-                            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                                guard let oauthToken = oauthToken else {
-                                    logger.error("\(error.debugDescription)")
-                                    return
-                                }
-                                viewModel.createToken(oauthToken.accessToken)
-                                logger.log("[Access Token] \(oauthToken.accessToken)")
-                            }
-                        } else {
-                            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-                                guard let oauthToken = oauthToken else {
-                                    logger.error("\(error.debugDescription)")
-                                    return
-                                }
-                                viewModel.createToken(oauthToken.accessToken)
-                                logger.log("\(oauthToken.accessToken)")
-                            }
-                        }
+                        viewModel.authenticate()
                     } label: {
                         Image("KakaoLogin")
                             .resizable()

@@ -9,21 +9,17 @@ import SwiftUI
 
 struct FeedForm: View {
     @ObservedObject private(set) var viewModel: ViewModel
+
     
     var body: some View {
         NavigationStack {
             ZStack {
                 Color.customWhite.ignoresSafeArea()
                 VStack {
+                    Text("새로운 글 작성").font(.title)
                     List {
                         titleLocationSection()
-                        Section {
-                            foodCategorySection()
-                            postTypeSelection()
-                            limitMemberSection()
-                        } header: {
-                            Text("Post Settings")
-                        }
+                        gatheringSection()
                         dateSelectionSection()
                     }
                     .scrollContentBackground(.hidden)
@@ -44,7 +40,6 @@ struct FeedForm: View {
                 }
             }
             .headerProminence(.increased)
-            .navigationTitle("새로운 글 작성")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(.hidden, for: .tabBar)
         }.onAppear {
@@ -55,7 +50,7 @@ struct FeedForm: View {
 
 extension FeedForm {
     private func titleLocationSection() -> some View {
-        Section(header: Text("Form Title")) {
+        DisclosureGroup("Form Title") {
             formTitleTextFieldView()
             NavigationLink(destination: {
                 pointOfInterestSelectionView()
@@ -106,6 +101,16 @@ extension FeedForm {
         }.pickerStyle(.segmented)
     }
     
+    private func gatheringSection() -> some View {
+        DisclosureGroup {
+            foodCategorySection()
+            postTypeSelection()
+            limitMemberSection()
+        } label: {
+            Text("Post Settings")
+        }
+    }
+    
     private func foodCategorySection() -> some View {
         Picker("Food Category", selection: $viewModel.foodCategory) {
             ForEach(FormModel.FoodCategory.allCases, id: \.self) { category in
@@ -115,7 +120,7 @@ extension FeedForm {
     }
     
     private func dateSelectionSection() -> some View {
-        Section("Date") {
+        DisclosureGroup("Date") {
             DatePicker("Date Ask", selection: $viewModel.startAt)
                 .datePickerStyle(.graphical)
         }

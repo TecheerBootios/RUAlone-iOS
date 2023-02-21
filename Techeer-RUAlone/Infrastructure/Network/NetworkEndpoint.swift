@@ -9,14 +9,18 @@ import Foundation
 import Alamofire
 
 enum AuthenticationEndpoint: URLRequestConvertible {
-    case signIn
-    case signUp
+    case signIn(accessToken: String)
+    case signUp(accessToken: String)
     
     func asURLRequest() throws -> URLRequest {
         let url = try Base.ProductionServer.baseURL.asURL()
         var request = URLRequest(url: url.appendingPathComponent(path))
         request.httpMethod = method.rawValue
         request.setValue(Base.AcceptType.json.rawValue, forHTTPHeaderField: Base.HTTPHeaderField.acceptType.rawValue)
+        if let parameters = parameters {
+            return try encoding.encode(request, with: parameters)
+        }
+            
         return request
     }
     
@@ -33,6 +37,24 @@ enum AuthenticationEndpoint: URLRequestConvertible {
             return "/api/social/login/kakao"
         case .signUp:
             return "/api/social/signup/kakao"
+        }
+    }
+    
+    private var parameters: Parameters? {
+        switch self {
+        case .signIn(let accessToken):
+            return ["accessToken": accessToken]
+        case .signUp(let accessToken):
+            return ["accessToken": accessToken]
+        }
+    }
+    
+    var encoding: ParameterEncoding {
+        switch self {
+        case .signIn:
+            return JSONEncoding.default
+        case .signUp:
+            return JSONEncoding.default
         }
     }
 }
@@ -78,3 +100,53 @@ enum UserEndpoint: URLRequestConvertible {
         }
     }
 }
+
+enum PostEndpoint: URLRequestConvertible {
+    case createPost
+    case updatePost
+    case fetchPostAll
+    case fetchPost
+    case deletePostByID(String)
+    case fetchPostByID(String)
+    
+    func asURLRequest() throws -> URLRequest {
+        let url = try Base.ProductionServer.baseURL.asURL()
+        var request = URLRequest(url: url.appendingPathComponent(path))
+        request.httpMethod = method.rawValue
+        request.setValue(Base.AcceptType.json.rawValue, forHTTPHeaderField: Base.HTTPHeaderField.acceptType.rawValue)
+        return request
+    }
+    
+    private var method: HTTPMethod {
+        switch self {
+        case .createPost:
+            return .post
+        case .updatePost:
+            return .put
+        case .fetchPost, .fetchPostAll, .fetchPostByID:
+            return .get
+        case .deletePostByID:
+            return .delete
+        }
+    }
+    
+    private var path: String {
+        switch self {
+        case .createPost:
+            return "/api/post"
+        case .updatePost:
+            return "/api/post"
+        case .fetchPost:
+            return "/api/post/list"
+        case .fetchPostAll:
+            return "/api/post/search"
+        case .fetchPostByID(let id):
+            return "/api/post/\(id)"
+        case .deletePostByID(let id):
+            return "/api/post/\(id)"
+        }
+    }
+}
+
+
+
