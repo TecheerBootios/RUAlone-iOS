@@ -29,8 +29,6 @@
 		0B0682BB2944D1AE00E5D648 /* VerticalRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682BA2944D1AE00E5D648 /* VerticalRectangle.swift */; };
 		0B0682BF2945AC3B00E5D648 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682BE2945AC3B00E5D648 /* Feed.swift */; };
 		0B0EE85B299A30BE00114F45 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0EE85A299A30BE00114F45 /* FSCalendar */; };
-		0B0EE861299BA23F00114F45 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0EE860299BA23F00114F45 /* Endpoint.swift */; };
-		0B0EE863299BA95700114F45 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0EE862299BA95700114F45 /* NetworkConfig.swift */; };
 		0B0EE86D299BD26D00114F45 /* SwiftPieChart in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0EE86C299BD26D00114F45 /* SwiftPieChart */; };
 		0B29ED0F294B080B00A2D8FA /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29ED0E294B080B00A2D8FA /* View+Extension.swift */; };
 		0B29ED11294B185800A2D8FA /* DetailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29ED10294B185800A2D8FA /* DetailRowView.swift */; };
@@ -68,6 +66,7 @@
 		0BD8D32B297C203900F72BF9 /* DefaultLocationAddressRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD8D32A297C203900F72BF9 /* DefaultLocationAddressRepository.swift */; };
 		0BD8D32D297C20E800F72BF9 /* LocationAddressRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD8D32C297C20E800F72BF9 /* LocationAddressRepository.swift */; };
 		0BD8D32F297C424B00F72BF9 /* SearchLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD8D32E297C424B00F72BF9 /* SearchLocationUseCase.swift */; };
+		417E86C829A4B0B400FB9938 /* SwiftPieChart in Frameworks */ = {isa = PBXBuildFile; productRef = 417E86C729A4B0B400FB9938 /* SwiftPieChart */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,8 +105,6 @@
 		0B0682B82944CB0D00E5D648 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		0B0682BA2944D1AE00E5D648 /* VerticalRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalRectangle.swift; sourceTree = "<group>"; };
 		0B0682BE2945AC3B00E5D648 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
-		0B0EE860299BA23F00114F45 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		0B0EE862299BA95700114F45 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkConfig.swift; path = ../../../../../../NetworkConfig.swift; sourceTree = "<group>"; };
 		0B0EE86B299BD26200114F45 /* SwiftPieChart */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftPieChart; path = ../../SwiftPieChart; sourceTree = "<group>"; };
 		0B29ED0E294B080B00A2D8FA /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		0B29ED10294B185800A2D8FA /* DetailRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRowView.swift; sourceTree = "<group>"; };
@@ -145,6 +142,7 @@
 		0BD8D32A297C203900F72BF9 /* DefaultLocationAddressRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLocationAddressRepository.swift; sourceTree = "<group>"; };
 		0BD8D32C297C20E800F72BF9 /* LocationAddressRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAddressRepository.swift; sourceTree = "<group>"; };
 		0BD8D32E297C424B00F72BF9 /* SearchLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationUseCase.swift; sourceTree = "<group>"; };
+		417E86C929A4B83700FB9938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				417E86C829A4B0B400FB9938 /* SwiftPieChart in Frameworks */,
 				0B0682B129421D5200E5D648 /* SendbirdUIKit in Frameworks */,
 				0B6EA2FE2992428900A329C6 /* Lottie in Frameworks */,
 				0B0EE86D299BD26D00114F45 /* SwiftPieChart in Frameworks */,
@@ -207,7 +206,7 @@
 		0B06822429370AC000E5D648 /* Techeer-RUAlone */ = {
 			isa = PBXGroup;
 			children = (
-				0B0EE85E299BA22700114F45 /* Infrastructure */,
+				417E86C929A4B83700FB9938 /* Info.plist */,
 				0B80C68F2980149700E72AFF /* Mocks */,
 				0BD8D323297C0E8400F72BF9 /* Service */,
 				0BD8D312297BCA7200F72BF9 /* Data */,
@@ -249,23 +248,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0B0EE85E299BA22700114F45 /* Infrastructure */ = {
-			isa = PBXGroup;
-			children = (
-				0B0EE85F299BA23300114F45 /* Network */,
-			);
-			path = Infrastructure;
-			sourceTree = "<group>";
-		};
-		0B0EE85F299BA23300114F45 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				0B0EE860299BA23F00114F45 /* Endpoint.swift */,
-				0B0EE862299BA95700114F45 /* NetworkConfig.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		0B0EE86A299BD26200114F45 /* Packages */ = {
@@ -550,6 +532,7 @@
 				0B6EA2FD2992428900A329C6 /* Lottie */,
 				0B0EE85A299A30BE00114F45 /* FSCalendar */,
 				0B0EE86C299BD26D00114F45 /* SwiftPieChart */,
+				417E86C729A4B0B400FB9938 /* SwiftPieChart */,
 			);
 			productName = "Techeer-RUAlone";
 			productReference = 0B06822229370AC000E5D648 /* Techeer-RUAlone.app */;
@@ -630,6 +613,7 @@
 				0431FABE295AE38F0026CD8F /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 				0B6EA2FC2992428900A329C6 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				0B0EE859299A30BE00114F45 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				417E86C629A4B0B400FB9938 /* XCRemoteSwiftPackageReference "SwiftPieChart" */,
 			);
 			productRefGroup = 0B06822329370AC000E5D648 /* Products */;
 			projectDirPath = "";
@@ -714,7 +698,6 @@
 				0B4833DA297C52D900730E97 /* FormModel.swift in Sources */,
 				042A83112950E96B001F3FE0 /* Message.swift in Sources */,
 				0B8CE81E2999C9B0009ED5DD /* GraphView.swift in Sources */,
-				0B0EE863299BA95700114F45 /* NetworkConfig.swift in Sources */,
 				0B29ED0F294B080B00A2D8FA /* View+Extension.swift in Sources */,
 				0B8CE8242999DF96009ED5DD /* HomeRectangle.swift in Sources */,
 				0B80C69729806FEE00E72AFF /* CoreDataStorage.swift in Sources */,
@@ -727,7 +710,6 @@
 				0B0682BF2945AC3B00E5D648 /* Feed.swift in Sources */,
 				0BD8D32B297C203900F72BF9 /* DefaultLocationAddressRepository.swift in Sources */,
 				0B80C6A0298085D100E72AFF /* Configuration.swift in Sources */,
-				0B0EE861299BA23F00114F45 /* Endpoint.swift in Sources */,
 				0BA0351C296C44C400BF8EA1 /* LocalSearch.swift in Sources */,
 				0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */,
 				0B8CE8222999CA0E009ED5DD /* ChartModel.swift in Sources */,
@@ -917,11 +899,11 @@
 				DEVELOPMENT_TEAM = LVBMDY357W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
+				INFOPLIST_FILE = "Techeer-RUAlone/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = RUAlone;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow access for location tracking during app usage.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -951,11 +933,11 @@
 				DEVELOPMENT_TEAM = LVBMDY357W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
+				INFOPLIST_FILE = "Techeer-RUAlone/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = RUAlone;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow access for location tracking during app usage.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1132,6 +1114,14 @@
 				minimumVersion = 4.1.2;
 			};
 		};
+		417E86C629A4B0B400FB9938 /* XCRemoteSwiftPackageReference "SwiftPieChart" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/KKodiac/SwiftPieChart.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1178,6 +1168,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0B6EA2FC2992428900A329C6 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		417E86C729A4B0B400FB9938 /* SwiftPieChart */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 417E86C629A4B0B400FB9938 /* XCRemoteSwiftPackageReference "SwiftPieChart" */;
+			productName = SwiftPieChart;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
