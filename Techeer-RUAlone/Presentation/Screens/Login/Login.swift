@@ -19,10 +19,9 @@ struct Login: View {
             .ignoresSafeArea()
             .overlay(
                 VStack {
-                    Image("MainIcon")
-                        .resizable()
-                        .frame(width: 320, height: 340)
-                    
+                    LottieView(lottieFile: "food-carousel", contentMode: .scaleAspectFit)
+                        .frame(width: 300, height: 300)
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 100, trailing: 0))
                     Button {
                         viewModel.authenticate()
                     } label: {
