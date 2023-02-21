@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {    
     var body: some View {
         TabView {
-            LottieView(lottieFile: "food-carousel", contentMode: .center)
             Home()
                 .tabItem {
                     Label("Home", systemImage: "house.fill")

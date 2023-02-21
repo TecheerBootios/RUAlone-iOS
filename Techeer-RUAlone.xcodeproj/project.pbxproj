@@ -67,6 +67,9 @@
 		0BD8D32D297C20E800F72BF9 /* LocationAddressRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD8D32C297C20E800F72BF9 /* LocationAddressRepository.swift */; };
 		0BD8D32F297C424B00F72BF9 /* SearchLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD8D32E297C424B00F72BF9 /* SearchLocationUseCase.swift */; };
 		417E86C829A4B0B400FB9938 /* SwiftPieChart in Frameworks */ = {isa = PBXBuildFile; productRef = 417E86C729A4B0B400FB9938 /* SwiftPieChart */; };
+		41B1819E29A4DD3900AC45B8 /* women-thinking.json in Resources */ = {isa = PBXBuildFile; fileRef = 41B1819D29A4DD3900AC45B8 /* women-thinking.json */; };
+		41B181A029A4DD4000AC45B8 /* Lottie-step10.json in Resources */ = {isa = PBXBuildFile; fileRef = 41B1819F29A4DD4000AC45B8 /* Lottie-step10.json */; };
+		41B181A229A4DD5600AC45B8 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B181A129A4DD5600AC45B8 /* SplashScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +146,9 @@
 		0BD8D32C297C20E800F72BF9 /* LocationAddressRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAddressRepository.swift; sourceTree = "<group>"; };
 		0BD8D32E297C424B00F72BF9 /* SearchLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationUseCase.swift; sourceTree = "<group>"; };
 		417E86C929A4B83700FB9938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41B1819D29A4DD3900AC45B8 /* women-thinking.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "women-thinking.json"; sourceTree = "<group>"; };
+		41B1819F29A4DD4000AC45B8 /* Lottie-step10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Lottie-step10.json"; sourceTree = "<group>"; };
+		41B181A129A4DD5600AC45B8 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +276,8 @@
 			isa = PBXGroup;
 			children = (
 				0B6EA3022992479000A329C6 /* food-carousel.json */,
+				41B1819F29A4DD4000AC45B8 /* Lottie-step10.json */,
+				41B1819D29A4DD3900AC45B8 /* women-thinking.json */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -391,6 +399,7 @@
 				0BA03518296C435400BF8EA1 /* FeedList */,
 				0BA03519296C43A500BF8EA1 /* Home */,
 				0B06822729370AC000E5D648 /* ContentView.swift */,
+				41B181A129A4DD5600AC45B8 /* SplashScreen.swift */,
 				0B06822529370AC000E5D648 /* Techeer_RUAloneApp.swift */,
 				0B80C69F298085D100E72AFF /* Configuration.swift */,
 			);
@@ -636,7 +645,9 @@
 				0B06822D29370AC200E5D648 /* Preview Assets.xcassets in Resources */,
 				0B8CE81C2995240A009ED5DD /* .swiftlint.yml in Resources */,
 				0B6EA3032992479000A329C6 /* food-carousel.json in Resources */,
+				41B1819E29A4DD3900AC45B8 /* women-thinking.json in Resources */,
 				0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */,
+				41B181A029A4DD4000AC45B8 /* Lottie-step10.json in Resources */,
 				0BA03530296E7DE500BF8EA1 /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -722,6 +733,7 @@
 				0B80C69E2980798000E72AFF /* KeyChainService.swift in Sources */,
 				0B80C6A229808C4600E72AFF /* ChatService.swift in Sources */,
 				0B80C6A629809BBD00E72AFF /* ChatRepository.swift in Sources */,
+				41B181A229A4DD5600AC45B8 /* SplashScreen.swift in Sources */,
 				042A830D2950CB43001F3FE0 /* Login.swift in Sources */,
 				0B0682B52944C8BF00E5D648 /* ActivityRectangle.swift in Sources */,
 			);
@@ -899,7 +911,7 @@
 				DEVELOPMENT_TEAM = LVBMDY357W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Techeer-RUAlone/Info.plist";
+				INFOPLIST_FILE = "/Users/jeonghyelin/workspace/rualone/RUAlone-iOS/Techeer-RUAlone/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = RUAlone;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow access for location tracking during app usage.";
@@ -933,7 +945,7 @@
 				DEVELOPMENT_TEAM = LVBMDY357W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Techeer-RUAlone/Info.plist";
+				INFOPLIST_FILE = "/Users/jeonghyelin/workspace/rualone/RUAlone-iOS/Techeer-RUAlone/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = RUAlone;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow access for location tracking during app usage.";
