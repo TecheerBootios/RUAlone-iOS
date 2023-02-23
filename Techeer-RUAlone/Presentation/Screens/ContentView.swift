@@ -29,7 +29,8 @@ struct ContentView: View {
         .tint(.black)
         .task {
             loginViewModel.deleteToken()
-            try? await Task.sleep(for: Duration.seconds(5))
+            try? await Task.sleep(for: Duration.seconds(2))
+            loginViewModel.isNotAuthenticated.toggle()
             self.launchScreenState.dismiss()
         }
         .fullScreenCover(isPresented: $loginViewModel.isNotAuthenticated) {

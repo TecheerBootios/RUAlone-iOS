@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct FeedForm: View {
+    @Environment(\.dismiss) private var dismiss
     @ObservedObject private(set) var viewModel: ViewModel
 
-    
     var body: some View {
         NavigationStack {
             ZStack {
                 Color.customWhite.ignoresSafeArea()
                 VStack {
-                    Text("새로운 글 작성").font(.title)
                     List {
                         titleLocationSection()
                         gatheringSection()
@@ -40,8 +39,15 @@ struct FeedForm: View {
                 }
             }
             .headerProminence(.increased)
+            .navigationTitle("새로운 모임 만들기")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar(.hidden, for: .tabBar)
+            .toolbar {
+                Button {
+                    dismiss()
+                } label: {
+                    Text("닫기")
+                }
+            }
         }.onAppear {
             viewModel.updateUserLocation()
         }

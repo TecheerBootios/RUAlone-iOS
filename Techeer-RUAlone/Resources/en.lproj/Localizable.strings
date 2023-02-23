@@ -46,3 +46,5 @@
 "Average Time" = "Average Time Spent";
 "Book Keeping" = "Spendings";
 "Time Spent" = "Time Spent on Gatherings(min)";
+"Login Header" = "Please Sign In";
+"Header %@" = "Welcome, %@";

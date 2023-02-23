@@ -22,4 +22,11 @@ class NetworkService {
                 completion(response.result)
             }
     }
+    
+    static func fetchUser(with email: String, completion: @escaping (Result<UserResponseDTO, AFError>) -> Void) {
+        AF.request(UserEndpoint.fetchUserByEmail(email))
+            .responseDecodable { (response: DataResponse<UserResponseDTO, AFError>) in
+                completion(response.result)
+            }
+    }
 }

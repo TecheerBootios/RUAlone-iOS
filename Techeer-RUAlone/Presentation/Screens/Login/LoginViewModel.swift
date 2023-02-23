@@ -15,21 +15,13 @@ private let logger = Logger.init(subsystem: "com.techeer.KKodiac.Techeer-RUAlone
 
 extension Login {
     class ViewModel: ObservableObject {
-        @Published var isNotAuthenticated: Bool = true
+        @Published var isNotAuthenticated: Bool = false
         
         func authenticate() {
             Task {
                 _ = await validateAuthentication()
-                NetworkService.signIn(with: SignInRequestDTO(accessToken: KeyChainService.shared.readToken() ?? "")) { result in
-                    switch result {
-                    case .success(let response):
-                        self.isNotAuthenticated.toggle()
-                        logger.log("[Login Success] \(response.data.accessToken)")
-                        self.createToken(response.data.accessToken)
-                    case .failure(let error):
-                        logger.error("[Login Error] \(error)")
-                    }
-                }
+                _ = await requestSignIn()
+                _ = await fetchUserData()
             }
         }
         
@@ -59,7 +51,48 @@ extension Login {
                     }
                 }
             }
-            
+        }
+        
+        func requestSignIn() async -> Bool {
+            return await withCheckedContinuation { continuation in
+                NetworkService.signIn(with: SignInRequestDTO(accessToken: KeyChainService.shared.readToken() ?? "")) { result in
+                    switch result {
+                    case .success(let response):
+                        logger.log("[Login Success] \(response.data.accessToken)")
+                        self.updateToken(response.data.accessToken)
+                        self.isNotAuthenticated.toggle()
+                        self.saveParameter(response.data.userEmail)
+                        continuation.resume(returning: true)
+                    case .failure(let error):
+                        logger.error("[Login Error] \(error)")
+                        continuation.resume(returning: false)
+                    }
+                }
+            }
+        }
+        
+        func fetchUserData() async -> Bool {
+            return await withCheckedContinuation { continuation in
+                guard let email = CoreDataStorage.shared.fetchParameter() else {
+                    logger.error("User email does not exist in Core Data!")
+                    continuation.resume(returning: false)
+                    return
+                }
+                NetworkService.fetchUser(with: email) { result in
+                    switch result {
+                    case .success(let response):
+                        logger.log("[User Fetch Success] \(response.data.name)")
+                        CoreDataStorage.shared.insertUser(UserEntity(name: response.data.name,
+                                                                     email: response.data.email,
+                                                                     nickname: response.data.nickName))
+                        continuation.resume(returning: true)
+                    case .failure(let error):
+                        logger.error("[User Fetch Failed] \(error)")
+                        continuation.resume(returning: false)
+                    }
+                }
+                
+            }
         }
         
         func readToken() -> String? {
@@ -80,18 +113,22 @@ extension Login {
         
         func updateToken(_ token: String) {
             if KeyChainService.shared.updateToken(token) {
-                logger.log("[KeyChain] Create successful")
+                logger.log("[KeyChain] Update successful")
             } else {
-                logger.error("[KeyChain] Create failed")
+                logger.error("[KeyChain] Update failed")
             }
         }
         
         func deleteToken() {
             if KeyChainService.shared.deleteToken() {
-                logger.log("[KeyChain] Create successful")
+                logger.log("[KeyChain] Delete successful")
             } else {
                 logger.error("[KeyChain] Create failed")
             }
+        }
+        
+        func saveParameter(_ param: String) {
+            CoreDataStorage.shared.insertQueryParameter(param)
         }
     }
 }

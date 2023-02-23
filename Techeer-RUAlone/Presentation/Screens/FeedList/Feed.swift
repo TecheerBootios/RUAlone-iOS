@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Feed: View {
     @State private var searchText = ""
+    @State private var isPresented = false
     
     var body: some View {
         NavigationStack {
@@ -24,15 +25,19 @@ struct Feed: View {
                 .frame(maxWidth: .infinity)
                 .background(Color.customWhite)
                 .cornerRadius(30, corners: [.topLeft, .topRight])
-                .edgesIgnoringSafeArea(.bottom)
             }
             .navigationTitle("Find Nav Title")
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText, prompt: Text("메뉴를 검색해보세요"))
             .toolbar {
-                NavigationLink(destination: {
-                    FeedForm(viewModel: .init(form: FormModel()))
-                }, label: { Image(systemName: "plus").foregroundColor(.customPink).bold() })
+                Button {
+                    isPresented.toggle()
+                } label: {
+                    Image(systemName: "plus").foregroundColor(.customPink).bold()
+                }
+            }
+            .fullScreenCover(isPresented: $isPresented) {
+                FeedForm(viewModel: .init(form: FormModel()))
             }
             
         }

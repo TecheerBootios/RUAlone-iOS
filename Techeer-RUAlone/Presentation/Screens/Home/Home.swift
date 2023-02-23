@@ -8,16 +8,20 @@
 import SwiftUI
 
 struct Home: View {
+    @StateObject var viewModel: ViewModel = .init()
     var body: some View {
         NavigationStack {
             GeometryReader { geometry in
                 VStack(spacing: 12) {
-                    HomeRectangle(rectangleColor: .customWhite)
+                    HomeRectangle(rectangleColor: .customWhite, viewModel: viewModel)
                     ActivityRectangle(rectangleColor: .customBlue)
                         .frame(height: geometry.size.height/3)
                 }
             }
             .padding()
+            .onAppear {
+                viewModel.fetchUser()
+            }
         }
     }
 }
@@ -25,5 +29,6 @@ struct Home: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
+            .environment(\.locale, .init(identifier: "ko"))
     }
 }

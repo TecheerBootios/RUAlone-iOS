@@ -8,32 +8,32 @@
 import Foundation
 
 // MARK: Reqeust DTO
-protocol AuthenticationRequestDTO: Encodable {
+protocol DefaultRequestDTO: Encodable {
     var accessToken: String { get set }
 }
 
-struct SignUpRequestDTO: AuthenticationRequestDTO {
+struct SignUpRequestDTO: DefaultRequestDTO {
     var accessToken: String
 }
 
-struct SignInRequestDTO: AuthenticationRequestDTO {
+struct SignInRequestDTO: DefaultRequestDTO {
     var accessToken: String
 }
 
 // MARK: Response DTO
-protocol AuthenticationResponseDTO: Decodable {
+protocol DefaultResponseDTO: Decodable {
     var code: Int { get }
     var msg: String { get }
     var success: Bool { get }
 }
 
-struct SignUpResponseDTO: AuthenticationResponseDTO {
+struct SignUpResponseDTO: DefaultResponseDTO {
     var code: Int
     var msg: String
     var success: Bool
 }
 
-struct SignInResponseDTO: AuthenticationResponseDTO {
+struct SignInResponseDTO: DefaultResponseDTO {
     var code: Int
     var msg: String
     var success: Bool
@@ -45,4 +45,5 @@ struct Token: Decodable {
     let accessTokenExpireDate: Int
     let grantType: String
     let refreshToken: String
+    let userEmail: String
 }

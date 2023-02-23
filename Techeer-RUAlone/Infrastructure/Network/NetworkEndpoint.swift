@@ -71,6 +71,16 @@ enum UserEndpoint: URLRequestConvertible {
         var request = URLRequest(url: url.appendingPathComponent(path))
         request.httpMethod = method.rawValue
         request.setValue(Base.AcceptType.json.rawValue, forHTTPHeaderField: Base.HTTPHeaderField.acceptType.rawValue)
+        if let token = KeyChainService.shared.readToken() {
+            let headers: HTTPHeaders = [
+                "X-AUTH-TOKEN": token
+            ]
+            request.headers = headers
+        }
+        if let parameters = parameters {
+            return try encoding.encode(request, with: parameters)
+        }
+        
         return request
     }
     
@@ -97,6 +107,24 @@ enum UserEndpoint: URLRequestConvertible {
             return "/api/user/\(id)"
         case .fetchUsers:
             return "/api/users"
+        }
+    }
+    
+    private var parameters: Parameters? {
+        switch self {
+        case .fetchUserByEmail, .fetchUserByID:
+            return ["lang": "ko"]
+        default:
+            return nil
+        }
+    }
+    
+    var encoding: ParameterEncoding {
+        switch self {
+        case .fetchUserByID, .fetchUserByEmail:
+            return URLEncoding.default
+        default:
+            return JSONEncoding.default
         }
     }
 }
