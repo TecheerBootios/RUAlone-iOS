@@ -31,14 +31,16 @@
 		0B0682BF2945AC3B00E5D648 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682BE2945AC3B00E5D648 /* Feed.swift */; };
 		0B0EE85B299A30BE00114F45 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0EE85A299A30BE00114F45 /* FSCalendar */; };
 		0B0EE861299BA23F00114F45 /* NetworkEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0EE860299BA23F00114F45 /* NetworkEndpoint.swift */; };
-		0B0EE863299BA95700114F45 /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0EE862299BA95700114F45 /* NetworkConfiguration.swift */; };
 		0B0EE86D299BD26D00114F45 /* SwiftPieChart in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0EE86C299BD26D00114F45 /* SwiftPieChart */; };
 		0B29ED0F294B080B00A2D8FA /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29ED0E294B080B00A2D8FA /* View+Extension.swift */; };
 		0B29ED11294B185800A2D8FA /* DetailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29ED10294B185800A2D8FA /* DetailRowView.swift */; };
 		0B4833DA297C52D900730E97 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4833D9297C52D900730E97 /* FormModel.swift */; };
+		0B578C9529A7D4FE00E703B6 /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B578C9429A7D4FE00E703B6 /* NetworkConfiguration.swift */; };
 		0B6EA2FE2992428900A329C6 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0B6EA2FD2992428900A329C6 /* Lottie */; };
 		0B6EA3012992430100A329C6 /* Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EA3002992430100A329C6 /* Lottie.swift */; };
 		0B6EA3032992479000A329C6 /* food-carousel.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EA3022992479000A329C6 /* food-carousel.json */; };
+		0B7201F329A7D56700ED5C43 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B7201F229A7D56700ED5C43 /* login.json */; };
+		0B7201F529A7D58000ED5C43 /* LaunchScreenStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7201F429A7D58000ED5C43 /* LaunchScreenStateManager.swift */; };
 		0B7F6B2C299DEA21006F1786 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F6B2B299DEA21006F1786 /* NetworkService.swift */; };
 		0B7F6B2F299DEE04006F1786 /* AuthenticationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F6B2E299DEE04006F1786 /* AuthenticationDTO.swift */; };
 		0B7F6B3429A369C3006F1786 /* CoreDataStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F6B3229A369C3006F1786 /* CoreDataStorage.xcdatamodeld */; };
@@ -64,10 +66,8 @@
 		0BA03527296DD88B00BF8EA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0BA03529296DD88B00BF8EA1 /* Localizable.strings */; };
 		0BA03530296E7DE500BF8EA1 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 0BA0352F296E7DE500BF8EA1 /* Localizable.stringsdict */; };
 		0BA03532296E82B000BF8EA1 /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA03531296E82B000BF8EA1 /* FeedModel.swift */; };
-		0BBAB0BC29A5377B0002199A /* LaunchScreenStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBAB0BB29A5377B0002199A /* LaunchScreenStateManager.swift */; };
 		0BBAB0BE29A537990002199A /* LaunchScreenStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBAB0BD29A537990002199A /* LaunchScreenStep.swift */; };
 		0BBAB0C029A537BD0002199A /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBAB0BF29A537BD0002199A /* LaunchScreenView.swift */; };
-		0BBAB0C229A53F9A0002199A /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BBAB0C129A53F9A0002199A /* login.json */; };
 		0BC4235729599A0C00188283 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC4235629599A0C00188283 /* ChatView.swift */; };
 		0BCCC0DB295C34B6002883AC /* FeedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCC0DA295C34B6002883AC /* FeedDetail.swift */; };
 		0BCCC0E4295D526A002883AC /* FeedDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCC0E3295D5269002883AC /* FeedDetailViewModel.swift */; };
@@ -121,13 +121,15 @@
 		0B0682BA2944D1AE00E5D648 /* VerticalRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalRectangle.swift; sourceTree = "<group>"; };
 		0B0682BE2945AC3B00E5D648 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		0B0EE860299BA23F00114F45 /* NetworkEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndpoint.swift; sourceTree = "<group>"; };
-		0B0EE862299BA95700114F45 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkConfiguration.swift; path = ../../../../../../NetworkConfiguration.swift; sourceTree = "<group>"; };
 		0B0EE86B299BD26200114F45 /* SwiftPieChart */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftPieChart; path = ../../SwiftPieChart; sourceTree = "<group>"; };
 		0B29ED0E294B080B00A2D8FA /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		0B29ED10294B185800A2D8FA /* DetailRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRowView.swift; sourceTree = "<group>"; };
 		0B4833D9297C52D900730E97 /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
+		0B578C9429A7D4FE00E703B6 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
 		0B6EA3002992430100A329C6 /* Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottie.swift; sourceTree = "<group>"; };
 		0B6EA3022992479000A329C6 /* food-carousel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "food-carousel.json"; sourceTree = "<group>"; };
+		0B7201F229A7D56700ED5C43 /* login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
+		0B7201F429A7D58000ED5C43 /* LaunchScreenStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenStateManager.swift; sourceTree = "<group>"; };
 		0B7F6B2B299DEA21006F1786 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0B7F6B2E299DEE04006F1786 /* AuthenticationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDTO.swift; sourceTree = "<group>"; };
 		0B7F6B3329A369C3006F1786 /* CoreDataStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStorage.xcdatamodel; sourceTree = "<group>"; };
@@ -155,10 +157,8 @@
 		0BA0352A296DD88F00BF8EA1 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0BA0352F296E7DE500BF8EA1 /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		0BA03531296E82B000BF8EA1 /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
-		0BBAB0BB29A5377B0002199A /* LaunchScreenStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LaunchScreenStateManager.swift; path = ../../../../../../../LaunchScreenStateManager.swift; sourceTree = "<group>"; };
 		0BBAB0BD29A537990002199A /* LaunchScreenStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenStep.swift; sourceTree = "<group>"; };
 		0BBAB0BF29A537BD0002199A /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
-		0BBAB0C129A53F9A0002199A /* login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = login.json; path = ../../../../../../../Downloads/login.json; sourceTree = "<group>"; };
 		0BC4235629599A0C00188283 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		0BCCC0DA295C34B6002883AC /* FeedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetail.swift; sourceTree = "<group>"; };
 		0BCCC0E3295D5269002883AC /* FeedDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailViewModel.swift; sourceTree = "<group>"; };
@@ -290,8 +290,8 @@
 		0B0EE85F299BA23300114F45 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				0B578C9429A7D4FE00E703B6 /* NetworkConfiguration.swift */,
 				0B0EE860299BA23F00114F45 /* NetworkEndpoint.swift */,
-				0B0EE862299BA95700114F45 /* NetworkConfiguration.swift */,
 				0B7F6B2B299DEA21006F1786 /* NetworkService.swift */,
 			);
 			path = Network;
@@ -316,7 +316,7 @@
 		0B6EA304299247A700A329C6 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				0BBAB0C129A53F9A0002199A /* login.json */,
+				0B7201F229A7D56700ED5C43 /* login.json */,
 				0B6EA3022992479000A329C6 /* food-carousel.json */,
 				41B1819F29A4DD4000AC45B8 /* Lottie-step10.json */,
 				41B1819D29A4DD3900AC45B8 /* women-thinking.json */,
@@ -403,9 +403,9 @@
 		0BBAB0B829A533370002199A /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
-				0BBAB0BB29A5377B0002199A /* LaunchScreenStateManager.swift */,
 				0BBAB0BD29A537990002199A /* LaunchScreenStep.swift */,
 				0BBAB0BF29A537BD0002199A /* LaunchScreenView.swift */,
+				0B7201F429A7D58000ED5C43 /* LaunchScreenStateManager.swift */,
 			);
 			path = LaunchScreen;
 			sourceTree = "<group>";
@@ -711,8 +711,8 @@
 				0B8CE81C2995240A009ED5DD /* .swiftlint.yml in Resources */,
 				0B6EA3032992479000A329C6 /* food-carousel.json in Resources */,
 				41B1819E29A4DD3900AC45B8 /* women-thinking.json in Resources */,
-				0BBAB0C229A53F9A0002199A /* login.json in Resources */,
 				0B06822A29370AC200E5D648 /* Assets.xcassets in Resources */,
+				0B7201F329A7D56700ED5C43 /* login.json in Resources */,
 				41B181A029A4DD4000AC45B8 /* Lottie-step10.json in Resources */,
 				0BA03530296E7DE500BF8EA1 /* Localizable.stringsdict in Resources */,
 			);
@@ -772,6 +772,7 @@
 				0BD8D322297C060300F72BF9 /* UseCase.swift in Sources */,
 				0B6EA3012992430100A329C6 /* Lottie.swift in Sources */,
 				0BA03524296D419900BF8EA1 /* FeedFormViewModel.swift in Sources */,
+				0B7201F529A7D58000ED5C43 /* LaunchScreenStateManager.swift in Sources */,
 				0B8CE8202999C9E2009ED5DD /* Chart+Stub.swift in Sources */,
 				0B0682B92944CB0D00E5D648 /* Color+Extensions.swift in Sources */,
 				0B0682B32944C7CC00E5D648 /* Home.swift in Sources */,
@@ -780,7 +781,6 @@
 				0B7F6B2C299DEA21006F1786 /* NetworkService.swift in Sources */,
 				042A83112950E96B001F3FE0 /* Message.swift in Sources */,
 				0B8CE81E2999C9B0009ED5DD /* GraphView.swift in Sources */,
-				0B0EE863299BA95700114F45 /* NetworkConfiguration.swift in Sources */,
 				0B29ED0F294B080B00A2D8FA /* View+Extension.swift in Sources */,
 				0B001D4829A4C44700EA40F3 /* UserDTO.swift in Sources */,
 				0B8CE8242999DF96009ED5DD /* HomeRectangle.swift in Sources */,
@@ -797,10 +797,10 @@
 				0B80C6A0298085D100E72AFF /* Configuration.swift in Sources */,
 				0B0EE861299BA23F00114F45 /* NetworkEndpoint.swift in Sources */,
 				0BA0351C296C44C400BF8EA1 /* LocalSearch.swift in Sources */,
-				0BBAB0BC29A5377B0002199A /* LaunchScreenStateManager.swift in Sources */,
 				0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */,
 				0B8CE8222999CA0E009ED5DD /* ChartModel.swift in Sources */,
 				0B80C69C2980773B00E72AFF /* LoginViewModel.swift in Sources */,
+				0B578C9529A7D4FE00E703B6 /* NetworkConfiguration.swift in Sources */,
 				0BD8D325297C0EA000F72BF9 /* LocationService.swift in Sources */,
 				0BA03532296E82B000BF8EA1 /* FeedModel.swift in Sources */,
 				0B80C68A2980144D00E72AFF /* FeedDetailModel.swift in Sources */,
