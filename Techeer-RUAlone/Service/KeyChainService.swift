@@ -57,7 +57,7 @@ final class KeyChainService {
         guard let existingItem = item as? [String: Any],
               let data = existingItem[kSecAttrGeneric as String] as? Data,
               let token = try? JSONDecoder().decode(String.self, from: data) else { return nil }
-        
+
         return token
     }
     

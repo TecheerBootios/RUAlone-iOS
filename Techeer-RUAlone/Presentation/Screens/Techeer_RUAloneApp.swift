@@ -9,17 +9,21 @@ import SwiftUI
 
 @main
 struct RUAloneApp: App {
+    @StateObject var launchScreenState = LaunchScreenStateManager()
+
     init() {
         Configuration.setUp()
     }
     
     var body: some Scene {
         WindowGroup {
-            if KeyChainService.shared.requiresLogin() {
-                Login()
-            } else {
+            ZStack {
                 ContentView()
-            }
+                
+                if launchScreenState.state != .finished {
+                    LaunchScreenView()
+                }
+            }.environmentObject(launchScreenState)
         }
     }
 }

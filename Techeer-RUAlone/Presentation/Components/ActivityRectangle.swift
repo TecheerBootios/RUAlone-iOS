@@ -19,7 +19,7 @@ struct ActivityRectangle: View {
             Color.clear.ignoresSafeArea()
             TabView {
                 RoundedRectangle(cornerRadius: radius)
-                    .fill(Color.customBlue)
+                    .fill(Color.customWhite)
                     .overlay {
                         GatherChart()
                     }
@@ -29,12 +29,13 @@ struct ActivityRectangle: View {
                         MoneyChart()
                     }
                 RoundedRectangle(cornerRadius: radius)
-                    .fill(Color.customOrange)
+                    .fill(Color.customLightOrange)
                     .overlay {
                         TimeChart()
                     }
             }
             .tabViewStyle(.page)
+            .shadow(radius: 20)
         }
         
         

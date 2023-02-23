@@ -8,38 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @State var isActive: Bool = false
+    @EnvironmentObject private var launchScreenState: LaunchScreenStateManager
+    @StateObject var loginViewModel: Login.ViewModel = .init()
     
     var body: some View {
-        VStack{
-            if self.isActive {
-                TabView {
-                    Home()
-                        .tabItem {
-                            Label("Home", systemImage: "house.fill")
-                        }
-                    Feed()
-                        .tabItem {
-                            Label("Post", systemImage: "person.3.fill")
-                        }
-                    Message()
-                        .tabItem {
-                            Label("Message", systemImage: "message.fill")
-                        }
+        TabView {
+            Home()
+                .tabItem {
+                    Label("Home", systemImage: "house.fill")
                 }
-                .tint(.black)
-            } else {
-                LottieView(lottieFile: "women-thinking", contentMode: .scaleAspectFit)
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 100, trailing: 0))
-            }
+            Feed()
+                .tabItem {
+                    Label("Post", systemImage: "person.3.fill")
+                }
+            Message()
+                .tabItem {
+                    Label("Message", systemImage: "message.fill")
+                }
         }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                withAnimation {
-                    self.isActive = true
-                }
-            }
+        .tint(.black)
+        .task {
+            loginViewModel.deleteToken()
+            try? await Task.sleep(for: Duration.seconds(2))
+            loginViewModel.isNotAuthenticated.toggle()
+            self.launchScreenState.dismiss()
+        }
+        .fullScreenCover(isPresented: $loginViewModel.isNotAuthenticated) {
+            Login(viewModel: loginViewModel)
         }
     }
 }

@@ -27,6 +27,10 @@ extension FeedModel {
             .init(title: "스파기티 먹방 기기!", date: Date(), currentlyGathered: 4, hoursPassed: 6),
             .init(title: "고기 씹으러 가자!", date: Date(), currentlyGathered: 1, hoursPassed: 2),
             .init(title: "냠냠 먹태파티", date: Date(), currentlyGathered: 3, hoursPassed: 2),
+            .init(title: "냠냠 먹태파티", date: Date(), currentlyGathered: 3, hoursPassed: 2),
+            .init(title: "냠냠 먹태파티", date: Date(), currentlyGathered: 3, hoursPassed: 2),
+            .init(title: "냠냠 먹태파티", date: Date(), currentlyGathered: 3, hoursPassed: 2),
+            .init(title: "냠냠 먹태파티", date: Date(), currentlyGathered: 3, hoursPassed: 2),
        ]
     }
 }

@@ -9,30 +9,35 @@ import SwiftUI
 
 struct Feed: View {
     @State private var searchText = ""
+    @State private var isPresented = false
     
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.customPink.ignoresSafeArea()
+                Color.customWhite.ignoresSafeArea()
                 ScrollView(.vertical, showsIndicators: false) {
-                    ForEach(FeedModel.stubs(), id: \.self) {
-                        DetailRowView(feed: $0)
+                    ForEach(Array(zip(FeedModel.stubs().indices, FeedModel.stubs())), id: \.0) { index, item in
+                        DetailRowView(feed: item, index: index)
                             .padding([.top, .leading, .trailing])
+                        Divider()
                     }
                 }
                 .frame(maxWidth: .infinity)
                 .background(Color.customWhite)
                 .cornerRadius(30, corners: [.topLeft, .topRight])
-                .edgesIgnoringSafeArea(.bottom)
             }
             .navigationTitle("Find Nav Title")
-            .navigationBarColor(titleColor: .white)
-            .textFieldColor(backgroundColor: .white, tintColor: .black)
+            .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText, prompt: Text("메뉴를 검색해보세요"))
             .toolbar {
-                NavigationLink(destination: {
-                    FeedForm(viewModel: .init(form: FormModel()))
-                }, label: { Image(systemName: "plus")})
+                Button {
+                    isPresented.toggle()
+                } label: {
+                    Image(systemName: "plus").foregroundColor(.customPink).bold()
+                }
+            }
+            .fullScreenCover(isPresented: $isPresented) {
+                FeedForm(viewModel: .init(form: FormModel()))
             }
             
         }

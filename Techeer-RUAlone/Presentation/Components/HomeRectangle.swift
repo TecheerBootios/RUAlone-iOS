@@ -17,6 +17,7 @@ struct HomeRectangle: View {
     @State var isEventDate: Bool = false
     @State var isChatPresented: Bool = false
     @State var selectedDate: Date = Date()
+    @ObservedObject var viewModel: Home.ViewModel
     
     var body: some View {
         GeometryReader { geometry in
@@ -25,7 +26,7 @@ struct HomeRectangle: View {
                     .fill(rectangleColor)
                     .overlay {
                         VStack {
-                            Text("WelcomeMessage \("Sean")")
+                            Text(viewModel.header)
                                 .font(.title)
                                 .bold()
                             
@@ -50,7 +51,7 @@ struct HomeRectangle: View {
                             .presentationDetents([.height(geometry.size.height/3)])
                         }
                     }
-                    .shadow(radius: 50, x: 10, y: 10)
+                    .shadow(radius: 20)
             }
         }
     }
@@ -162,6 +163,6 @@ struct HomeRectangle: View {
 
 struct HomeRectangle_Previews: PreviewProvider {
     static var previews: some View {
-        HomeRectangle(rectangleColor: .customPurple)
+        HomeRectangle(rectangleColor: .customPurple, viewModel: .init())
     }
 }
