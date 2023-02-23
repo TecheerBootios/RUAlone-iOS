@@ -50,7 +50,7 @@ struct HomeRectangle: View {
                             .presentationDetents([.height(geometry.size.height/3)])
                         }
                     }
-                    .shadow(radius: 50, x: 10, y: 10)
+                    .shadow(radius: 20)
             }
         }
     }

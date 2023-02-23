@@ -13,11 +13,12 @@ struct Feed: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.customPink.ignoresSafeArea()
+                Color.customWhite.ignoresSafeArea()
                 ScrollView(.vertical, showsIndicators: false) {
-                    ForEach(FeedModel.stubs(), id: \.self) {
-                        DetailRowView(feed: $0)
+                    ForEach(Array(zip(FeedModel.stubs().indices, FeedModel.stubs())), id: \.0) { index, item in
+                        DetailRowView(feed: item, index: index)
                             .padding([.top, .leading, .trailing])
+                        Divider()
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -26,13 +27,12 @@ struct Feed: View {
                 .edgesIgnoringSafeArea(.bottom)
             }
             .navigationTitle("Find Nav Title")
-            .navigationBarColor(titleColor: .white)
-            .textFieldColor(backgroundColor: .white, tintColor: .black)
+            .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText, prompt: Text("메뉴를 검색해보세요"))
             .toolbar {
                 NavigationLink(destination: {
                     FeedForm(viewModel: .init(form: FormModel()))
-                }, label: { Image(systemName: "plus")})
+                }, label: { Image(systemName: "plus").foregroundColor(.customPink).bold() })
             }
             
         }

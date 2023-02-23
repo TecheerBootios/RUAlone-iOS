@@ -35,7 +35,7 @@ struct ActivityRectangle: View {
                     }
             }
             .tabViewStyle(.page)
-            .shadow(radius: 50)
+            .shadow(radius: 20)
         }
         
         

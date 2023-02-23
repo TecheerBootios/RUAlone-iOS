@@ -15,7 +15,7 @@ private let logger = Logger.init(subsystem: "com.techeer.KKodiac.Techeer-RUAlone
 
 extension Login {
     class ViewModel: ObservableObject {
-        @Published var isAuthenticated: Bool = false
+        @Published var isNotAuthenticated: Bool = true
         
         func authenticate() {
             Task {
@@ -23,6 +23,7 @@ extension Login {
                 NetworkService.signIn(with: SignInRequestDTO(accessToken: KeyChainService.shared.readToken() ?? "")) { result in
                     switch result {
                     case .success(let response):
+                        self.isNotAuthenticated.toggle()
                         logger.log("[Login Success] \(response.data.accessToken)")
                         self.createToken(response.data.accessToken)
                     case .failure(let error):
@@ -66,14 +67,12 @@ extension Login {
                 logger.error("[KeyChain] Read failed")
                 return nil
             }
-            print("READ \(token)")
             return token
         }
         
         func createToken(_ token: String) {
             if KeyChainService.shared.createToken(token) {
                 logger.log("[KeyChain] Create successful")
-                isAuthenticated.toggle()
             } else {
                 logger.error("[KeyChain] Create failed")
             }

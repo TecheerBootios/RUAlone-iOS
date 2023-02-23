@@ -23,7 +23,7 @@ struct FeedDetail: View {
                         modalView().presentationDetents([.medium, .large])
                     }
             }
-            .toolbar(.hidden, for: .tabBar)
+//            .toolbar(.hidden, for: .tabBar)
         }
     }
 }

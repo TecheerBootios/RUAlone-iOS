@@ -9,20 +9,21 @@ import SwiftUI
 
 @main
 struct RUAloneApp: App {
-    @StateObject var loginViewModel: Login.ViewModel = .init()
-    
+    @StateObject var launchScreenState = LaunchScreenStateManager()
+
     init() {
         Configuration.setUp()
-        loginViewModel.deleteToken()
     }
     
     var body: some Scene {
         WindowGroup {
-            if loginViewModel.isAuthenticated == false {
-                Login(viewModel: loginViewModel)
-            } else {
+            ZStack {
                 ContentView()
-            }
+                
+                if launchScreenState.state != .finished {
+                    LaunchScreenView()
+                }
+            }.environmentObject(launchScreenState)
         }
     }
 }

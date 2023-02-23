@@ -15,22 +15,22 @@ struct Login: View {
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
-        Color.customBackground
-            .ignoresSafeArea()
-            .overlay(
-                VStack {
-                    LottieView(lottieFile: "food-carousel", contentMode: .scaleAspectFit)
-                        .frame(width: 300, height: 300)
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 100, trailing: 0))
-                    Button {
-                        viewModel.authenticate()
-                    } label: {
-                        Image("KakaoLogin")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.main.bounds.width * 0.9)
-                    }
-                })
+        ZStack {
+            Color.customBackground.ignoresSafeArea()
+            VStack {
+                LottieView(lottieFile: "login", contentMode: .scaleAspectFit)
+                    .frame(width: 300, height: 300)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 100, trailing: 0))
+                Button {
+                    viewModel.authenticate()
+                } label: {
+                    Image("KakaoLogin")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: UIScreen.main.bounds.width * 0.9)
+                }
+            }
+        }
     }
 }
 
