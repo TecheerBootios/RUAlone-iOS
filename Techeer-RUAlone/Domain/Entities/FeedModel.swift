@@ -23,7 +23,6 @@ struct FeedModel: Hashable, Identifiable {
         self.currentlyGathered = currentlyGathered
         self.hoursPassed = hoursPassed
     }
-    
 }
 
 struct FeedPage: Equatable {

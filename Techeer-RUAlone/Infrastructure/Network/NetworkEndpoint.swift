@@ -147,6 +147,3 @@ enum PostEndpoint: URLRequestConvertible {
         }
     }
 }
-
-
-
