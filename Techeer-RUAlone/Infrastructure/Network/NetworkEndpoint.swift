@@ -70,13 +70,16 @@ enum UserEndpoint: URLRequestConvertible {
         let url = try Base.ProductionServer.baseURL.asURL()
         var request = URLRequest(url: url.appendingPathComponent(path))
         request.httpMethod = method.rawValue
-        request.setValue(Base.AcceptType.json.rawValue, forHTTPHeaderField: Base.HTTPHeaderField.acceptType.rawValue)
+        request.setValue(Base.AcceptType.json.rawValue,
+                         forHTTPHeaderField: Base.HTTPHeaderField.acceptType.rawValue)
+        
         if let token = KeyChainService.shared.readToken() {
             let headers: HTTPHeaders = [
                 "X-AUTH-TOKEN": token
             ]
             request.headers = headers
         }
+        
         if let parameters = parameters {
             return try encoding.encode(request, with: parameters)
         }
@@ -142,6 +145,18 @@ enum PostEndpoint: URLRequestConvertible {
         var request = URLRequest(url: url.appendingPathComponent(path))
         request.httpMethod = method.rawValue
         request.setValue(Base.AcceptType.json.rawValue, forHTTPHeaderField: Base.HTTPHeaderField.acceptType.rawValue)
+        
+        if let token = KeyChainService.shared.readToken() {
+            let headers: HTTPHeaders = [
+                "X-AUTH-TOKEN": token
+            ]
+            request.headers = headers
+        }
+        
+        if let parameters = parameters {
+            return try encoding.encode(request, with: parameters)
+        }
+        
         return request
     }
     
@@ -172,6 +187,26 @@ enum PostEndpoint: URLRequestConvertible {
             return "/api/post/\(id)"
         case .deletePostByID(let id):
             return "/api/post/\(id)"
+        }
+    }
+    
+    private var parameters: Parameters? {
+        switch self {
+        case .createPost:
+            return ["accessToken": ""]
+        case .updatePost:
+            return ["accessToken": ""]
+        default:
+            return [:]
+        }
+    }
+    
+    var encoding: ParameterEncoding {
+        switch self {
+        case .createPost, .updatePost:
+            return JSONEncoding.default
+        default:
+            return URLEncoding.default
         }
     }
 }

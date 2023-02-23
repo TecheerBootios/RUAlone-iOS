@@ -20,6 +20,7 @@ extension Login {
         func authenticate() {
             Task {
                 _ = await validateAuthentication()
+                _ = await requestSignUp()
                 _ = await requestSignIn()
                 _ = await fetchUserData()
             }
@@ -52,6 +53,23 @@ extension Login {
                 }
             }
         }
+        
+        
+        func requestSignUp() async -> Bool {
+            return await withCheckedContinuation { continuation in
+                NetworkService.signUp(with: SignUpRequestDTO(accessToken: KeyChainService.shared.readToken() ?? "")) { result in
+                    switch result {
+                    case .success(_):
+                        logger.log("[SignUp Success]")
+                        continuation.resume(returning: true)
+                    case .failure(let error):
+                        logger.error("[SignUp Success] \(error)")
+                        continuation.resume(returning: false)
+                    }
+                }
+            }
+        }
+        
         
         func requestSignIn() async -> Bool {
             return await withCheckedContinuation { continuation in

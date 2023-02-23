@@ -9,9 +9,9 @@ import Alamofire
 import Foundation
 
 class NetworkService {
-    static func signUp(with token: SignUpRequestDTO, completion: @escaping (Result<[SignUpResponseDTO], AFError>) -> Void) {
+    static func signUp(with token: SignUpRequestDTO, completion: @escaping (Result<SignUpResponseDTO, AFError>) -> Void) {
         AF.request(AuthenticationEndpoint.signUp(accessToken: token.accessToken))
-            .responseDecodable { (response: DataResponse<[SignUpResponseDTO], AFError>) in
+            .responseDecodable { (response: DataResponse<SignUpResponseDTO, AFError>) in
                 completion(response.result)
             }
     }
