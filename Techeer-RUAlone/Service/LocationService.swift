@@ -25,7 +25,7 @@ final class LocationService: NSObject, ObservableObject {
         self.manager.delegate = self
     }
     
-    public func requestLocalLocation() {
+    public func requestLocation() {
         manager.requestLocation()
     }
     
@@ -33,7 +33,7 @@ final class LocationService: NSObject, ObservableObject {
         request(resultType: .pointOfInterest, searchText: searchText)
     }
     
-    public func requestAuthorization(_ manager: CLLocationManager) {
+    public func requestAuthorization() {
         switch manager.authorizationStatus {
         case .authorizedAlways:
             authorizationStatus = .authorizedAlways

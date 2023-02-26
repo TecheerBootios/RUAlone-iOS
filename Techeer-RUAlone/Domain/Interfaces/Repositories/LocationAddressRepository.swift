@@ -10,6 +10,7 @@ import Foundation
 protocol LocationAddressRepository {
     var service: LocationService { get }
     
+    func requestUsageAuthorization()
     func updateUserLocation()
     func search(pointOfInterest: String)
 }

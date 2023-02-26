@@ -10,6 +10,7 @@ import SwiftUI
 struct Feed: View {
     @State private var searchText = ""
     @State private var isPresented = false
+    @StateObject private var viewModel: ViewModel = .init()
     
     var body: some View {
         NavigationStack {
@@ -40,6 +41,9 @@ struct Feed: View {
                 FeedForm(viewModel: .init(form: FormModel()))
             }
             
+        }
+        .onAppear {
+            viewModel.requestUsageAuthorization()
         }
     }
 }
