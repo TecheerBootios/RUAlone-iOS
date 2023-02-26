@@ -13,7 +13,6 @@ extension FeedDetail {
         @Published var place: PlaceIdentifier = PlaceIdentifier(lat: 37.334_900, long: -122.009_020)
         @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.334_900-0.0040, longitude: -122.009_020),
                                                    latitudinalMeters: 750, longitudinalMeters: 750)
-        
         @Published var details = FeedDetailModel.stub()
     }
 }

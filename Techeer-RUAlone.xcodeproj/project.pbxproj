@@ -36,6 +36,7 @@
 		0B29ED11294B185800A2D8FA /* DetailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29ED10294B185800A2D8FA /* DetailRowView.swift */; };
 		0B4833DA297C52D900730E97 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4833D9297C52D900730E97 /* FormModel.swift */; };
 		0B578C9529A7D4FE00E703B6 /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B578C9429A7D4FE00E703B6 /* NetworkConfiguration.swift */; };
+		0B578C8D29A74FED00E703B6 /* PostDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B578C8C29A74FED00E703B6 /* PostDTO.swift */; };
 		0B6EA2FE2992428900A329C6 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0B6EA2FD2992428900A329C6 /* Lottie */; };
 		0B6EA3012992430100A329C6 /* Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6EA3002992430100A329C6 /* Lottie.swift */; };
 		0B6EA3032992479000A329C6 /* food-carousel.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B6EA3022992479000A329C6 /* food-carousel.json */; };
@@ -126,6 +127,7 @@
 		0B29ED10294B185800A2D8FA /* DetailRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRowView.swift; sourceTree = "<group>"; };
 		0B4833D9297C52D900730E97 /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
 		0B578C9429A7D4FE00E703B6 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
+		0B578C8C29A74FED00E703B6 /* PostDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDTO.swift; sourceTree = "<group>"; };
 		0B6EA3002992430100A329C6 /* Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottie.swift; sourceTree = "<group>"; };
 		0B6EA3022992479000A329C6 /* food-carousel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "food-carousel.json"; sourceTree = "<group>"; };
 		0B7201F229A7D56700ED5C43 /* login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 			children = (
 				0B7F6B2E299DEE04006F1786 /* AuthenticationDTO.swift */,
 				0B001D4729A4C44700EA40F3 /* UserDTO.swift */,
+				0B578C8C29A74FED00E703B6 /* PostDTO.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -766,6 +769,7 @@
 				0B80C69329803CDE00E72AFF /* FeedDetail+Stub.swift in Sources */,
 				0BCF9C9329A7114000E92B8A /* HomeViewModel.swift in Sources */,
 				0BBAB0BE29A537990002199A /* LaunchScreenStep.swift in Sources */,
+				0B578C8D29A74FED00E703B6 /* PostDTO.swift in Sources */,
 				0BCCC0DB295C34B6002883AC /* FeedDetail.swift in Sources */,
 				0BBAB0C029A537BD0002199A /* LaunchScreenView.swift in Sources */,
 				0B29ED11294B185800A2D8FA /* DetailRowView.swift in Sources */,

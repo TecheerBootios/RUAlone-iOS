@@ -125,6 +125,13 @@ extension FeedForm {
         }
     }
     
+    private func detailSection() -> some View {
+        Picker("배달? 픽업?", selection: $viewModel.foodCategory) {
+            Text("배달")
+            Text("픽업")
+        }
+    }
+    
     private func dateSelectionSection() -> some View {
         DisclosureGroup("Date") {
             DatePicker("Date Ask", selection: $viewModel.startAt)
