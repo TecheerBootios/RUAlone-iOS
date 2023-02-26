@@ -19,7 +19,20 @@ struct PostCreateRequestDTO: Encodable {
     var title: String
 }
 
-struct Location: Encodable {
+struct PostCreateResposneDTO: Encodable {
+    var chatURL: String
+    var creatorEmail: String
+    var foodCategory: String
+    var limitMember: Int
+    var location: Location
+    var place: String
+    var postType: String
+    var startAt: String
+    var title: String
+}
+
+
+struct Location: Codable {
     let latitude: Double
     let longitude: Double
 }

@@ -63,7 +63,6 @@
 		0B8CE8242999DF96009ED5DD /* HomeRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CE8232999DF96009ED5DD /* HomeRectangle.swift */; };
 		0B8CE8262999F218009ED5DD /* GraphCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CE8252999F218009ED5DD /* GraphCapsule.swift */; };
 		0BA03510296C302F00BF8EA1 /* FeedForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0350F296C302F00BF8EA1 /* FeedForm.swift */; };
-		0BA0351C296C44C400BF8EA1 /* LocalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0351B296C44C400BF8EA1 /* LocalSearch.swift */; };
 		0BA03524296D419900BF8EA1 /* FeedFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA03523296D419900BF8EA1 /* FeedFormViewModel.swift */; };
 		0BA03527296DD88B00BF8EA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0BA03529296DD88B00BF8EA1 /* Localizable.strings */; };
 		0BA03530296E7DE500BF8EA1 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 0BA0352F296E7DE500BF8EA1 /* Localizable.stringsdict */; };
@@ -155,7 +154,6 @@
 		0B8CE8232999DF96009ED5DD /* HomeRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRectangle.swift; sourceTree = "<group>"; };
 		0B8CE8252999F218009ED5DD /* GraphCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCapsule.swift; sourceTree = "<group>"; };
 		0BA0350F296C302F00BF8EA1 /* FeedForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedForm.swift; sourceTree = "<group>"; };
-		0BA0351B296C44C400BF8EA1 /* LocalSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearch.swift; sourceTree = "<group>"; };
 		0BA03523296D419900BF8EA1 /* FeedFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFormViewModel.swift; sourceTree = "<group>"; };
 		0BA03528296DD88B00BF8EA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0BA0352A296DD88F00BF8EA1 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -522,7 +520,6 @@
 		0BD8D31C297C04CB00F72BF9 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				0BA0351B296C44C400BF8EA1 /* LocalSearch.swift */,
 				0B4833D9297C52D900730E97 /* FormModel.swift */,
 				0B80C6892980144D00E72AFF /* FeedDetailModel.swift */,
 				0BA03531296E82B000BF8EA1 /* FeedModel.swift */,
@@ -804,7 +801,6 @@
 				0BD8D32B297C203900F72BF9 /* DefaultLocationAddressRepository.swift in Sources */,
 				0B80C6A0298085D100E72AFF /* Configuration.swift in Sources */,
 				0B0EE861299BA23F00114F45 /* NetworkEndpoint.swift in Sources */,
-				0BA0351C296C44C400BF8EA1 /* LocalSearch.swift in Sources */,
 				0B06822629370AC000E5D648 /* Techeer_RUAloneApp.swift in Sources */,
 				0B8CE8222999CA0E009ED5DD /* ChartModel.swift in Sources */,
 				0B80C69C2980773B00E72AFF /* LoginViewModel.swift in Sources */,

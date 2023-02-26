@@ -53,7 +53,7 @@ final class LocationService: NSObject, ObservableObject {
     
     private func request(resultType: MKLocalSearch.ResultType, searchText: String) {
         guard let location = location else { return }
-        let radius: CLLocationDistance = 350_000
+        let radius: CLLocationDistance = 150_000
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = searchText
         request.pointOfInterestFilter = .includingAll

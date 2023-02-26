@@ -7,20 +7,29 @@
 
 import SendbirdChatSDK
 import SwiftUI
+import Combine
 
 import os
 
 private let logger = Logger(subsystem: "com.seanhong.KKodiac.Techeer-RUAlone", category: "ChatService")
 
 final class ChatService: NSObject, ObservableObject {
-    func createChat(name: String, users: [String], isDistinct: Bool = true) {
+    let chatPublisher = PassthroughSubject<String, Never>()
+    
+    func createChat(_ name: String, users: [String], isDistinct: Bool = false) {
         let params = GroupChannelCreateParams()
         params.name = name
         params.userIds = users
         params.isDistinct = isDistinct
+        
         GroupChannel.createChannel(params: params) { channel, error in
-            guard let channelURL = channel?.channelURL else { return }
-            logger.log("\(channelURL.description)")
+            if let error = error {
+                logger.error("\(error)")
+                return
+            }
+            if let channel = channel {
+                self.chatPublisher.send(channel.channelURL)
+            }
         }
     }
 

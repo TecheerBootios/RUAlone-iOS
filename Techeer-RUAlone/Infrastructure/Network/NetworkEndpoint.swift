@@ -133,7 +133,7 @@ enum UserEndpoint: URLRequestConvertible {
 }
 
 enum PostEndpoint: URLRequestConvertible {
-    case createPost
+    case createPost(FormModel)
     case updatePost
     case fetchPostAll
     case fetchPost
@@ -192,10 +192,21 @@ enum PostEndpoint: URLRequestConvertible {
     
     private var parameters: Parameters? {
         switch self {
-        case .createPost:
-            return ["accessToken": ""]
-        case .updatePost:
-            return ["accessToken": ""]
+        case .createPost(let form):
+            return [
+                "chatUrl": form.chatURL,
+                "creatorEmail": CoreDataStorage.shared.fetchUser()?.email ?? "",
+                "foodCategory": form.foodCategory.rawValue,
+                "limitMember": form.limitMember,
+                "location": [
+                  "latitude": 0,
+                  "longitude": 0
+                ],
+                "place": form.address,
+                "postType": form.postType,
+                "startAt": form.startAt,
+                "title": form.title
+            ]
         default:
             return [:]
         }

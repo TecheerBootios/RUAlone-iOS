@@ -16,6 +16,7 @@ struct FormModel: Codable {
         case limitMember = "LimitMember"
         case postType = "PostType"
         case chatURL = "ChatURL"
+        case location
     }
 
     var title: String = ""
@@ -25,6 +26,7 @@ struct FormModel: Codable {
     var startAt: Date = Date()
     var limitMember: Int = 1
     var chatURL: String = ""
+    var location: Location? = nil
     
     enum PostType: String, Codable, CaseIterable {
         case eatOut = "EatOut"
