@@ -32,6 +32,10 @@ extension FeedDetail {
                 self.region = MKCoordinateRegion(center: centerCoordinate, latitudinalMeters: span, longitudinalMeters: span)
             }
         }
+        
+        func saveToPersistence() {
+            CoreDataStorage.shared.insertPost(detail)
+        }
     }
 }
 

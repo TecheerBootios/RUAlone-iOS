@@ -71,6 +71,7 @@ private extension FeedDetail {
     func joinButtonView() -> some View {
         Button(action: {
             isChatPresented.toggle()
+            viewModel.saveToPersistence()
         }, label: {
             Label(title: {
                 Spacer()
@@ -89,7 +90,7 @@ private extension FeedDetail {
     func basicInfoSectionView() -> some View {
         Section {
             Text("\(viewModel.detail.startAt.formatted(date: .abbreviated, time: .shortened))").bold()
-            Text("Gathered State \(3) \(viewModel.detail.limitMember)")
+            Text("Gathered State \(1) \(viewModel.detail.limitMember)")
                 .foregroundColor(.red)
                 .bold()
         } header: {

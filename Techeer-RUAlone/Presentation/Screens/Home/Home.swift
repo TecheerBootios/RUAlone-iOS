@@ -21,6 +21,7 @@ struct Home: View {
             .padding()
             .onAppear {
                 viewModel.fetchUser()
+                viewModel.fetchPosts()
             }
         }
     }

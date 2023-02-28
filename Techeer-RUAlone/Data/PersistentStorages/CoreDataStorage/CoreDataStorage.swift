@@ -64,6 +64,7 @@ final class CoreDataStorage {
         persistentContainer.performBackgroundTask(block)
     }
     
+    // MARK: TOKEN Operations
     func insertQueryParameter(_ entity: String) {
         if let paramEntity = paramEntity {
             let managedObject = NSManagedObject(entity: paramEntity, insertInto: context)
@@ -92,6 +93,7 @@ final class CoreDataStorage {
         return result.param
     }
     
+    // MARK: USER Operations
     func insertUser(_ entity: UserEntity) {
         if let userEntity = userEntity {
             let managedObject = NSManagedObject(entity: userEntity, insertInto: context)
@@ -102,7 +104,7 @@ final class CoreDataStorage {
         }
     }
     
-    func fetchUsers() -> [User] {
+    private func fetchUsers() -> [User] {
         do {
             let request = User.fetchRequest()
             let result = try context.fetch(request)
@@ -120,5 +122,39 @@ final class CoreDataStorage {
             return nil
         }
         return UserEntity(name: result.name ?? "", email: result.email ?? "", nickname: result.nickname ?? "")
+    }
+    
+    // MARK: POST Operations
+    func insertPost(_ entity: FormModel) {
+        if let postEntity = postEntity,
+           let location = entity.location {
+            let managedObject = NSManagedObject(entity: postEntity, insertInto: context)
+            managedObject.setValue(entity.title, forKey: "title")
+            managedObject.setValue(entity.address, forKey: "address")
+            managedObject.setValue(entity.startAt, forKey: "startAt")
+            managedObject.setValue(entity.chatURL, forKey: "chatURL")
+            managedObject.setValue(entity.limitMember, forKey: "limitMember")
+            managedObject.setValue(entity.foodCategory.rawValue, forKey: "foodCategory")
+            managedObject.setValue(entity.postType.rawValue, forKey: "postType")
+            managedObject.setValue(location.latitude, forKey: "latitude")
+            managedObject.setValue(location.longitude, forKey: "longitude")
+            saveContext()
+        }
+    }
+    
+    private func fetchPosts() -> [Post] {
+        do {
+            let request = Post.fetchRequest()
+            let result = try context.fetch(request)
+            return result
+        } catch {
+            logger.error("\(error.localizedDescription)")
+        }
+        return []
+    }
+    
+    func fetchPost() -> [FormModel]? {
+        let result = fetchPosts()
+        return result.map { FormModel(persistence: $0) }
     }
 }

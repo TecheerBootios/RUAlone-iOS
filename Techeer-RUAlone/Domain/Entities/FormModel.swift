@@ -61,6 +61,17 @@ struct FormModel: Codable {
         self.location = data.locationInfo
     }
     
+    init(persistence: Post) {
+        self.title = persistence.title!
+        self.foodCategory = FoodCategory(rawValue: persistence.foodCategory!)!
+        self.postType = PostType(rawValue: persistence.postType!)!
+        self.address = persistence.address!
+        self.limitMember = Int(exactly: persistence.limitMember)!
+        self.location = Location(latitude: persistence.latitude, longitude: persistence.longitude)
+        self.chatURL = persistence.chatURL!
+        self.startAt = persistence.startAt!
+    }
+    
     enum PostType: String, Codable, CaseIterable {
         case eatOut = "EatOut"
         case eatIn = "EatIn"
