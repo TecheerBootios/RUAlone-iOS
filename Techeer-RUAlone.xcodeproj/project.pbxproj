@@ -27,7 +27,6 @@
 		0B0682B52944C8BF00E5D648 /* ActivityRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682B42944C8BF00E5D648 /* ActivityRectangle.swift */; };
 		0B0682B72944CA4800E5D648 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B0682B62944CA4800E5D648 /* Colors.xcassets */; };
 		0B0682B92944CB0D00E5D648 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682B82944CB0D00E5D648 /* Color+Extensions.swift */; };
-		0B0682BB2944D1AE00E5D648 /* VerticalRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682BA2944D1AE00E5D648 /* VerticalRectangle.swift */; };
 		0B0682BF2945AC3B00E5D648 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682BE2945AC3B00E5D648 /* Feed.swift */; };
 		0B0EE85B299A30BE00114F45 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0EE85A299A30BE00114F45 /* FSCalendar */; };
 		0B0EE861299BA23F00114F45 /* NetworkEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0EE860299BA23F00114F45 /* NetworkEndpoint.swift */; };
@@ -119,7 +118,6 @@
 		0B0682B42944C8BF00E5D648 /* ActivityRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRectangle.swift; sourceTree = "<group>"; };
 		0B0682B62944CA4800E5D648 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0B0682B82944CB0D00E5D648 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
-		0B0682BA2944D1AE00E5D648 /* VerticalRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalRectangle.swift; sourceTree = "<group>"; };
 		0B0682BE2945AC3B00E5D648 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		0B0EE860299BA23F00114F45 /* NetworkEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndpoint.swift; sourceTree = "<group>"; };
 		0B0EE86B299BD26200114F45 /* SwiftPieChart */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftPieChart; path = ../../SwiftPieChart; sourceTree = "<group>"; };
@@ -375,6 +373,7 @@
 		0BA03518296C435400BF8EA1 /* FeedList */ = {
 			isa = PBXGroup;
 			children = (
+				0B29ED10294B185800A2D8FA /* DetailRowView.swift */,
 				0B0682BE2945AC3B00E5D648 /* Feed.swift */,
 				0B11EB4029AB4DBE009CE511 /* FeedViewModel.swift */,
 			);
@@ -384,6 +383,10 @@
 		0BA03519296C43A500BF8EA1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0B8CE8232999DF96009ED5DD /* HomeRectangle.swift */,
+				0B8CE8252999F218009ED5DD /* GraphCapsule.swift */,
+				0B8CE81D2999C9B0009ED5DD /* GraphView.swift */,
+				0B0682B42944C8BF00E5D648 /* ActivityRectangle.swift */,
 				0B0682B22944C7CC00E5D648 /* Home.swift */,
 				0BCF9C9229A7114000E92B8A /* HomeViewModel.swift */,
 			);
@@ -428,7 +431,6 @@
 			isa = PBXGroup;
 			children = (
 				0BBAB0B829A533370002199A /* LaunchScreen */,
-				0BD8D313297BCAC300F72BF9 /* Components */,
 				0BD8D314297BCAD000F72BF9 /* Screens */,
 			);
 			path = Presentation;
@@ -442,19 +444,6 @@
 				0BD8D329297C1FF100F72BF9 /* Repositories */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		0BD8D313297BCAC300F72BF9 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				0B0682B42944C8BF00E5D648 /* ActivityRectangle.swift */,
-				0B0682BA2944D1AE00E5D648 /* VerticalRectangle.swift */,
-				0B29ED10294B185800A2D8FA /* DetailRowView.swift */,
-				0B8CE81D2999C9B0009ED5DD /* GraphView.swift */,
-				0B8CE8232999DF96009ED5DD /* HomeRectangle.swift */,
-				0B8CE8252999F218009ED5DD /* GraphCapsule.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		0BD8D314297BCAD000F72BF9 /* Screens */ = {
@@ -796,7 +785,6 @@
 				0B80C6A429809B9100E72AFF /* DefaultChatRepository.swift in Sources */,
 				0B8CE8262999F218009ED5DD /* GraphCapsule.swift in Sources */,
 				0B06822829370AC000E5D648 /* ContentView.swift in Sources */,
-				0B0682BB2944D1AE00E5D648 /* VerticalRectangle.swift in Sources */,
 				0B0682BF2945AC3B00E5D648 /* Feed.swift in Sources */,
 				0BD8D32B297C203900F72BF9 /* DefaultLocationAddressRepository.swift in Sources */,
 				0B80C6A0298085D100E72AFF /* Configuration.swift in Sources */,
