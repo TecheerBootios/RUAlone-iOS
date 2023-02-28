@@ -14,6 +14,7 @@ struct FeedDetail: View {
     @State private var isPresented = true
     @State private var isChatPresented = false
     
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -49,7 +50,7 @@ private extension FeedDetail {
     
     func titleView() -> some View {
         HStack {
-            Text("\(viewModel.details.title)").font(.title).bold()
+            Text("\(viewModel.detail.title)").font(.title).bold()
             Spacer()
             ZStack {
                 Image(systemName: "x.circle.fill").foregroundColor(.gray)
@@ -61,7 +62,7 @@ private extension FeedDetail {
     
     func uploadTimeView() -> some View {
         Label(title: {
-            Text("Time \(viewModel.details.timestamp)").font(.subheadline)
+            Text("Time \(Int(viewModel.detail.startAt.timeIntervalSinceNow / 3600))").font(.subheadline)
         }, icon: {
             Image(systemName: "clock.fill")
         }).foregroundColor(Color.gray)
@@ -81,14 +82,14 @@ private extension FeedDetail {
         .tint(.customOrange)
         .buttonStyle(.borderedProminent)
         .fullScreenCover(isPresented: $isChatPresented) {
-            ChatView(channelURL: viewModel.details.chatURLString)
+            ChatView(channelURL: viewModel.detail.chatURL)
         }
     }
     
     func basicInfoSectionView() -> some View {
         Section {
-            Text("\(viewModel.details.startAt)").bold()
-            Text("Gathered State \(viewModel.details.currentMemeber) \(viewModel.details.limitMember)")
+            Text("\(viewModel.detail.startAt.formatted(date: .abbreviated, time: .shortened))").bold()
+            Text("Gathered State \(3) \(viewModel.detail.limitMember)")
                 .foregroundColor(.red)
                 .bold()
         } header: {
@@ -116,12 +117,5 @@ private extension FeedDetail {
                 })
             }
         }
-    }
-}
-
-struct FeedDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedDetail(viewModel: .init())
-            .environment(\.locale, .init(identifier: "ko"))
     }
 }

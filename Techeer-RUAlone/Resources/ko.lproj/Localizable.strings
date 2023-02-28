@@ -16,8 +16,8 @@
 "GatherFriend" = "친구를 모아보세요!";
 "RecentGathering" = "최근 나의 모임 기록";
 "CheckGathering" = "확인하기";
-"Gathered %lld" = "%lld명 모임";
-"Time %lld" = "%lld시간 전";
+"Gathered %lld" = "%lld명 모집 중";
+"Time %lld" = "모임 %lld시간 전";
 "Gathered State %lld %lld"= "%lld / %lld명 모집 중";
 "Find Nav Title" = "메이트 구하기";
 "Join" = "참여하기";

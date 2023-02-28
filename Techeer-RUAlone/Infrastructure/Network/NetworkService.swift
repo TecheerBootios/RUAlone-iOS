@@ -29,4 +29,18 @@ class NetworkService {
                 completion(response.result)
             }
     }
+    
+    static func createPost(with dto: PostCreateRequestDTO, completion: @escaping (Result<PostCreateResponseDTO, AFError>) -> Void) {
+        AF.request(PostEndpoint.createPost(dto))
+            .responseDecodable { (response: DataResponse<PostCreateResponseDTO, AFError>) in
+                completion(response.result)
+            }
+    }
+    
+    static func fetchPosts(completion: @escaping (Result<PostsFetchResponseDTO, AFError>) -> Void) {
+        AF.request(PostEndpoint.fetchPosts)
+            .responseDecodable { (response: DataResponse<PostsFetchResponseDTO, AFError>) in
+                completion(response.result)
+            }
+    }
 }

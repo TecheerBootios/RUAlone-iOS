@@ -133,9 +133,9 @@ enum UserEndpoint: URLRequestConvertible {
 }
 
 enum PostEndpoint: URLRequestConvertible {
-    case createPost(FormModel)
+    case createPost(PostCreateRequestDTO)
     case updatePost
-    case fetchPostAll
+    case fetchPosts
     case fetchPost
     case deletePostByID(String)
     case fetchPostByID(String)
@@ -166,7 +166,7 @@ enum PostEndpoint: URLRequestConvertible {
             return .post
         case .updatePost:
             return .put
-        case .fetchPost, .fetchPostAll, .fetchPostByID:
+        case .fetchPost, .fetchPosts, .fetchPostByID:
             return .get
         case .deletePostByID:
             return .delete
@@ -180,9 +180,9 @@ enum PostEndpoint: URLRequestConvertible {
         case .updatePost:
             return "/api/post"
         case .fetchPost:
-            return "/api/post/list"
-        case .fetchPostAll:
             return "/api/post/search"
+        case .fetchPosts:
+            return "/api/post/list"
         case .fetchPostByID(let id):
             return "/api/post/\(id)"
         case .deletePostByID(let id):
@@ -192,20 +192,20 @@ enum PostEndpoint: URLRequestConvertible {
     
     private var parameters: Parameters? {
         switch self {
-        case .createPost(let form):
+        case .createPost(let dto):
             return [
-                "chatUrl": form.chatURL,
-                "creatorEmail": CoreDataStorage.shared.fetchUser()?.email ?? "",
-                "foodCategory": form.foodCategory.rawValue,
-                "limitMember": form.limitMember,
+                "chatUrl": dto.chatURL,
+                "creatorEmail": dto.creatorEmail,
+                "foodCategory": dto.foodCategory,
+                "limitMember": dto.limitMember,
                 "location": [
-                  "latitude": 0,
-                  "longitude": 0
+                    "latitude": dto.location?.latitude,
+                    "longitude": dto.location?.longitude
                 ],
-                "place": form.address,
-                "postType": form.postType,
-                "startAt": form.startAt,
-                "title": form.title
+                "place": dto.place,
+                "postType": dto.postType,
+                "startAt": dto.startAt,
+                "title": dto.title
             ]
         default:
             return [:]

@@ -9,10 +9,10 @@ import Foundation
 
 struct FeedModel: Hashable, Identifiable {
     let id: UUID = UUID()
-    let title: String
-    let date: Date
-    let currentlyGathered: Int
-    let hoursPassed: Int
+    let title: String?
+    let date: Date?
+    let currentlyGathered: Int?
+    let hoursPassed: Int?
     
     init(title: String,
          date: Date,

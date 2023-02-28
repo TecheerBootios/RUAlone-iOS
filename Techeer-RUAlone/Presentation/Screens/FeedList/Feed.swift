@@ -17,7 +17,7 @@ struct Feed: View {
             ZStack {
                 Color.customWhite.ignoresSafeArea()
                 ScrollView(.vertical, showsIndicators: false) {
-                    ForEach(Array(zip(FeedModel.stubs().indices, FeedModel.stubs())), id: \.0) { index, item in
+                    ForEach(Array(zip(viewModel.feeds.indices, viewModel.feeds)), id: \.0) { index, item in
                         DetailRowView(feed: item, index: index)
                             .padding([.top, .leading, .trailing])
                         Divider()
@@ -25,7 +25,9 @@ struct Feed: View {
                 }
                 .frame(maxWidth: .infinity)
                 .background(Color.customWhite)
-                .cornerRadius(30, corners: [.topLeft, .topRight])
+                .refreshable {
+                    viewModel.fetchPosts()
+                }
             }
             .navigationTitle("Find Nav Title")
             .navigationBarTitleDisplayMode(.inline)
@@ -40,10 +42,10 @@ struct Feed: View {
             .fullScreenCover(isPresented: $isPresented) {
                 FeedForm(viewModel: .init(form: FormModel()))
             }
-            
         }
         .onAppear {
             viewModel.requestUsageAuthorization()
+            viewModel.fetchPosts()
         }
     }
 }

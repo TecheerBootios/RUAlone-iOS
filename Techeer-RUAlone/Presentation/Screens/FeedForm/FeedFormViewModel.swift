@@ -50,18 +50,43 @@ extension FeedForm {
         }
         
         func submitFeedForm() {
+            
             chatRepository.createChannel(as: form.title)
             self.cancellable = chatRepository.service.chatPublisher.sink { chatURL in
                 self.form.chatURL = chatURL
-                logger.log("\(self.form.title)")
-                logger.log("\(self.form.address)")
-                logger.log("\(self.form.limitMember)")
-                logger.log("\(self.form.chatURL)")
-                logger.log("\(self.form.foodCategory.rawValue)")
-                logger.log("\(self.form.location.debugDescription)")
-                logger.log("\(self.form.postType.rawValue)")
-                logger.log("\(self.form.startAt)")
+                let dto = self.convertToDTO()
+                logger.log("[DTO] \(dto.creatorEmail!)")
+                logger.log("[DTO] \(dto.chatURL!)")
+                logger.log("[DTO] \(dto.startAt!)")
+                logger.log("[DTO] \(dto.location.debugDescription)")
+                NetworkService.createPost(with: dto) { result in
+                    switch result {
+                    case .success(let response):
+                        logger.log("[Success] \(response.code)")
+                    case .failure(let error):
+                        logger.error("[Error] \(error.localizedDescription)")
+                    }
+                }
             }
+        }
+        
+        private func convertToDTO() -> PostCreateRequestDTO {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+            let date = dateFormatter.string(from: form.startAt)
+            var dto = PostCreateRequestDTO()
+            if let user = CoreDataStorage.shared.fetchUser() {
+                dto.chatURL = form.chatURL
+                dto.creatorEmail = user.email
+                dto.startAt = date
+                dto.location = form.location
+                dto.postType = form.postType.rawValue
+                dto.foodCategory = form.foodCategory.rawValue
+                dto.limitMember = form.limitMember
+                dto.title = form.title
+                dto.place = form.address
+            }
+            return dto
         }
         
         private func search(pointOfInterest: String) {
