@@ -43,4 +43,11 @@ class NetworkService {
                 completion(response.result)
             }
     }
+    
+    static func fetchPostsWithDistance(with location: Location, completion: @escaping (Result<PostsFetchResponseDTO, AFError>) -> Void) {
+        AF.request(PostEndpoint.fetchPostWithDistance(location.latitude, location.longitude))
+            .responseDecodable { (response: DataResponse<PostsFetchResponseDTO, AFError>) in
+                completion(response.result)
+            }
+    }
 }

@@ -137,6 +137,7 @@ enum PostEndpoint: URLRequestConvertible {
     case updatePost
     case fetchPosts
     case fetchPost
+    case fetchPostWithDistance(Double, Double)
     case deletePostByID(String)
     case fetchPostByID(String)
     
@@ -166,7 +167,7 @@ enum PostEndpoint: URLRequestConvertible {
             return .post
         case .updatePost:
             return .put
-        case .fetchPost, .fetchPosts, .fetchPostByID:
+        case .fetchPost, .fetchPosts, .fetchPostByID, .fetchPostWithDistance:
             return .get
         case .deletePostByID:
             return .delete
@@ -183,6 +184,8 @@ enum PostEndpoint: URLRequestConvertible {
             return "/api/post/search"
         case .fetchPosts:
             return "/api/post/list"
+        case .fetchPostWithDistance:
+            return "/api/post/list/distance"
         case .fetchPostByID(let id):
             return "/api/post/\(id)"
         case .deletePostByID(let id):
@@ -206,6 +209,11 @@ enum PostEndpoint: URLRequestConvertible {
                 "postType": dto.postType,
                 "startAt": dto.startAt,
                 "title": dto.title
+            ]
+        case .fetchPostWithDistance(let lat, let lng):
+            return [
+                "userLatitude": lat,
+                "userLongitude": lng
             ]
         default:
             return [:]

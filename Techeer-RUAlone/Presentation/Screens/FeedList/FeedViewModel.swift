@@ -40,5 +40,21 @@ extension Feed {
                 }
             }
         }
+        
+        func fetchPostsWithDistance() {
+            self.requestUserLocation()
+            guard let location = locationManager.service.location.map ({ Location(latitude: $0.latitude, longitude: $0.longitude) }) else {
+                return 
+            }
+            NetworkService.fetchPostsWithDistance(with: location) { result in
+                switch result {
+                case .success(let response):
+                    logger.log("[Success] \(response.list.count)")
+                    self.feeds = response.list.reversed().map { FormModel(data: $0) }
+                case .failure(let error):
+                    logger.error("[Error] \(error.localizedDescription)")
+                }
+            }
+        }
     }
 }

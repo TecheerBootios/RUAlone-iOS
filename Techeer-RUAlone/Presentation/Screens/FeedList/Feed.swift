@@ -45,7 +45,7 @@ struct Feed: View {
         }
         .onAppear {
             viewModel.requestUsageAuthorization()
-            viewModel.fetchPosts()
+            viewModel.fetchPostsWithDistance()
         }
     }
 }
