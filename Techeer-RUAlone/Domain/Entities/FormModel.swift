@@ -32,7 +32,7 @@ struct FormModel: Codable {
          foodCategory: FoodCategory = .korean,
          postType: PostType = .eatOut,
          address: String = "",
-         startAt: Date = Date(),
+         startAt: Date = .now,
          limitMember: Int = 1,
          chatURL: String = "",
          location: Location? = nil) {

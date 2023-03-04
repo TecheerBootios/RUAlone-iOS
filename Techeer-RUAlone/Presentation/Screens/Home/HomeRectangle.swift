@@ -138,7 +138,7 @@ struct HomeRectangle: View {
                 return eventCount
             }
             
-            func isEventDate(_ eventDate: [Date], _ selectedDate: Date) -> Bool {
+            private func isEventDate(_ eventDate: [Date], _ selectedDate: Date) -> Bool {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateStyle = .full
                 dateFormatter.timeStyle = .none
