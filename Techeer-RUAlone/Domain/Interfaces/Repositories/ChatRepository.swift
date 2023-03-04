@@ -9,6 +9,6 @@ import Foundation
 
 protocol ChatRepository {
     var service: ChatService { get }
-    func createChannel()
+    func createChannel(as name: String)
     func deleteChannel()
 }

@@ -12,8 +12,12 @@ final class DefaultLocationAddressRepository {
 }
 
 extension DefaultLocationAddressRepository: LocationAddressRepository {
+    func requestUsageAuthorization() {
+        service.requestAuthorization()
+    }
+    
     func updateUserLocation() {
-        service.requestLocalLocation()
+        service.requestLocation()
     }
     
     func search(pointOfInterest: String) {

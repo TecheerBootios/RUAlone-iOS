@@ -25,7 +25,7 @@ final class LocationService: NSObject, ObservableObject {
         self.manager.delegate = self
     }
     
-    public func requestLocalLocation() {
+    public func requestLocation() {
         manager.requestLocation()
     }
     
@@ -33,7 +33,7 @@ final class LocationService: NSObject, ObservableObject {
         request(resultType: .pointOfInterest, searchText: searchText)
     }
     
-    public func requestAuthorization(_ manager: CLLocationManager) {
+    public func requestAuthorization() {
         switch manager.authorizationStatus {
         case .authorizedAlways:
             authorizationStatus = .authorizedAlways
@@ -53,7 +53,7 @@ final class LocationService: NSObject, ObservableObject {
     
     private func request(resultType: MKLocalSearch.ResultType, searchText: String) {
         guard let location = location else { return }
-        let radius: CLLocationDistance = 350_000
+        let radius: CLLocationDistance = 150_000
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = searchText
         request.pointOfInterestFilter = .includingAll

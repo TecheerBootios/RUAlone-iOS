@@ -16,7 +16,7 @@
 "GatherFriend" = "Gather a new group of Friends!";
 "RecentGathering" = "Recent Gatherings";
 "CheckGathering" = "Check it out";
-"Gathered %lld" = "%lld Gathered";
+"Gathered %lld" = "Looking for %lld more";
 "Time %lld" = "%lld hours ago";
 "Gathered State %lld %lld"= "%lld / %lld have joined";
 "Find Nav Title" = "Find Your Friend";

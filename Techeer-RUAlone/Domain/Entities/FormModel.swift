@@ -16,15 +16,61 @@ struct FormModel: Codable {
         case limitMember = "LimitMember"
         case postType = "PostType"
         case chatURL = "ChatURL"
+        case location
     }
 
-    var title: String = ""
-    var foodCategory: FoodCategory = .korean
-    var postType: PostType = .eatOut
-    var address: String = ""
-    var startAt: Date = Date()
-    var limitMember: Int = 1
-    var chatURL: String = ""
+    var title: String
+    var foodCategory: FoodCategory
+    var postType: PostType
+    var address: String
+    var startAt: Date
+    var limitMember: Int
+    var chatURL: String
+    var location: Location?
+    
+    init(title: String = "",
+         foodCategory: FoodCategory = .korean,
+         postType: PostType = .eatOut,
+         address: String = "",
+         startAt: Date = .now,
+         limitMember: Int = 1,
+         chatURL: String = "",
+         location: Location? = nil) {
+        self.title = title
+        self.foodCategory = foodCategory
+        self.postType = postType
+        self.address = address
+        self.startAt = startAt
+        self.limitMember = limitMember
+        self.chatURL = chatURL
+        self.location = location
+    }
+    
+    init(data: PostData) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let startAt = dateFormatter.date(from: data.startAt)
+        self.startAt = startAt!
+        
+        self.title = data.title
+        self.foodCategory = FoodCategory(rawValue: data.foodCategory)!
+        self.postType = PostType(rawValue: data.postType)!
+        self.address = data.place
+        self.limitMember = data.limitMember
+        self.chatURL = data.chatUrl
+        self.location = data.locationInfo
+    }
+    
+    init(persistence: Post) {
+        self.title = persistence.title!
+        self.foodCategory = FoodCategory(rawValue: persistence.foodCategory!)!
+        self.postType = PostType(rawValue: persistence.postType!)!
+        self.address = persistence.address!
+        self.limitMember = Int(exactly: persistence.limitMember)!
+        self.location = Location(latitude: persistence.latitude, longitude: persistence.longitude)
+        self.chatURL = persistence.chatURL!
+        self.startAt = persistence.startAt!
+    }
     
     enum PostType: String, Codable, CaseIterable {
         case eatOut = "EatOut"

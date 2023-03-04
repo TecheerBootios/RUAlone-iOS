@@ -13,30 +13,28 @@ struct FeedForm: View {
 
     var body: some View {
         NavigationStack {
-            ZStack {
-                Color.customWhite.ignoresSafeArea()
-                VStack {
-                    List {
-                        titleLocationSection()
-                        gatheringSection()
-                        dateSelectionSection()
-                    }
-                    .scrollContentBackground(.hidden)
-                    .listStyle(.sidebar)
-                    Spacer()
-                    Button(action: {
-                        viewModel.createNewChannel()
-                    }, label: {
-                        HStack {
-                            Spacer()
-                            Text("Submit").font(.title2).bold()
-                                .padding([.top, .bottom])
-                            Spacer()
-                        }
-                    })
-                    .padding([.leading, .trailing])
-                    .buttonStyle(.borderedProminent)
+            VStack {
+                List {
+                    titleLocationSection()
+                    gatheringSection()
+                    dateSelectionSection()
                 }
+                .scrollContentBackground(.hidden)
+                .listStyle(.sidebar)
+                Spacer()
+                Button(action: {
+                    viewModel.submitFeedForm()
+                    dismiss()
+                }, label: {
+                    HStack {
+                        Spacer()
+                        Text("Submit").font(.title2).bold()
+                            .padding([.top, .bottom])
+                        Spacer()
+                    }
+                })
+                .padding([.leading, .trailing])
+                .buttonStyle(.borderedProminent)
             }
             .headerProminence(.increased)
             .navigationTitle("새로운 모임 만들기")
@@ -56,10 +54,10 @@ struct FeedForm: View {
 
 extension FeedForm {
     private func titleLocationSection() -> some View {
-        DisclosureGroup("Form Title") {
+        Section("Form Title") {
             formTitleTextFieldView()
             NavigationLink(destination: {
-                pointOfInterestSelectionView()
+                PointOfInterestView(viewModel: viewModel)
             }, label: {
                 Text("Location")
             })
@@ -68,31 +66,13 @@ extension FeedForm {
     
     private func formTitleTextFieldView() -> some View {
         TextField("Field Example",
-                  text: $viewModel.title)
+                  text: $viewModel.form.title)
         .autocorrectionDisabled()
         .textFieldStyle(.automatic)
     }
     
-    private func pointOfInterestSelectionView() -> some View {
-        VStack(alignment: .leading) {
-            TextField("음식점 검색", text: $viewModel.pointOfInterest)
-            Divider()
-            List(viewModel.data) { item in
-                Button(action: { }, label: {
-                    VStack(alignment: .leading) {
-                        Text(item.locationTitle)
-                        Text(item.locationAddress)
-                            .foregroundColor(.secondary)
-                    }
-                })
-            }
-        }
-        .navigationTitle("음식점을 찾아보세요")
-        .padding(.all)
-    }
-    
     private func postTypeSelection() -> some View {
-        Picker("", selection: $viewModel.postType) {
+        Picker("", selection: $viewModel.form.postType) {
             ForEach(FormModel.PostType.allCases, id: \.self) {
                 Text($0.description)
             }
@@ -100,7 +80,7 @@ extension FeedForm {
     }
     
     private func limitMemberSection() -> some View {
-        Picker("", selection: $viewModel.limitMember) {
+        Picker("", selection: $viewModel.form.limitMember) {
             ForEach(1...5, id: \.self) {
                 Text("Person \($0)")
             }
@@ -108,28 +88,61 @@ extension FeedForm {
     }
     
     private func gatheringSection() -> some View {
-        DisclosureGroup {
+        Section {
             foodCategorySection()
             postTypeSelection()
             limitMemberSection()
-        } label: {
+        } header: {
             Text("Post Settings")
         }
     }
     
     private func foodCategorySection() -> some View {
-        Picker("Food Category", selection: $viewModel.foodCategory) {
+        Picker("Food Category", selection: $viewModel.form.foodCategory) {
             ForEach(FormModel.FoodCategory.allCases, id: \.self) { category in
                 Text(category.description)
             }
         }
     }
     
-    private func dateSelectionSection() -> some View {
-        DisclosureGroup("Date") {
-            DatePicker("Date Ask", selection: $viewModel.startAt)
-                .datePickerStyle(.graphical)
+    private func detailSection() -> some View {
+        Picker("배달? 픽업?", selection: $viewModel.form.foodCategory) {
+            Text("배달")
+            Text("픽업")
         }
+    }
+    
+    private func dateSelectionSection() -> some View {
+        Section("Date") {
+            DatePicker("Date Ask", selection: $viewModel.form.startAt)
+                .datePickerStyle(.automatic)
+        }
+    }
+}
+
+struct PointOfInterestView: View {
+    @Environment(\.dismiss) private var dismiss
+    @ObservedObject var viewModel: FeedForm.ViewModel
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            TextField("음식점 검색", text: $viewModel.pointOfInterest)
+            Divider()
+            List(viewModel.mapItem) { item in
+                Button(action: {
+                    viewModel.selectedMapItem = item
+                    dismiss()
+                }, label: {
+                    VStack(alignment: .leading) {
+                        Text(item.name)
+                        Text(item.address)
+                            .foregroundColor(.secondary)
+                    }
+                })
+            }.listStyle(.plain)
+        }
+        .navigationTitle("음식점을 찾아보세요")
+        .padding(.all)
     }
 }
 

@@ -7,54 +7,41 @@
 
 import Foundation
 import Combine
+import MapKit
 
-protocol FeedFormViewModelInput {
-    func updateUserLocation()
-}
+import os
 
-protocol FeedFormViewModelOutput {
-    var title: String { get }
-    var address: String { get }
-    // User Coord
-    var startAt: Date { get }
-    var limitMember: Int { get }
-    var foodCategory: FormModel.FoodCategory { get }
-}
-
-protocol FeedFormViewModel: FeedFormViewModelInput, FeedFormViewModelOutput { }
+private let logger = Logger(subsystem: "com.seanhong.KKodiac.Techeer-RUAlone", category: "FeedFormViewModel")
 
 extension FeedForm {
-    final class ViewModel: ObservableObject, FeedFormViewModel {
+    final class ViewModel: ObservableObject {
         private let locationAddressRepository: LocationAddressRepository
         private var cancellable: AnyCancellable?
         private let chatRepository: ChatRepository
         
-        @Published var data = [LocalSearch]()
+        @Published var form: FormModel
+        @Published var chatURL: String?
+        @Published var mapItem = [MapItem]()
+        @Published var selectedMapItem: MapItem? {
+            willSet {
+                if let newValue = newValue {
+                    let newLatitude = newValue.placeMark.coordinate.latitude
+                    let newLongitude = newValue.placeMark.coordinate.longitude
+                    form.location = Location(latitude: newLatitude, longitude: newLongitude)
+                    form.address = newValue.address
+                }
+            }
+        }
         @Published var pointOfInterest = "" {
             didSet { search(pointOfInterest: pointOfInterest) }
         }
         
-        // MARK: Output
-        @Published var title: String
-        @Published var address: String
-        @Published var startAt: Date
-        @Published var limitMember: Int
-        @Published var foodCategory: FormModel.FoodCategory
-        @Published var postType: FormModel.PostType
-        
-        init(form: FormModel,
-             locationAddressRepository: LocationAddressRepository = DefaultLocationAddressRepository(),
-             chatRepository: ChatRepository = DefaultChatRepository()) {
-            self.title = form.title
-            self.address = form.address
-            self.startAt = form.startAt
-            self.limitMember = form.limitMember
-            self.foodCategory = form.foodCategory
-            self.postType = form.postType
-            self.locationAddressRepository = locationAddressRepository
-            self.chatRepository = chatRepository
+        init(form: FormModel) {
+            self.form = form
+            self.locationAddressRepository = DefaultLocationAddressRepository()
+            self.chatRepository = DefaultChatRepository()
             self.cancellable = locationAddressRepository.service.searchPublisher.sink { items in
-                self.data = items.map({ LocalSearch(item: $0) })
+                self.mapItem = items.map({ MapItem(mapItem: $0) })
             }
         }
         
@@ -62,12 +49,61 @@ extension FeedForm {
             locationAddressRepository.updateUserLocation()
         }
         
-        func createNewChannel() {
-            chatRepository.createChannel()
+        func submitFeedForm() {
+            
+            chatRepository.createChannel(as: form.title)
+            self.cancellable = chatRepository.service.chatPublisher.sink { chatURL in
+                self.form.chatURL = chatURL
+                let dto = self.convertToDTO()
+                logger.log("[DTO] \(dto.creatorEmail!)")
+                logger.log("[DTO] \(dto.chatURL!)")
+                logger.log("[DTO] \(dto.startAt!)")
+                logger.log("[DTO] \(dto.location.debugDescription)")
+                NetworkService.createPost(with: dto) { result in
+                    switch result {
+                    case .success(let response):
+                        logger.log("[Success] \(response.code)")
+                    case .failure(let error):
+                        logger.error("[Error] \(error.localizedDescription)")
+                    }
+                }
+            }
+        }
+        
+        private func convertToDTO() -> PostCreateRequestDTO {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+            let date = dateFormatter.string(from: form.startAt)
+            var dto = PostCreateRequestDTO()
+            if let user = CoreDataStorage.shared.fetchUser() {
+                dto.chatURL = form.chatURL
+                dto.creatorEmail = user.email
+                dto.startAt = date
+                dto.location = form.location
+                dto.postType = form.postType.rawValue
+                dto.foodCategory = form.foodCategory.rawValue
+                dto.limitMember = form.limitMember
+                dto.title = form.title
+                dto.place = form.address
+            }
+            return dto
         }
         
         private func search(pointOfInterest: String) {
             locationAddressRepository.search(pointOfInterest: pointOfInterest)
         }
+    }
+}
+
+struct MapItem: Identifiable, Hashable {
+    var id = UUID()
+    var name: String
+    var address: String
+    var placeMark: MKPlacemark
+    
+    init(mapItem: MKMapItem) {
+        self.name = mapItem.name ?? ""
+        self.address = mapItem.placemark.title ?? ""
+        self.placeMark = mapItem.placemark
     }
 }

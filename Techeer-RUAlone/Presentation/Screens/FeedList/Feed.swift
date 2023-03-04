@@ -10,13 +10,15 @@ import SwiftUI
 struct Feed: View {
     @State private var searchText = ""
     @State private var isPresented = false
+    @State private var isLocationOnly = false
+    @StateObject private var viewModel: ViewModel = .init()
     
     var body: some View {
         NavigationStack {
             ZStack {
                 Color.customWhite.ignoresSafeArea()
                 ScrollView(.vertical, showsIndicators: false) {
-                    ForEach(Array(zip(FeedModel.stubs().indices, FeedModel.stubs())), id: \.0) { index, item in
+                    ForEach(Array(zip(viewModel.feeds.indices, viewModel.feeds)), id: \.0) { index, item in
                         DetailRowView(feed: item, index: index)
                             .padding([.top, .leading, .trailing])
                         Divider()
@@ -24,7 +26,13 @@ struct Feed: View {
                 }
                 .frame(maxWidth: .infinity)
                 .background(Color.customWhite)
-                .cornerRadius(30, corners: [.topLeft, .topRight])
+                .refreshable {
+                    if isLocationOnly {
+                        viewModel.fetchPostsWithDistance()
+                    } else {
+                        viewModel.fetchPosts()
+                    }
+                }
             }
             .navigationTitle("Find Nav Title")
             .navigationBarTitleDisplayMode(.inline)
@@ -35,11 +43,17 @@ struct Feed: View {
                 } label: {
                     Image(systemName: "plus").foregroundColor(.customPink).bold()
                 }
+                Toggle(isOn: $isLocationOnly) {
+                    Text("주변 검색")
+                }.toggleStyle(.switch)
             }
             .fullScreenCover(isPresented: $isPresented) {
                 FeedForm(viewModel: .init(form: FormModel()))
             }
-            
+        }
+        .onAppear {
+            viewModel.requestUsageAuthorization()
+            viewModel.fetchPosts()
         }
     }
 }

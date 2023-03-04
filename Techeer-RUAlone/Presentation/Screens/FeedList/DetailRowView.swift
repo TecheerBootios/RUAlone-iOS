@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailRowView: View {
-    let feed: FeedModel
+    let feed: FormModel
     let index: Int
     let foodCategory = FormModel.FoodCategory.allCases
     let colors: [Color] = [.customPurpleComplement,
@@ -23,7 +23,7 @@ struct DetailRowView: View {
     
     
     var body: some View {
-        NavigationLink(destination: FeedDetail(viewModel: .init())) {
+        NavigationLink(destination: FeedDetail(viewModel: .init(detail: feed))) {
             HStack {
                 Circle()
                     .foregroundColor(colors[index % colors.count])
@@ -35,16 +35,16 @@ struct DetailRowView: View {
                     }
                 VStack(alignment: .leading) {
                     Text(feed.title)
-                    Text("\(feed.date)")
+                    Text("\(feed.startAt.formatted(date: .abbreviated, time: .shortened))")
                         .font(.subheadline)
                         .foregroundColor(Color.gray)
                 }
                 .padding(.leading)
                 Spacer()
                 VStack {
-                    Text("Gathered \(feed.currentlyGathered)")
+                    Text("Gathered \(feed.limitMember)")
                     Label(title: {
-                        Text("Time \(feed.hoursPassed)")
+                        Text("Time \(Int(feed.startAt.timeIntervalSinceNow / 3600))")
                             .font(.footnote)
                             .foregroundColor(.gray)
                     }, icon: {
@@ -54,11 +54,5 @@ struct DetailRowView: View {
                 }
             }
         }
-    }
-}
-
-struct DetailRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailRowView(feed: FeedModel.stubs().first!, index: 0)
     }
 }

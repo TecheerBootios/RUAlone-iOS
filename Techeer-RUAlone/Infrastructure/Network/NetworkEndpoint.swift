@@ -133,10 +133,11 @@ enum UserEndpoint: URLRequestConvertible {
 }
 
 enum PostEndpoint: URLRequestConvertible {
-    case createPost
+    case createPost(PostCreateRequestDTO)
     case updatePost
-    case fetchPostAll
+    case fetchPosts
     case fetchPost
+    case fetchPostWithDistance(Double, Double)
     case deletePostByID(String)
     case fetchPostByID(String)
     
@@ -166,7 +167,7 @@ enum PostEndpoint: URLRequestConvertible {
             return .post
         case .updatePost:
             return .put
-        case .fetchPost, .fetchPostAll, .fetchPostByID:
+        case .fetchPost, .fetchPosts, .fetchPostByID, .fetchPostWithDistance:
             return .get
         case .deletePostByID:
             return .delete
@@ -180,9 +181,11 @@ enum PostEndpoint: URLRequestConvertible {
         case .updatePost:
             return "/api/post"
         case .fetchPost:
-            return "/api/post/list"
-        case .fetchPostAll:
             return "/api/post/search"
+        case .fetchPosts:
+            return "/api/post/list"
+        case .fetchPostWithDistance:
+            return "/api/post/list/distance"
         case .fetchPostByID(let id):
             return "/api/post/\(id)"
         case .deletePostByID(let id):
@@ -192,10 +195,26 @@ enum PostEndpoint: URLRequestConvertible {
     
     private var parameters: Parameters? {
         switch self {
-        case .createPost:
-            return ["accessToken": ""]
-        case .updatePost:
-            return ["accessToken": ""]
+        case .createPost(let dto):
+            return [
+                "chatUrl": dto.chatURL,
+                "creatorEmail": dto.creatorEmail,
+                "foodCategory": dto.foodCategory,
+                "limitMember": dto.limitMember,
+                "location": [
+                    "latitude": dto.location?.latitude,
+                    "longitude": dto.location?.longitude
+                ],
+                "place": dto.place,
+                "postType": dto.postType,
+                "startAt": dto.startAt,
+                "title": dto.title
+            ]
+        case .fetchPostWithDistance(let lat, let lng):
+            return [
+                "userLatitude": lat,
+                "userLongitude": lng
+            ]
         default:
             return [:]
         }

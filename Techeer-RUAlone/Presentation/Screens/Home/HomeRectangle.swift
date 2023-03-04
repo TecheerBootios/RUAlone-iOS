@@ -30,7 +30,7 @@ struct HomeRectangle: View {
                                 .font(.title)
                                 .bold()
                             
-                            CalendarView(isSelectedEventDate: $isEventDate, selectedDate: $selectedDate)
+                            CalendarView(isSelectedEventDate: $isEventDate, selectedDate: $viewModel.selectedDate, eventDates: $viewModel.dates)
                         }
                         .padding()
                         .sheet(isPresented: $isEventDate) {
@@ -38,6 +38,7 @@ struct HomeRectangle: View {
                                 Text("\(selectedDate.formatted(date: .abbreviated, time: .omitted))은 모임이 있는 날 입니다!")
                                 Button(action: {
                                     isChatPresented.toggle()
+                                    viewModel.fetchChatURL()
                                 }, label: {
                                     Text("채팅방 바로 들어가기")
                                         .font(.title3)
@@ -45,7 +46,7 @@ struct HomeRectangle: View {
                                 .tint(.customOrange)
                                 .buttonStyle(.borderedProminent)
                                 .fullScreenCover(isPresented: $isChatPresented) {
-                                    ChatView(channelURL: FeedDetailModel.stub().chatURLString)
+                                    ChatView(channelURL: viewModel.chatURL)
                                 }
                             }
                             .presentationDetents([.height(geometry.size.height/3)])
@@ -59,9 +60,10 @@ struct HomeRectangle: View {
     struct CalendarView: View {
         @Binding var isSelectedEventDate: Bool
         @Binding var selectedDate: Date
+        @Binding var eventDates: [Date]
         
         var body: some View {
-            CalendarViewRepresentable(selectedDate: $selectedDate, isSelectedEventDate: $isSelectedEventDate)
+            CalendarViewRepresentable(selectedDate: $selectedDate, isSelectedEventDate: $isSelectedEventDate, eventDates: $eventDates)
                 .ignoresSafeArea()
         }
     }
@@ -72,12 +74,7 @@ struct HomeRectangle: View {
         fileprivate var calendar = FSCalendar()
         @Binding var selectedDate: Date
         @Binding var isSelectedEventDate: Bool
-        
-        let eventDates = [Date(),
-                          Date.now.addingTimeInterval(400000),
-                          Date.now.addingTimeInterval(100000),
-                          Date.now.addingTimeInterval(-600000),
-                          Date.now.addingTimeInterval(-200000)]
+        @Binding var eventDates: [Date]
         
         func makeUIView(context: Context) -> FSCalendar {
             calendar.delegate = context.coordinator
@@ -121,6 +118,7 @@ struct HomeRectangle: View {
                           didSelect date: Date,
                           at monthPosition: FSCalendarMonthPosition) {
                 parent.selectedDate = date
+                
                 if isEventDate(parent.eventDates, date)  {
                     parent.isSelectedEventDate.toggle()
                 }
@@ -129,7 +127,6 @@ struct HomeRectangle: View {
             func calendar(_ calendar: FSCalendar,
                           numberOfEventsFor date: Date) -> Int {
                 let eventDates = parent.eventDates
-                
                 var eventCount = 0
                 eventDates.forEach { eventDate in
                     if eventDate.formatted(date: .complete,
@@ -141,7 +138,7 @@ struct HomeRectangle: View {
                 return eventCount
             }
             
-            func isEventDate(_ eventDate: [Date], _ selectedDate: Date) -> Bool {
+            private func isEventDate(_ eventDate: [Date], _ selectedDate: Date) -> Bool {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateStyle = .full
                 dateFormatter.timeStyle = .none
