@@ -10,6 +10,7 @@ import SwiftUI
 struct Feed: View {
     @State private var searchText = ""
     @State private var isPresented = false
+    @State private var isLocationOnly = false
     @StateObject private var viewModel: ViewModel = .init()
     
     var body: some View {
@@ -26,7 +27,11 @@ struct Feed: View {
                 .frame(maxWidth: .infinity)
                 .background(Color.customWhite)
                 .refreshable {
-                    viewModel.fetchPosts()
+                    if isLocationOnly {
+                        viewModel.fetchPostsWithDistance()
+                    } else {
+                        viewModel.fetchPosts()
+                    }
                 }
             }
             .navigationTitle("Find Nav Title")
@@ -38,6 +43,9 @@ struct Feed: View {
                 } label: {
                     Image(systemName: "plus").foregroundColor(.customPink).bold()
                 }
+                Toggle(isOn: $isLocationOnly) {
+                    Text("주변 검색")
+                }.toggleStyle(.switch)
             }
             .fullScreenCover(isPresented: $isPresented) {
                 FeedForm(viewModel: .init(form: FormModel()))
@@ -45,7 +53,7 @@ struct Feed: View {
         }
         .onAppear {
             viewModel.requestUsageAuthorization()
-            viewModel.fetchPostsWithDistance()
+            viewModel.fetchPosts()
         }
     }
 }
