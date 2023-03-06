@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>SnapShot.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>Techeer-RUAlone.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>0B06823B29370AC300E5D648</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0B0C758329B5AF2000ED318E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

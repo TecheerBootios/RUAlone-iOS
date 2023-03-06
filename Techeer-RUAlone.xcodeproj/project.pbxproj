@@ -28,6 +28,9 @@
 		0B0682B72944CA4800E5D648 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B0682B62944CA4800E5D648 /* Colors.xcassets */; };
 		0B0682B92944CB0D00E5D648 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682B82944CB0D00E5D648 /* Color+Extensions.swift */; };
 		0B0682BF2945AC3B00E5D648 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0682BE2945AC3B00E5D648 /* Feed.swift */; };
+		0B0C758729B5AF2000ED318E /* SnapShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0C758629B5AF2000ED318E /* SnapShot.swift */; };
+		0B0C758929B5AF2000ED318E /* SnapShotLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0C758829B5AF2000ED318E /* SnapShotLaunchTests.swift */; };
+		0B0C759029B5CB3F00ED318E /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0C758F29B5CB3F00ED318E /* SnapshotHelper.swift */; };
 		0B0EE85B299A30BE00114F45 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0EE85A299A30BE00114F45 /* FSCalendar */; };
 		0B0EE861299BA23F00114F45 /* NetworkEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0EE860299BA23F00114F45 /* NetworkEndpoint.swift */; };
 		0B0EE86D299BD26D00114F45 /* SwiftPieChart in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0EE86C299BD26D00114F45 /* SwiftPieChart */; };
@@ -98,6 +101,13 @@
 			remoteGlobalIDString = 0B06822129370AC000E5D648;
 			remoteInfo = "Techeer-RUAlone";
 		};
+		0B0C758A29B5AF2000ED318E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B06821A29370AC000E5D648 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B06822129370AC000E5D648;
+			remoteInfo = "Techeer-RUAlone";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +129,10 @@
 		0B0682B62944CA4800E5D648 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0B0682B82944CB0D00E5D648 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		0B0682BE2945AC3B00E5D648 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		0B0C758429B5AF2000ED318E /* SnapShot.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapShot.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B0C758629B5AF2000ED318E /* SnapShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShot.swift; sourceTree = "<group>"; };
+		0B0C758829B5AF2000ED318E /* SnapShotLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotLaunchTests.swift; sourceTree = "<group>"; };
+		0B0C758F29B5CB3F00ED318E /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		0B0EE860299BA23F00114F45 /* NetworkEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndpoint.swift; sourceTree = "<group>"; };
 		0B0EE86B299BD26200114F45 /* SwiftPieChart */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftPieChart; path = ../../SwiftPieChart; sourceTree = "<group>"; };
 		0B11EB4029AB4DBE009CE511 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
@@ -205,6 +219,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0B0C758129B5AF2000ED318E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -216,6 +237,7 @@
 				0B06822429370AC000E5D648 /* Techeer-RUAlone */,
 				0B06823529370AC300E5D648 /* Techeer-RUAloneTests */,
 				0B06823F29370AC300E5D648 /* Techeer-RUAloneUITests */,
+				0B0C758529B5AF2000ED318E /* SnapShot */,
 				0B06822329370AC000E5D648 /* Products */,
 				0B0EE854299A146200114F45 /* Frameworks */,
 			);
@@ -227,6 +249,7 @@
 				0B06822229370AC000E5D648 /* Techeer-RUAlone.app */,
 				0B06823229370AC300E5D648 /* Techeer-RUAloneTests.xctest */,
 				0B06823C29370AC300E5D648 /* Techeer-RUAloneUITests.xctest */,
+				0B0C758429B5AF2000ED318E /* SnapShot.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -270,6 +293,16 @@
 				0B06824229370AC300E5D648 /* Techeer_RUAloneUITestsLaunchTests.swift */,
 			);
 			path = "Techeer-RUAloneUITests";
+			sourceTree = "<group>";
+		};
+		0B0C758529B5AF2000ED318E /* SnapShot */ = {
+			isa = PBXGroup;
+			children = (
+				0B0C758F29B5CB3F00ED318E /* SnapshotHelper.swift */,
+				0B0C758629B5AF2000ED318E /* SnapShot.swift */,
+				0B0C758829B5AF2000ED318E /* SnapShotLaunchTests.swift */,
+			);
+			path = SnapShot;
 			sourceTree = "<group>";
 		};
 		0B0EE854299A146200114F45 /* Frameworks */ = {
@@ -640,6 +673,24 @@
 			productReference = 0B06823C29370AC300E5D648 /* Techeer-RUAloneUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		0B0C758329B5AF2000ED318E /* SnapShot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B0C758E29B5AF2000ED318E /* Build configuration list for PBXNativeTarget "SnapShot" */;
+			buildPhases = (
+				0B0C758029B5AF2000ED318E /* Sources */,
+				0B0C758129B5AF2000ED318E /* Frameworks */,
+				0B0C758229B5AF2000ED318E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0B0C758B29B5AF2000ED318E /* PBXTargetDependency */,
+			);
+			name = SnapShot;
+			productName = SnapShot;
+			productReference = 0B0C758429B5AF2000ED318E /* SnapShot.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -647,7 +698,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					0B06822129370AC000E5D648 = {
@@ -659,6 +710,10 @@
 					};
 					0B06823B29370AC300E5D648 = {
 						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 0B06822129370AC000E5D648;
+					};
+					0B0C758329B5AF2000ED318E = {
+						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 0B06822129370AC000E5D648;
 					};
 				};
@@ -688,6 +743,7 @@
 				0B06822129370AC000E5D648 /* Techeer-RUAlone */,
 				0B06823129370AC300E5D648 /* Techeer-RUAloneTests */,
 				0B06823B29370AC300E5D648 /* Techeer-RUAloneUITests */,
+				0B0C758329B5AF2000ED318E /* SnapShot */,
 			);
 		};
 /* End PBXProject section */
@@ -718,6 +774,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0B06823A29370AC300E5D648 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B0C758229B5AF2000ED318E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -824,6 +887,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0B0C758029B5AF2000ED318E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B0C758929B5AF2000ED318E /* SnapShotLaunchTests.swift in Sources */,
+				0B0C758729B5AF2000ED318E /* SnapShot.swift in Sources */,
+				0B0C759029B5CB3F00ED318E /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -836,6 +909,11 @@
 			isa = PBXTargetDependency;
 			target = 0B06822129370AC000E5D648 /* Techeer-RUAlone */;
 			targetProxy = 0B06823D29370AC300E5D648 /* PBXContainerItemProxy */;
+		};
+		0B0C758B29B5AF2000ED318E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B06822129370AC000E5D648 /* Techeer-RUAlone */;
+			targetProxy = 0B0C758A29B5AF2000ED318E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1112,6 +1190,42 @@
 			};
 			name = Release;
 		};
+		0B0C758C29B5AF2000ED318E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LVBMDY357W;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.KKodiac.SnapShot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Techeer-RUAlone";
+			};
+			name = Debug;
+		};
+		0B0C758D29B5AF2000ED318E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LVBMDY357W;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.KKodiac.SnapShot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Techeer-RUAlone";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1147,6 +1261,15 @@
 			buildConfigurations = (
 				0B06824D29370AC300E5D648 /* Debug */,
 				0B06824E29370AC300E5D648 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B0C758E29B5AF2000ED318E /* Build configuration list for PBXNativeTarget "SnapShot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B0C758C29B5AF2000ED318E /* Debug */,
+				0B0C758D29B5AF2000ED318E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
