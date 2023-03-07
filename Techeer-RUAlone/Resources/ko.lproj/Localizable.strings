@@ -1,0 +1,50 @@
+/* 
+  Localizable.strings
+  Techeer-RUAlone
+
+  Created by Sean Hong on 2023/01/11.
+  
+*/
+
+// KO
+"Home" = "홈";
+"Post" = "게시판";
+"Message" = "메세지";
+"WelcomeMessage %@" = "어서오세요, %@님";
+"TodaysGathering" = "오늘의 모임";
+"FindFriend" = "친구를 찾아보세요!";
+"GatherFriend" = "친구를 모아보세요!";
+"RecentGathering" = "최근 나의 모임 기록";
+"CheckGathering" = "확인하기";
+"Gathered %lld" = "%lld명 모집 중";
+"Time %lld" = "모임 %lld시간 전";
+"Gathered State %lld %lld"= "%lld / %lld명 모집 중";
+"Find Nav Title" = "메이트 구하기";
+"Join" = "참여하기";
+"Gather Time" = "만남 시간";
+"Find Route" = "경로보기";
+"Form Title" = "제목";
+"Field Example" = "예) 버거킹 같이 드실 분!";
+"Location" = "모임 위치";
+"Persons" = "모집 인원";
+"Food Category" = "음식 카테고리";
+"Food Type" = "음식 종류";
+"Date" = "일정";
+"Date Ask" = "언제 만날까요?";
+"Submit" = "작성 완료";
+"Korean" = "한식";
+"Chinese" = "중식";
+"Japanese" = "일식";
+"Chicken" = "치킨";
+"Bunsik" = "분식";
+"Western" = "양식";
+"Person %lld" = "%lld명";
+"Post Settings" = "모임 설정";
+"EatIn" = "배달 시켜 먹기";
+"EatOut" = "나가서 먹기";
+"Activity" = "월별 모임 횟수";
+"Average Time" = "다른 회원들과 모인 시간";
+"Book Keeping" = "소비 차트";
+"Time Spent" = "만남에 소비된 시간(분)";
+"Login Header" = "로그인을 진행해주세요";
+"Header %@" = "어서오세요, %@님";

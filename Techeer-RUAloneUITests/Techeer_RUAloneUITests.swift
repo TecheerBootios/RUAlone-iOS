@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class Techeer_RUAloneUITests: XCTestCase {
+final class RUAloneUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,17 +22,24 @@ final class Techeer_RUAloneUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func test_homeUITest() throws {
         let app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        XCTAssertTrue(app.navigationBars.staticTexts["오늘의 모임"].exists)
     }
-
+    
+    func test_feedUITest() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        XCTAssertTrue(app.navigationBars.staticTexts["메이트 구하기"].exists)
+    }
+    
+    
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
+                        // This measures how long it takes to launch your application.
             measure(metrics: [XCTApplicationLaunchMetric()]) {
                 XCUIApplication().launch()
             }

@@ -1,0 +1,50 @@
+/* 
+  Localizable.strings
+  Techeer-RUAlone
+
+  Created by Sean Hong on 2023/01/11.
+  
+*/
+
+// EN
+"Home" = "Home";
+"Post" = "Post";
+"Message" = "Message";
+"WelcomeMessage %@" = "Welcome, %@";
+"TodaysGathering" = "Today's Gatherings";
+"FindFriend" = "Find a new Friend!";
+"GatherFriend" = "Gather a new group of Friends!";
+"RecentGathering" = "Recent Gatherings";
+"CheckGathering" = "Check it out";
+"Gathered %lld" = "Looking for %lld more";
+"Time %lld" = "%lld hours ago";
+"Gathered State %lld %lld"= "%lld / %lld have joined";
+"Find Nav Title" = "Find Your Friend";
+"Join" = "Join Chat";
+"Gather Time" = "Meeting Time";
+"Find Route" = "Find Route";
+"Form Title" = "Title";
+"Field Example" = "What should the title be?";
+"Location" = "Location";
+"Persons" = "Persons";
+"Food Category" = "Food Category";
+"Food Type" = "Food Type";
+"Date" = "Schedule";
+"Date Ask" = "Gathering Time";
+"Submit" = "Submit";
+"Korean" = "Korean";
+"Chinese" = "Chinese";
+"Japanese" = "Japanese";
+"Chicken" = "Chicken";
+"Bunsik" = "Bunsik";
+"Western" = "Western";
+"Person %lld" = "";
+"Post Settings" = "Post Settings";
+"EatIn" = "Eat In";
+"EatOut" = "Eat Out";
+"Activity" = "Monthly Gatherings";
+"Average Time" = "Average Time Spent";
+"Book Keeping" = "Spendings";
+"Time Spent" = "Time Spent on Gatherings(min)";
+"Login Header" = "Please Sign In";
+"Header %@" = "Welcome, %@";
