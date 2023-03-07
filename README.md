@@ -11,11 +11,8 @@ iOS repository for RUAlone @ Techeer: Team Bootios
   </a>
   
   ![ezgif com-video-to-gif](https://user-images.githubusercontent.com/35219323/223493742-0774b913-8e43-4003-8fa8-8a9f270cebb9.gif)
-  
   ![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/35219323/223493869-4fce26a9-e373-4793-b453-d5fca4ddf7e9.gif)
-  
   ![ezgif com-video-to-gif (2)](https://user-images.githubusercontent.com/35219323/223493899-64d64c94-5901-46c9-bc84-b94b64fbb136.gif)
-  
   ![ezgif com-video-to-gif (3)](https://user-images.githubusercontent.com/35219323/223493924-9e154765-ee7f-4b22-84c1-1b595fa54cca.gif)
 
   <p align="center">
