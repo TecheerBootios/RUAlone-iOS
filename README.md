@@ -1,7 +1,7 @@
 [![Swift Version][swift-image]][swift-url]
 [![License][license-image]][license-url]
 
-# RUAlone-iOS: 혼자왔디?
+# RUAlone-iOS: 혼자왔니?
 iOS repository for RUAlone @ Techeer: Team Bootios
 
 <br />
